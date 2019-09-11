@@ -2,32 +2,68 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.home-page {
+  background-color: rgb(200, 200, 20);
+  padding-bottom: 100%;
+}
+.navbar {
+  background-color: greenyellow;
+  overflow: hidden;
+  height: 100px;
+  line-height: 100px;
+  width: 100%;
+}
+.nav-center {
+  width: 100%;
+  padding-left: 10px;
+}
+.logo {
+  width: 70px;
+  float: left;
+}
+.search-bar {
+  width: 30%;
+
+  float: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-links li {
+  float: left;
+  width: 120px;
+  height: 70px;
+  display: block;
+  padding-left: 30px;
+  margin-left: 40px;
+  text-align: center;
+  list-style-type: none;
 }
+.search-bar {
+  float: right;
+  height: 10px;
+  margin-bottom: 50px;
+}
+.search-bar input {
+  height: 40px;
+  width: 300px;
+}
+.search-bar button {
+  float: right;
+  padding-right: 105px;
 
+  line-height: 35px;
+  width: 25px;
+  margin-top: 30px;
+  margin-right: 140px;
+}
 .App-link {
-  color: #61dafb;
+  color: #00ff00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/*ul#horizontal-list {
+  min-width: 1px;
+  list-style: none;
+  padding-top: 2px;
+}*/
+ul#horizontal-list li {
+  display: inline;
 }

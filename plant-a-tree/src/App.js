@@ -1,37 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import "boostrap/dist/css/boostrap.min.css";
+import React from "react";
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import About from "./pages/About";
+import Account from "./pages/Account";
+import Cart from "./pages/Cart";
+import Contact from "./pages/Contact";
+import Description from "./pages/Description";
+import Details from "./pages/Details";
+import Error from "./pages/Error";
+import Favourites from "./pages/Favourites";
+import Home from "./pages/Home";
+import Items from "./pages/Items";
+import Login from "./pages/Login";
+import Maintenance from "./pages/Maintenance";
+import Policy from "./pages/Policy";
+import Register from "./pages/Register";
+import Search from "./pages/Search";
+import Tools from "./pages/Tools";
+import Tree from "./pages/Tree";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
-      <div className="row">
-        <div className="col-6">column number one</div>
-        <div className="col-6">
-          <span>
-            <i className="fas fa-home"/>
-          </span>
-        </div>
-      </div>
-    </div>
+    <>
+      <Navbar />
+      <Footer />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/account" component={Account} />
+        <Route exact path="/account/cart" component={Cart} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/description" component={Description} />
+        <Route exact path="/details" component={Details} />
+        <Route exact path="/account/favourites" component={Favourites} />
+        <Route exact path="/items" component={Items} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/items/maintenance" component={Maintenance} />
+        <Route exact path="/policy" component={Policy} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/search" component={Search} />
+        <Route exact path="/items/tools" component={Tools} />
+        <Route exact path="/items/tree" component={Tree} />
+        <Route component={Error} />
+      </Switch>
+    </>
   );
 }
-
-/**<header className="App-header">
-        <img src={logo} className="App=logo" alt="logo" />
-        <p>
-          Edit <code> src/App.js</code> and save to reload.
-        </p>
-        <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1> Hola amigos ponte a trabajar por favor</h1>
-      </header> */
 
 export default App;
