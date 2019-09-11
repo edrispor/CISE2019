@@ -5,14 +5,48 @@ export default class Navbar extends Component {
   // <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
   render() {
     return (
-      <nav className="navbar">
+      <div className="navbar">
         <div className="nav-center">
-          <div className="nav-header">
+          <div className="logo">
             <Link to="/">
               <img src={logo} alt="Plant a Tree" />
             </Link>
           </div>
-          <ul id="horizontal-list">
+          <div className="Links">
+            <ul className="nav-links">
+              <li>
+                <Link to="/tree">Browse</Link>
+              </li>
+              <li>
+                <Link to="/">Account</Link>
+              </li>
+              <li>
+                <Link to="/">Cart</Link>
+              </li>
+              <li>
+                <Link to="/">Favourite</Link>
+              </li>
+              <li>
+                <Link to="/login"> Login</Link>
+              </li>
+              <li>
+                <Link to="/register"> Register</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="search">
+            <form className="search-bar">
+              <input type="text" placeholder="Seach" />
+              <button>Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+/*
+<ul id="horizontal-list">
             <li>
               <Link to="/"> Home</Link>
             </li>
@@ -30,8 +64,4 @@ export default class Navbar extends Component {
               <Link to="/register"> Register</Link>
             </li>
           </ul>
-        </div>
-      </nav>
-    );
-  }
-}
+*/
