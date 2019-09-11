@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.home-page {
+  background-color: rgb(200, 200, 20);
+  padding-bottom: 100%;
+}
 .navbar {
   background-color: greenyellow;
   overflow: hidden;
@@ -54,6 +58,7 @@
 .App-link {
   color: #00ff00;
 }
+
 /*ul#horizontal-list {
   min-width: 1px;
   list-style: none;

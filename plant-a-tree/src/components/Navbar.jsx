@@ -15,16 +15,16 @@ export default class Navbar extends Component {
           <div className="Links">
             <ul className="nav-links">
               <li>
-                <Link to="/tree">Browse</Link>
+                <Link to="/items">Browse</Link>
               </li>
               <li>
-                <Link to="/">Account</Link>
+                <Link to="/account">Account</Link>
               </li>
               <li>
-                <Link to="/">Cart</Link>
+                <Link to="/account/cart">Cart</Link>
               </li>
               <li>
-                <Link to="/">Favourite</Link>
+                <Link to="/account/favourites">Favourite</Link>
               </li>
               <li>
                 <Link to="/login"> Login</Link>
@@ -37,7 +37,9 @@ export default class Navbar extends Component {
           <div className="search">
             <form className="search-bar">
               <input type="text" placeholder="Seach" />
-              <button>Search</button>
+              <Link to="/search">
+                <button>Search</button>
+              </Link>
             </form>
           </div>
         </div>
@@ -45,23 +47,3 @@ export default class Navbar extends Component {
     );
   }
 }
-/*
-<ul id="horizontal-list">
-            <li>
-              <Link to="/"> Home</Link>
-            </li>
-
-            <li>
-              <Link to="/search"> Search</Link>
-            </li>
-            <li>
-              <Link to="/details"> Details</Link>
-            </li>
-            <li>
-              <Link to="/login"> Login</Link>
-            </li>
-            <li>
-              <Link to="/register"> Register</Link>
-            </li>
-          </ul>
-*/
