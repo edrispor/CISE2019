@@ -1,69 +1,147 @@
-.App {
-  text-align: center;
+:root {
+  --mainBlack: #042a2b;
+  --mainGreen: #5cb548;
+  --mainBrown: #b76128;
+  --mainCream: #fcf7d6;
+  --mainBlue: #659dbd;
+  --mainDarkGreen: #069b06d0;
+  --mainPinky: #daad86;
+  --mainWhite: #ffffff;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.4;
+  height: 100%;
 }
 
 .home-page {
-  background-color: rgb(200, 200, 20);
-  padding-bottom: 100%;
+  background-color: var(--mainWhite);
+  padding-left: 190px;
+  padding-right: 190px;
+  padding-top: 10px;
+  height: 100%;
+  position: static;
 }
+
+/* Navigation */
 .navbar {
-  background-color: greenyellow;
-  overflow: hidden;
-  height: 100px;
-  line-height: 100px;
+  position: fixed;
+  background-color: var(--mainGreen);
+  top: 0;
+  left: 0;
+  height: 140px;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /*overflow: hidden; /*this hides the links if they are going over the bar*/
 }
+
+.logo {
+  width: 80px;
+  float: left;
+  margin-left: 80px;
+  padding-top: 20px;
+}
+
+.logoname {
+  width: 1px;
+  float: left;
+  margin-left: 30px;
+  padding-top: 0px;
+}
+
 .nav-center {
   width: 100%;
-  padding-left: 10px;
+  padding-left: 90px;
 }
-.logo {
-  width: 70px;
-  float: left;
-}
-.search-bar {
-  width: 30%;
 
-  float: right;
+.nav-links ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links li {
-  float: left;
-  width: 120px;
-  height: 70px;
-  display: block;
-  padding-left: 30px;
-  margin-left: 40px;
-  text-align: center;
-  list-style-type: none;
+  display: inline-block;
+  margin: 0 1rem;
+  /*margin-left: 50px;*/
+  padding-top: 80px;
+
+  /*width: 80px;
+  padding-left: 30px;*/
 }
+
+.nav-links li a {
+  color: var(--mainWhite);
+  text-decoration: none;
+  font-size: 17px;
+  padding: 5px 20px;
+}
+
+.nav-links a:active,
+.nav-links a:hover,
+.nav-links a.active {
+  border: 1px solid white;
+}
+
+.cart {
+  /*display: inline-flex;*/
+  position: absolute;
+  width: 50px;
+  top: 80px;
+  right: 370px;
+  margin-right: 100px;
+}
+
+/*Search bar*/
+.form-control {
+  margin-top: 9px;
+  margin-left: 30px;
+  box-shadow: none;
+}
+
+.input-group-text {
+  margin: 8.5px 10px 3px 0;
+  cursor: pointer;
+}
+
 .search-bar {
-  float: right;
-  height: 10px;
-  margin-bottom: 50px;
+  display: inline-flex;
+  position: absolute;
+  top: 80px;
+  right: 150px;
+  width: 20%;
 }
-.search-bar input {
-  height: 40px;
-  width: 300px;
-}
-.search-bar button {
-  float: right;
-  padding-right: 105px;
+/*Search bar ends*/
 
-  line-height: 35px;
-  width: 25px;
-  margin-top: 30px;
-  margin-right: 140px;
-}
-.App-link {
-  color: #00ff00;
+/* navigation ends*/
+
+/*footer*/
+.f-center {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--mainCream);
+  height: 200px;
+  width: 100%;
+  padding-left: 400px;
 }
 
-/*ul#horizontal-list {
-  min-width: 1px;
-  list-style: none;
-  padding-top: 2px;
-}*/
-ul#horizontal-list li {
-  display: inline;
+.f-center h1 {
+  font-size: 25px;
+  margin-top: 25px;
+  color: var(--mainDarkGreen);
 }
+
+.f-center p {
+  color: var(--mainPinky);
+}
+/* footer ends*/
