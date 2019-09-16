@@ -1,3 +1,9 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
 :root {
   --mainBlack: #042a2b;
   --mainGreen: #5cb548;
@@ -13,6 +19,7 @@
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
+/*Globals*/
 body {
   color: var(--mainBlack);
   background: var(--mainWhite);
@@ -20,6 +27,14 @@ body {
   line-height: 1.4;
   height: 100%;
 }
+
+h1 {
+  font-size: 25px;
+  margin-top: 25px;
+  color: var(--mainBlack);
+}
+
+/*Globals end*/
 
 .home-page {
   background-color: var(--mainWhite);
@@ -30,32 +45,33 @@ body {
   position: static;
 }
 
-/* Navigation */
 .navbar {
+  display: grid;
   position: fixed;
   background-color: var(--mainGreen);
   top: 0;
   left: 0;
   height: 140px;
   width: 100%;
-  display: flex;
+
   flex-wrap: wrap;
   align-items: center;
   /*overflow: hidden; /*this hides the links if they are going over the bar*/
 }
 
+/*
+ .logoname {
+    width: 1px;
+    float: left;
+    margin-left: 30px;
+    padding-top: 0px;
+  }*/
+
 .logo {
   width: 80px;
   float: left;
-  margin-left: 80px;
-  padding-top: 20px;
-}
-
-.logoname {
-  width: 1px;
-  float: left;
-  margin-left: 30px;
-  padding-top: 0px;
+  margin-left: 0px;
+  padding-top: 5px;
 }
 
 .nav-center {
@@ -90,7 +106,8 @@ body {
 .nav-links a:active,
 .nav-links a:hover,
 .nav-links a.active {
-  border: 1px solid white;
+  color: var(--darkShadow);
+  /*border: 1px solid white;*/
 }
 
 .cart {
@@ -145,3 +162,24 @@ body {
   color: var(--mainPinky);
 }
 /* footer ends*/
+
+/*
+@media screen and (min-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
+  }
+  .nav-links li a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+  }
+}*/

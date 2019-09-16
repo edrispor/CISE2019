@@ -1,23 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.svg";
-import logoname from "../images/logoname.svg";
+import treelogo from "../images/treelogo.svg";
 import shoppingcart from "../images/shoppingcart.svg";
+import { FaAlignRight } from "react-icons/fa";
+
 export default class Navbar extends Component {
   // <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
   // <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"         title="Flaticon">www.flaticon.com</a></div>
+
+  /*state = {
+    isOpen: false
+  };
+
+  handleToggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };*/
+
   render() {
     return (
       <header className="navbar">
         <div className="nav-center">
           <div className="logo">
             <Link to="/">
-              <img src={logo} alt="Plant a Tree" />
-            </Link>
-          </div>
-          <div className="logoname">
-            <Link to="/">
-              <img src={logoname} width="200" height="100" alt="Plant a Tree" />
+              <img src={treelogo} width="200" height="100" alt="Plant a Tree" />
             </Link>
           </div>
           <nav className="nav-links">
