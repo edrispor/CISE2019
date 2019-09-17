@@ -4,7 +4,7 @@ export default class Maincategories extends Component {
   render() {
     return (
       <div>
-        <h1>This will contain a table of main categories.</h1>
+        <h1>table of contents main page.</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
           laudantium facere cum dolor labore provident quas delectus vero
