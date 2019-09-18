@@ -34,17 +34,57 @@ h1 {
   color: var(--mainBlack);
 }
 
+p {
+  font-size: 15px;
+  margin-top: 25px;
+  color: var(--mainBlack);
+}
+
 /*Globals end*/
 
+/* Pages start */
 .home-page {
   background-color: var(--mainWhite);
+  padding-top: 10px;
   padding-left: 190px;
   padding-right: 190px;
-  padding-top: 10px;
   height: 100%;
   position: static;
 }
 
+.items-page {
+  padding-left: 190px;
+  padding-right: 190px;
+}
+
+.account-page {
+  padding-left: 190px;
+  padding-right: 190px;
+}
+
+.favourites-page {
+  padding-left: 190px;
+  padding-right: 190px;
+}
+
+.login-page {
+  padding-left: 190px;
+  padding-right: 190px;
+}
+
+.register-page {
+  padding-left: 190px;
+  padding-right: 190px;
+}
+
+.cart-page {
+  padding-left: 190px;
+  padding-right: 190px;
+}
+
+/* Pages end */
+
+/* Navigation start */
 .navbar {
   display: grid;
   position: fixed;
@@ -58,14 +98,6 @@ h1 {
   align-items: center;
   /*overflow: hidden; /*this hides the links if they are going over the bar*/
 }
-
-/*
- .logoname {
-    width: 1px;
-    float: left;
-    margin-left: 30px;
-    padding-top: 0px;
-  }*/
 
 .logo {
   width: 80px;
@@ -142,14 +174,14 @@ h1 {
 
 /* navigation ends*/
 
-/*footer*/
+/* Footer starts */
 .f-center {
   position: absolute;
   bottom: 0;
   background-color: var(--mainCream);
   height: 200px;
   width: 100%;
-  padding-left: 400px;
+  padding-left: 200px;
 }
 
 .f-center h1 {
@@ -161,7 +193,8 @@ h1 {
 .f-center p {
   color: var(--mainPinky);
 }
-/* footer ends*/
+
+/* Footer Ends*/
 
 /*
 @media screen and (min-width: 768px) {

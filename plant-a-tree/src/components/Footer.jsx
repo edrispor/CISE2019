@@ -18,6 +18,12 @@ export default class Footer extends Component {
               <p>Contact Us</p>
               <p>Store Locations</p>
             </div>
+            <div className="col-md-3">
+              <h1>More links</h1>
+              <p>Link uno</p>
+              <p>Link dos</p>
+              <p>Link tres</p>
+            </div>
           </div>
         </div>
       </footer>
