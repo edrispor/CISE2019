@@ -15,11 +15,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "client-install": "npm install --prefix plant-a-tree",
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix plant-a-tree",
-    "dev": "concurrently \"npm run server\" \"npm run client \""
+    "heroku-postbuild": "cd plant-a-tree && npm install && npm run build"
   },
   "repository": {
     "type": "git",
