@@ -11,11 +11,14 @@ import Error from "./pages/Error";
 import Favourites from "./pages/Favourites";
 import Home from "./pages/Home";
 import Items from "./pages/Items";
+import Location from "./pages/Location";
 import Login from "./pages/Login";
 import Maintenance from "./pages/Maintenance";
 import Policy from "./pages/Policy";
+import Privacy from "./pages/Privacy";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
+import Terms from "./pages/Terms";
 import Tools from "./pages/Tools";
 import Tree from "./pages/Tree";
 import Footer from "./components/Footer";
@@ -36,11 +39,14 @@ function App() {
         <Route exact path="/details" component={Details} />
         <Route exact path="/account/favourites" component={Favourites} />
         <Route exact path="/items" component={Items} />
+        <Route exact path="/location" component={Location} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />
         <Route exact path="/policy" component={Policy} />
+        <Route exact path="/privacy" component={Privacy} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/terms" component={Terms} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/tree" component={Tree} />
         <Route component={Error} />
