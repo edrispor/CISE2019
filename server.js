@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
+const port = process.env.PORT || 4000;
 
 const app = express();
 
@@ -39,6 +40,6 @@ app.get("/products", (req, res) => {
   });
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("products server listening on port 4000");
 });
