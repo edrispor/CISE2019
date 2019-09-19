@@ -5,6 +5,7 @@ export default class Maincategories extends Component {
     return (
       <div>
         <h1>Plant A Tree</h1>
+        <h1>table of contents main page.</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
           laudantium facere cum dolor labore provident quas delectus vero
