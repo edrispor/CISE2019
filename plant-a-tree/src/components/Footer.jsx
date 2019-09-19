@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
 export default class Footer extends Component {
   render() {
     return (
@@ -8,31 +8,15 @@ export default class Footer extends Component {
           <div className="row">
             <div className="col-md-3">
               <h1>Useful Links</h1>
-              <ul>
-                <li>
-                  <Link to="/privacy">Privacy Policy</Link>
-                </li>
-                <li>
-                  <Link to="/terms">Terms of Use</Link>
-                </li>
-                <li>
-                  <Link to="/policy">Return Policy</Link>
-                </li>
-              </ul>
+              <p>Privacy Policy</p>
+              <p>Terms of Use</p>
+              <p>Return Policy</p>
             </div>
             <div className="col-md-3">
               <h1>Company</h1>
-              <ul>
-                <li>
-                  <Link to="/about">About Us</Link>
-                </li>
-                <li>
-                  <Link to="/contact">Contact Us</Link>
-                </li>
-                <li>
-                  <Link to="/location">Store Locations</Link>
-                </li>
-              </ul>
+              <p>About Us</p>
+              <p>Contact Us</p>
+              <p>Store Locations</p>
             </div>
           </div>
         </div>
