@@ -1,9 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
+const path = require("path");
 const port = process.env.PORT || 4000;
 
 const app = express();
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "plant-a-tree/build")));
 
 const SELECT_ALL_PRODUCTS_QUERY = "SELECT * FROM products";
 
@@ -16,13 +20,8 @@ const connection = mysql.createConnection({
 
 app.use(cors());
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "plant-a-tree/build")));
 app.get("/", (req, res) => {
   res.send("go to /products");
-});
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/plant-a-tree/build/index.html"));
 });
 
 connection.connect(err => {
@@ -43,6 +42,10 @@ app.get("/products", (req, res) => {
       });
     }
   });
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/plant-a-tree/build/index.html"));
 });
 
 app.listen(port, () => {
