@@ -16,8 +16,13 @@ const connection = mysql.createConnection({
 
 app.use(cors());
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "plant-a-tree/build")));
 app.get("/", (req, res) => {
   res.send("go to /products");
+});
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/plant-a-tree/build/index.html"));
 });
 
 connection.connect(err => {
