@@ -8,13 +8,15 @@ export default function Home() {
       title="TREE SALE!!"
       subtitle="deluxe trees starting at $299"
     ></Featured>*/
-    <div className="home-page">
-      <p>This is from home page</p>
-      <div>
-        <Maincategories></Maincategories>
-      </div>
-      <div>
-        <Featured></Featured>
+    <div className="pagelayout">
+      <div className="home-page">
+        <p>This is from home page</p>
+        <div>
+          <Maincategories></Maincategories>
+        </div>
+        <div>
+          <Featured></Featured>
+        </div>
       </div>
     </div>
   );
