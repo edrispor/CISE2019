@@ -4,9 +4,11 @@ import Products from "../components/Products";
 
 export default function Items() {
   return (
-    <div>
-      <p>This is All Items Page.</p>
-      <Products></Products>
+    <div className="pagelayout">
+      <div className="items-page">
+        <p>This is All Items Page.</p>
+        <Maincategories></Maincategories>
+      </div>
     </div>
   );
 }

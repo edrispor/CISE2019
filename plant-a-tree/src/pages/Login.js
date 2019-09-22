@@ -2,8 +2,10 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div>
-      <p>This is Login Page</p>
+    <div className="pagelayout">
+      <div className="login-page">
+        <p>This is Login Page</p>
+      </div>
     </div>
   );
 }
