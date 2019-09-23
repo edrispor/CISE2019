@@ -10,6 +10,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "plant-a-tree/build")));
 
 const SELECT_ALL_PRODUCTS_QUERY = "SELECT * FROM products";
+const SELECT_ALL_USER_QUERY = "SELECT * FROM user";
 
 let pool = mysql.createPool({
   connectionLimit: 10,
@@ -31,6 +32,23 @@ app.get("/products", (req, res) => {
       res.send("Error occured");
     } else {
       conn.query(SELECT_ALL_PRODUCTS_QUERY, function(err2, records, fields) {
+        if (!err2) {
+          res.json({
+            data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+app.get("/user", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      conn.query(SELECT_ALL_USER_QUERY, function(err2, records, fields) {
         if (!err2) {
           res.json({
             data: records
