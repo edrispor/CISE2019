@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Footer extends Component {
   render() {
@@ -14,8 +15,9 @@ export default class Footer extends Component {
             </div>
             <div className="col-md-3">
               <h1>Company</h1>
-              <p>About Us</p>
-              <p>Contact Us</p>
+              <Link to="/pages/About">About</Link>
+              <br></br>
+              <Link to="/pages/contact">Contact</Link>
               <p>Store Locations</p>
             </div>
             <div className="col-md-3">
