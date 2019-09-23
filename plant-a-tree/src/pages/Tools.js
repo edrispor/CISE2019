@@ -4,7 +4,7 @@ import Maincategories from "../components/Maincategories";
 export default function Tool() {
   return (
     <div className="pagelayout">
-      <p>This is All Items Page.</p>
+      <p>This is All Tools Page.</p>
       <Maincategories></Maincategories>
       <Tools></Tools>
     </div>
