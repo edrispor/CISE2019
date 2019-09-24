@@ -1,4 +1,6 @@
 import React from "react";
+import GroupPhoto from "../images/grouppicplaceholder.jpg";
+import Logo from "../images/treelogo2.svg";
 
 export default function Contact() {
   return (
@@ -9,31 +11,9 @@ export default function Contact() {
           Feel free to send us a message. We will try our best to get back to
           you ASAP!
         </p>
-        <form>
-          Name:
-          <br>
-            <input type="text" name="Name" />>
-          </br>
-          Email:
-          <br>
-            <input type="text" name="Email" />>
-          </br>
-          Query:
-          <br>
-            <input type="text" name="Query" />>
-          </br>
-        </form>
-        <p>
-          Plant A Tree by TreeCo
-          <br />
-          123 HelloWorld Street
-          <br />
-          Auckland
-          <br />
-          1111
-          <br />
-          Email: treeco@gmail.com
-        </p>
+        <p>Email: terrabyte@gmail.com</p>
+        <img src={GroupPhoto} alt="Group Photo Placeholder" />
+        <img src={Logo} width="200" height="100" alt="the logo" />
       </main>
     </div>
   );

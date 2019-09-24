@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import treelogo2 from "../images/treelogo.svg";
+import treelogo2 from "../images/treelogo2.svg";
 import shoppingcart from "../images/shoppingcart.svg";
 import { FaAlignRight } from "react-icons/fa";
 
