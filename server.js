@@ -69,7 +69,11 @@ app.post("/data", (req, res) => {
     if (err) {
       res.send("Error occured");
     } else {
-      var data = { username: req.body.username, pass: req.body.pass };
+      var data = {
+        username: req.body.username,
+        pass: req.body.pass,
+        email: req.body.email
+      };
       var sql = "INSERT INTO users SET ?";
       conn.query(sql, data, function(err2, records, fields) {
         if (!err2) {
@@ -78,7 +82,8 @@ app.post("/data", (req, res) => {
             status: "Data sukses diinput!",
             no: null,
             name: req.body.username,
-            pass: req.body.pass
+            pass: req.body.pass,
+            email: req.body.email
           });
         }
         conn.release();
