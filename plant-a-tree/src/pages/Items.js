@@ -10,6 +10,11 @@ export default function Items() {
         <Link to="/">Home</Link>
         <p> > All Products</p>
         <Maincategories></Maincategories>
+
+        <h1>Links</h1>
+        <Link to="/items/tools">Tools</Link>
+        <br />
+        <br />
         <Products></Products>
       </div>
     </div>
