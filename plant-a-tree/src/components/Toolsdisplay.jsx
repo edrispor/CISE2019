@@ -15,8 +15,7 @@ export default function Toolsdisplay({ tool }) {
     photo_link,
     slug
   } = tool;
-  let imgtemp = String(photo_link);
-  //  <Link to={`/items/tools/${slug}`}> </Link>
+
   function importimages(product_id) {
     if (product_id == 21) {
       return (

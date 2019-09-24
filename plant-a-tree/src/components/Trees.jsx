@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
+import Treesdisplay from "./Treesdisplay";
 export default class Trees extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       trees: []
     };
@@ -12,20 +12,25 @@ export default class Trees extends Component {
     this.getTrees();
   }
 
-  getTree = _ => {
+  getTrees = _ => {
     fetch("/trees")
       .then(response => response.json())
       .then(response => this.setState({ trees: response.data }))
       .catch(err => console.error(err));
   };
 
-  renderTrees = ({ product_id, product_name, product_price }) => (
-    <div key={product_id}>
-      {product_id} : {product_name} : {product_price}
-    </div>
-  );
   render() {
-    const { trees } = this.state;
-    return <div>{trees.map(this.renderTrees)}</div>;
+    let { trees } = this.state;
+    console.log(trees);
+    trees = trees.map(tree => {
+      return <Treesdisplay key={tree.product_id} tree={tree}></Treesdisplay>;
+    });
+
+    return (
+      <section>
+        <h1>Featured Trees</h1>
+        <div>{trees}</div>
+      </section>
+    );
   }
 }
