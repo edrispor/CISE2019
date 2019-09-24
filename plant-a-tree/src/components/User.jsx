@@ -13,7 +13,7 @@ class App extends Component {
 
   klikPost(e) {
     e.preventDefault();
-    var url = "http://localhost:4000/data";
+    var url = "/data";
     axios
       .post(url, {
         username: this.inputusername.value,
@@ -35,7 +35,7 @@ class App extends Component {
 
   klikGet(e) {
     e.preventDefault();
-    var url = "http://localhost:4000/data";
+    var url = "/data";
     axios.get(url).then(ambilData => {
       console.log(ambilData.data);
       this.setState({
