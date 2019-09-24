@@ -56,7 +56,7 @@ class App extends Component {
         <Zoom>
           <center style={{ margin: "25px" }}>
             <Flip>
-              <h3> ♥ Register ♥ </h3>
+              <h3> 🌲 Register 🌲 </h3>
             </Flip>
 
             <form>
@@ -73,7 +73,7 @@ class App extends Component {
               <div className="form-group" style={{ margin: "15px" }}>
                 <input
                   className="form-control"
-                  type="number"
+                  type="text"
                   id="pass"
                   ref={inpass => (this.inputpass = inpass)}
                   placeholder="enter a password"
