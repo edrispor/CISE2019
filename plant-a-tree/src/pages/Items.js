@@ -25,10 +25,6 @@ export default function Items() {
 
         <Maincategories></Maincategories>
 
-        <h1>Links</h1>
-        <Link to="/items/tools">Tools</Link>
-        <br />
-        <br />
         <Products></Products>
       </div>
     </div>

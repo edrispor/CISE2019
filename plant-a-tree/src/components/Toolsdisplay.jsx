@@ -46,7 +46,7 @@ export default function Toolsdisplay({ tool }) {
         <div className="toolitemdetails">
           <h2>{product_name}</h2>
           <p1>{description}</p1>
-          <span className="price">$39.99</span>
+          <span className="price">${product_price}</span>
           <button width="135px" color="#F4FF77" radius="50px" class="btnitem">
             Add To Cart
           </button>

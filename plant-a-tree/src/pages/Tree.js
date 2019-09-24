@@ -3,9 +3,9 @@ import Trees from "../components/Trees";
 import { Link } from "react-router-dom";
 export default function Tree() {
   return (
-    <div>
-      <br></br>
-      <br></br>
+    <div className="pagelayout">
+      <Link to="/">Home</Link>
+      <p> > All Trees</p>
       <h3>Links</h3>
       <ul>
         <li>

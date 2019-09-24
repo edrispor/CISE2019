@@ -3,9 +3,9 @@ import Fast from "../components/Maintenance";
 import { Link } from "react-router-dom";
 export default function Maintenance() {
   return (
-    <div>
-      <br></br>
-      <br></br>
+    <div className="pagelayout">
+      <Link to="/">Home</Link>
+      <p> > All Garden Maintenance</p>
       <h3>Links</h3>
       <ul>
         <li>
