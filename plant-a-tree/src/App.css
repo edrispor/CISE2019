@@ -28,6 +28,11 @@ body {
   height: 100%;
 }
 
+body a {
+  color: var(--mainBlack);
+  font-size: 17px;
+}
+
 h1 {
   font-size: 27px;
   margin-top: 50px;
@@ -154,13 +159,6 @@ p {
   text-decoration: none;
 }
 
-/*.nav-links a:active,
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--darkShadow);
-  /*border: 1px solid white;
-}*/
-
 .search-bar {
   display: inline-flex;
   position: absolute;
@@ -174,7 +172,7 @@ p {
 
 /* Feature Section */
 .feature {
-  background: rgba(116, 196, 63, 0.5);
+  background: url("./TreeImages/featuretree.jpg");
   padding: 5rem 5rem;
   text-align: center;
   text-transform: capitalize;
@@ -182,21 +180,22 @@ p {
 }
 
 .feature h1 {
-  font-size: 2.5rem;
-  height: 50px;
-  color: var(--mainBlack);
+  font-size: 10rem;
+  height: 100px;
+  color: var(--mainDarkGreen);
 }
 
 .feature div {
   width: 10rem;
-  height: 5px;
+  height: 100px;
+  color: var(--mainDarkGreen);
   margin: 1.7rem auto;
 }
 
 .feature p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--mainWhite);
+  font-size: 2rem;
+  color: var(--darkBrown);
+  background: rgba(116, 196, 63, 0.5);
 }
 
 /* Footer starts */
