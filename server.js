@@ -10,6 +10,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, "plant-a-tree/build")));
 
 const SELECT_ALL_PRODUCTS_QUERY = "SELECT * FROM products";
+const SELECT_ALL_TREES_QUERY = "SELECT * FROM trees";
+const SELECT_ALL_TOOLS_QUERY = "SELECT * FROM tools";
+const SELECT_ALL_MAINTENANCE_QUERY = "SELECT * FROM garden_main";
 
 let pool = mysql.createPool({
   connectionLimit: 10,
@@ -25,12 +28,68 @@ app.get("/", (req, res) => {
   res.send("go to /products");
 });
 
+//this is for all products.
 app.get("/products", (req, res) => {
   pool.getConnection(function(err, conn) {
     if (err) {
       res.send("Error occured");
     } else {
       conn.query(SELECT_ALL_PRODUCTS_QUERY, function(err2, records, fields) {
+        if (!err2) {
+          res.json({
+            data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+//this is for all trees
+app.get("/trees", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      conn.query(SELECT_ALL_TREES_QUERY, function(err2, records, fields) {
+        if (!err2) {
+          res.json({
+            data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+//this is for all the tools
+app.get("/tools", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      conn.query(SELECT_ALL_TOOLS_QUERY, function(err2, records, fields) {
+        if (!err2) {
+          res.json({
+            data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+//this is for all the garden maintenance.accordion
+
+app.get("/garden_main", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      conn.query(SELECT_ALL_MAINTENANCE_QUERY, function(err2, records, fields) {
         if (!err2) {
           res.json({
             data: records

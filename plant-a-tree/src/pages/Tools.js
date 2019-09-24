@@ -1,9 +1,12 @@
 import React from "react";
-
-export default function Tools() {
+import Tools from "../components/Tools";
+import Maincategories from "../components/Maincategories";
+export default function Tool() {
   return (
-    <div>
-      <p>This is Tools Page.</p>
+    <div className="pagelayout">
+      <p>This is All Tools Page.</p>
+
+      <Tools></Tools>
     </div>
   );
 }
