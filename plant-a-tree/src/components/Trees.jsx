@@ -19,7 +19,7 @@ export default class Trees extends Component {
       .catch(err => console.error(err));
   };
 
-  rendeTrees = ({ product_id, product_name, product_price }) => (
+  renderTrees = ({ product_id, product_name, product_price }) => (
     <div key={product_id}>
       {product_id} : {product_name} : {product_price}
     </div>

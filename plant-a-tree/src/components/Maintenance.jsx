@@ -26,6 +26,7 @@ export default class Maintenance extends Component {
   );
   render() {
     const { maintenance } = this.state;
+    console.log(maintenance);
     return <div>{maintenance.map(this.renderMaintenance)}</div>;
   }
 }
