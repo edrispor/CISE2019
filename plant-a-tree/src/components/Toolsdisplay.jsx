@@ -15,8 +15,7 @@ export default function Toolsdisplay({ tool }) {
     photo_link,
     slug
   } = tool;
-  let imgtemp = String(photo_link);
-  //  <Link to={`/items/tools/${slug}`}> </Link>
+
   function importimages(product_id) {
     if (product_id == 21) {
       return (
@@ -44,8 +43,8 @@ export default function Toolsdisplay({ tool }) {
   return (
     <article>
       <div>
-        ola {product_id} | {product_name} | {description} | {product_price}|{" "}
-        This is the link:
+        {product_id} | {product_name} | {description} | {product_price}| This is
+        the link:
         {photo_link} | this is the slug : {slug}
       </div>
       <div> This should show images {importimages(product_id)}</div>

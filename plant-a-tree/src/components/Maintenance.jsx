@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Maintenancedisplay from "./Maintenancedisplay";
 export default class Maintenance extends Component {
   constructor() {
     super();
@@ -19,14 +19,23 @@ export default class Maintenance extends Component {
       .catch(err => console.error(err));
   };
 
-  renderMaintenance = ({ product_id, product_name, product_price }) => (
-    <div key={product_id}>
-      {product_id} : {product_name} : {product_price}
-    </div>
-  );
   render() {
-    const { maintenance } = this.state;
+    let { maintenance } = this.state;
     console.log(maintenance);
-    return <div>{maintenance.map(this.renderMaintenance)}</div>;
+    maintenance = maintenance.map(maintain => {
+      return (
+        <Maintenancedisplay
+          key={maintain.product_id}
+          maintain={maintain}
+        ></Maintenancedisplay>
+      );
+    });
+
+    return (
+      <section>
+        <h1>Featured Tools</h1>
+        <div>{maintenance}</div>
+      </section>
+    );
   }
 }
