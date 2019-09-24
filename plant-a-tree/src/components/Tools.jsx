@@ -53,13 +53,15 @@ export default class Tools extends Component {
       let description = tool.description;
       let photo = tool.photo_link;
       let tags = tool.tags;
-      let toolobj = { id, name, description, price, photo, tags };
+      let slug = tool.slug;
+      let toolobj = { id, name, description, price, photo, tags, slug };
       return toolobj;
     });
     return tempTools;
   }
   render() {
     let { tools } = this.state;
+    console.log(tools);
     tools = tools.map(tool => {
       return <Toolsdisplay key={tool.product_id} tool={tool}></Toolsdisplay>;
     });
