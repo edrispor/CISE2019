@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 
-export default class Featured extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Featured List.</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-          eius!
-        </p>
-      </div>
-    );
-  }
+export default function Featured({ children, title, subtitle }) {
+  return (
+    <div className="feature">
+      <h1>{title}</h1>
+      <div />
+      <p>{subtitle}</p>
+      {children}
+    </div>
+  );
 }

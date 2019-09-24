@@ -21,7 +21,7 @@ export default class Products extends Component {
 
   renderProduct = ({ product_id, product_name, product_price }) => (
     <div key={product_id}>
-      {product_id} : {product_name} : {product_price}
+      {product_id} : {product_name} : ${product_price}
     </div>
   );
   render() {

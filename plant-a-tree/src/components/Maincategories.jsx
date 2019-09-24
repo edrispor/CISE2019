@@ -4,21 +4,18 @@ export default class Maincategories extends Component {
   render() {
     return (
       <div>
-        <h1>Plant A Tree</h1>
         <h1>table of contents main page.</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
-          laudantium facere cum dolor labore provident quas delectus vero
-          voluptatem eum voluptate corporis dignissimos reprehenderit quibusdam
-          ullam culpa, tempora numquam odit recusandae consectetur! Perspiciatis
-          ducimus explicabo, nemo accusamus magni atque sed accusantium minima
-          alias dolore, voluptatem voluptas temporibus? Architecto porro
-          provident dolor ipsum quod quos ullam autem qui illo veniam asperiores
-          voluptas expedita, placeat amet. Dignissimos sit temporibus eaque
-          nesciunt sequi quibusdam molestiae, a fuga! Nam mollitia perspiciatis
-          aperiam enim adipisci quibusdam repellat qui provident ipsum veniam
-          et, aliquam porro sapiente veritatis magni sequi iure dolor
-          aspernatur! Culpa dolorum magni quam?
+          Users should browse tree-types based on their name (e.g. Beech trees)
+          They should be able to restrict what is viewed based on at least: Tree
+          category (fruit tree, hedge, evergreen, NZ native, gum tree, palm
+          tree, hardwood) Conditions of place to be planted: Soil Drainage
+          (fast/med/slow/anything) Sun (Sunny/Med/shade/anything) Maintenance
+          requirements (high/med/low) – (feeding, watering, pruning) Max height
+          of mature tree (under 1, 1-2m, 2-3m, >3m) Growth rate (fast/medium
+          slow) Price for tree They should be able view the above information
+          about a tree, plus a photograph if they want, and other relevant facts
+          about the tree such as flowers, berries, and uses.
         </p>
       </div>
     );

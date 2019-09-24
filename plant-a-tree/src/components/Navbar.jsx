@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import treelogo from "../images/treelogo.svg";
+import treelogo2 from "../images/treelogo2.svg";
 import shoppingcart from "../images/shoppingcart.svg";
 import { FaAlignRight } from "react-icons/fa";
 
@@ -18,44 +18,61 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <header className="navbar">
-        <div className="nav-center">
-          <div className="logo">
-            <Link to="/">
-              <img src={treelogo} width="200" height="100" alt="Plant a Tree" />
-            </Link>
+      <header className="header-section">
+        <div className="header-top">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-2 text-center text-lg-left">
+                <Link to="/">
+                  <img
+                    src={treelogo2}
+                    width="200"
+                    height="100"
+                    alt="Plant a Tree"
+                  />
+                </Link>
+              </div>
+              <div className="search-bar">
+                <form className="header-search-form">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Search"
+                  />
+                  <span className="input-group-text">
+                    <i className="fa fa-search"></i>
+                  </span>
+                </form>
+              </div>
+              <div className="cart">
+                <Link to="/account/cart">
+                  <img src={shoppingcart} alt="Cart" />
+                </Link>
+              </div>
+            </div>
           </div>
-          <nav className="nav-links">
-            <ul>
+        </div>
+        <nav className="nav-links">
+          <div className="container">
+            <ul className="main-menu">
               <li>
-                <Link to="/items">Browse</Link>
+                <Link to="/items">Products</Link>
               </li>
               <li>
                 <Link to="/account">Account</Link>
               </li>
               <li>
-                <Link to="/account/favourites">Favourited</Link>
+                <Link to="/account/favourites">Favourites</Link>
               </li>
               <li>
-                <Link to="/login"> Login</Link>
+                <Link to="/login">Login</Link>
               </li>
               <li>
-                <Link to="/register"> Register</Link>
+                <Link to="/register">Register</Link>
               </li>
             </ul>
-          </nav>
-          <nav className="cart">
-            <Link to="/account/cart">
-              <img src={shoppingcart} alt="Cart" />
-            </Link>
-          </nav>
-          <div className="search-bar">
-            <input type="text" className="form-control" placeholder="Search" />
-            <span className="input-group-text">
-              <i className="fa fa-search"></i>
-            </span>
           </div>
-        </div>
+        </nav>
       </header>
     );
   }

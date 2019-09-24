@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Description from "./pages/Description";
 import Details from "./pages/Details";
 import Error from "./pages/Error";
+import ExtraLinksPage from "./pages/ExtraLinksPage";
 import Favourites from "./pages/Favourites";
 import Home from "./pages/Home";
 import Items from "./pages/Items";
@@ -25,7 +26,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <Footer />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
@@ -34,6 +34,7 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/description" component={Description} />
         <Route exact path="/details" component={Details} />
+        <Route exact path="/extralinkspage" component={ExtraLinksPage} />
         <Route exact path="/account/favourites" component={Favourites} />
         <Route exact path="/items" component={Items} />
         <Route exact path="/login" component={Login} />
@@ -45,6 +46,7 @@ function App() {
         <Route exact path="/items/tree" component={Tree} />
         <Route component={Error} />
       </Switch>
+      <Footer />
     </>
   );
 }

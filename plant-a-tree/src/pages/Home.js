@@ -4,20 +4,17 @@ import Featured from "../components/Featured";
 
 export default function Home() {
   return (
-    /*<Featured
-      title="TREE SALE!!"
-      subtitle="deluxe trees starting at $299"
-    ></Featured>*/
-    <div className="pagelayout">
+    <>
       <div className="home-page">
-        <p>This is from home page</p>
-        <div>
-          <Maincategories></Maincategories>
-        </div>
-        <div>
-          <Featured></Featured>
-        </div>
+        <main>
+          <Featured title="Spring Sale" subtitle="Selected trees 15% off!" />
+          <h1>Welcome to Plant-A-Tree, by TreeCo.</h1>
+          <p>Powered by Terra-Byte.</p>
+          <div>
+            <Maincategories></Maincategories>
+          </div>
+        </main>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Policy() {
+export default function Extra() {
   return (
     <div className="pagelayout">
-      <p>This is Policy Page.</p>
+      <p>This is a placeholder for more links</p>
     </div>
   );
 }
