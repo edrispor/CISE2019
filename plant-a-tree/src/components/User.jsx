@@ -18,7 +18,8 @@ class App extends Component {
       .post(url, {
         username: this.inputusername.value,
         pass: this.inputpass.value,
-        email: this.inputemail.value
+        email: this.inputemail.value,
+        shipping: this.inputshipping.value
       })
       .then(function(response) {
         console.log(response);
@@ -29,6 +30,7 @@ class App extends Component {
     this.inputusername.value = "";
     this.inputpass.value = "";
     this.inputemail.value = "";
+    this.inputshipping.value = "";
   }
 
   klikGet(e) {
@@ -50,7 +52,9 @@ class App extends Component {
         ", pass: ",
         item.pass,
         ", email: ",
-        item.email
+        item.email,
+        ", shipping: ",
+        item.shipping
       ].join(" ");
       return <p key={index}>{arrayku}</p>;
     });
@@ -90,6 +94,16 @@ class App extends Component {
                   id="email"
                   ref={inemail => (this.inputemail = inemail)}
                   placeholder="enter your email address"
+                />
+              </div>
+
+              <div className="form-group" style={{ margin: "15px" }}>
+                <input
+                  className="form-control"
+                  type="text"
+                  id="shipping"
+                  ref={inshipping => (this.inputshipping = inshipping)}
+                  placeholder="enter your shipping address"
                 />
               </div>
 

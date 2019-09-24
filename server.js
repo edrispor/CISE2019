@@ -72,7 +72,8 @@ app.post("/data", (req, res) => {
       var data = {
         username: req.body.username,
         pass: req.body.pass,
-        email: req.body.email
+        email: req.body.email,
+        shipping: req.body.shipping
       };
       var sql = "INSERT INTO users SET ?";
       conn.query(sql, data, function(err2, records, fields) {
@@ -83,7 +84,8 @@ app.post("/data", (req, res) => {
             no: null,
             name: req.body.username,
             pass: req.body.pass,
-            email: req.body.email
+            email: req.body.email,
+            shipping: req.body.shipping
           });
         }
         conn.release();
