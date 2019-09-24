@@ -1,10 +1,12 @@
 import React from "react";
 import Tools from "../components/Tools";
-import Maincategories from "../components/Maincategories";
 import { Link } from "react-router-dom";
+import Maincategories from "../components/Maincategories";
 export default function Tool() {
   return (
     <div className="pagelayout">
+      <Link to="/">Home</Link>
+      <p> > All Tools</p>
       <h3>Links</h3>
       <ul>
         <li>

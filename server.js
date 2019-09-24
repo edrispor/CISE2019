@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
 const path = require("path");
+const bodyParser = require("body-parser");
 const port = process.env.PORT || 4000;
 
 const app = express();
@@ -13,6 +14,7 @@ const SELECT_ALL_PRODUCTS_QUERY = "SELECT * FROM products";
 const SELECT_ALL_TREES_QUERY = "SELECT * FROM trees";
 const SELECT_ALL_TOOLS_QUERY = "SELECT * FROM tools";
 const SELECT_ALL_MAINTENANCE_QUERY = "SELECT * FROM garden_main";
+const SELECT_ALL_USER_QUERY = "SELECT * FROM users";
 
 let pool = mysql.createPool({
   connectionLimit: 10,
@@ -23,6 +25,7 @@ let pool = mysql.createPool({
 });
 
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("go to /products");
@@ -45,7 +48,6 @@ app.get("/products", (req, res) => {
     }
   });
 });
-
 //this is for all trees
 app.get("/trees", (req, res) => {
   pool.getConnection(function(err, conn) {
@@ -64,7 +66,7 @@ app.get("/trees", (req, res) => {
   });
 });
 
-//this is for all the tools
+//all the tools
 app.get("/tools", (req, res) => {
   pool.getConnection(function(err, conn) {
     if (err) {
@@ -82,8 +84,7 @@ app.get("/tools", (req, res) => {
   });
 });
 
-//this is for all the garden maintenance.accordion
-
+//all the garden maintenence
 app.get("/garden_main", (req, res) => {
   pool.getConnection(function(err, conn) {
     if (err) {
@@ -93,6 +94,53 @@ app.get("/garden_main", (req, res) => {
         if (!err2) {
           res.json({
             data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+app.get("/data", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      conn.query(SELECT_ALL_USER_QUERY, function(err2, records, fields) {
+        if (!err2) {
+          res.json({
+            data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+app.post("/data", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      var data = {
+        username: req.body.username,
+        pass: req.body.pass,
+        email: req.body.email,
+        shipping: req.body.shipping
+      };
+      var sql = "INSERT INTO users SET ?";
+      conn.query(sql, data, function(err2, records, fields) {
+        if (!err2) {
+          console.log(records);
+          res.send({
+            status: "Data sukses diinput!",
+            no: null,
+            name: req.body.username,
+            pass: req.body.pass,
+            email: req.body.email,
+            shipping: req.body.shipping
           });
         }
         conn.release();
