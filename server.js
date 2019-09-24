@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require("mysql");
 const path = require("path");
+const bodyParser = require("body-parser");
 const port = process.env.PORT || 4000;
 
 const app = express();
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, "plant-a-tree/build")));
 
 const SELECT_ALL_PRODUCTS_QUERY = "SELECT * FROM products";
-const SELECT_ALL_USER_QUERY = "SELECT * FROM user";
+const SELECT_ALL_USER_QUERY = "SELECT * FROM users";
 
 let pool = mysql.createPool({
   connectionLimit: 10,
@@ -21,6 +22,7 @@ let pool = mysql.createPool({
 });
 
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.send("go to /products");
@@ -43,15 +45,40 @@ app.get("/products", (req, res) => {
   });
 });
 
-app.get("/user", (req, res) => {
+app.get("/data", (req, res) => {
   pool.getConnection(function(err, conn) {
     if (err) {
       res.send("Error occured");
     } else {
       conn.query(SELECT_ALL_USER_QUERY, function(err2, records, fields) {
         if (!err2) {
-          res.json({
+          console.log(records);
+          res.send(records);
+          /*res.json({
             data: records
+          });*/
+        }
+        conn.release();
+      });
+    }
+  });
+});
+
+app.post("/data", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      var data = { username: req.body.username, pass: req.body.pass };
+      var sql = "INSERT INTO users SET ?";
+      conn.query(sql, data, function(err2, records, fields) {
+        if (!err2) {
+          console.log(records);
+          res.send({
+            status: "Data sukses diinput!",
+            no: null,
+            name: req.body.username,
+            pass: req.body.pass
           });
         }
         conn.release();

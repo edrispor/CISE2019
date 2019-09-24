@@ -15,7 +15,6 @@ export default function Account() {
           photo of the tree into their garden and change the age (height and
           width) of the tree
         </p>
-        <User></User>
       </div>
     </div>
   );
