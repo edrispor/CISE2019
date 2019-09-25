@@ -44,6 +44,7 @@ function App() {
         <Route exact path="/search" component={Search} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/trees" component={Tree} />
+
         <Route component={Error} />
       </Switch>
       <Footer />

@@ -25,6 +25,9 @@ export default function Items() {
         <br />
         <br />
         <Allitems></Allitems>
+        <Maincategories></Maincategories>
+
+        <Products></Products>
       </div>
     </div>
   );

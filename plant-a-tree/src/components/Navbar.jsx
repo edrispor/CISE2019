@@ -40,7 +40,9 @@ export default class Navbar extends Component {
                     placeholder="Search"
                   />
                   <span className="input-group-text">
-                    <i className="fa fa-search"></i>
+                    <Link to="/search">
+                      <i className="fa fa-search"></i>
+                    </Link>
                   </span>
                 </form>
               </div>

@@ -17,7 +17,6 @@ export default function Tool() {
         </li>
       </ul>
       <p>This is All Tools Page.</p>
-
       <Tools></Tools>
     </div>
   );
