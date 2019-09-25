@@ -26,17 +26,24 @@ export default function Treesdisplay({ tree }) {
       return (
         <Link to={`/items/trees/${slug}`}>
           {""}
-          {product_name} <img src={NZ_Kauri} alt={cat}></img>{" "}
+          <img src={NZ_Kauri} alt={cat} width="200px" height="200px"></img>{" "}
         </Link>
       );
     }
   }
   return (
-    <article>
-      <div>
-        {product_id} | {product_name} | {latin_name} | {product_price} |{" "}
+    <div wrap="true" className="toolwrap">
+      {importimages(product_id)}
+      <div className="toolitem">
+        <div className="toolitemdetails">
+          <h2>{product_name}</h2>
+          <p1>{description}</p1>
+          <span className="price">{product_price} NZ$</span>
+          <button width="135px" color="#F4FF77" radius="50px" class="btnitem">
+            Add To Cart
+          </button>
+        </div>
       </div>
-      <div> This should show images {importimages(product_id)}</div>
-    </article>
+    </div>
   );
 }
