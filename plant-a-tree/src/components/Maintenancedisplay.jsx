@@ -10,7 +10,7 @@ export default function Maintenancedisplay({ maintain }) {
     if (product_id == 30) {
       return (
         <div className="Fertiliser">
-          <Link to={`/items/trees/${slug}`}>
+          <Link to={`/items/maintenance/${slug}`}>
             <img
               src={Fertiliser}
               alt={Fertiliser}
@@ -23,7 +23,7 @@ export default function Maintenancedisplay({ maintain }) {
     } else if (product_id == 31) {
       return (
         <div className="Bucket">
-          <Link to={`/items/trees/${slug}`}>
+          <Link to={`/items/maintenance/${slug}`}>
             <img src={Bucket} alt={Bucket} width="200px" height="150px"></img>{" "}
           </Link>
         </div>
@@ -32,10 +32,10 @@ export default function Maintenancedisplay({ maintain }) {
   }
 
   return (
-    <div wrap="true" className="toolwrap">
+    <div wrap="true" className="itemwrap">
       {importimages(product_id)}
-      <div className="toolitem">
-        <div className="toolitemdetails">
+      <div className="item">
+        <div className="itemdetails">
           <h2>{product_name}</h2>
           <p1>{description}</p1>
           <span className="price">${product_price}</span>

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import cat from "../images/cat.jpeg";
 import Shovel from "../images/shovel.jpeg";
 import Rake from "../images/rake.jpeg";
 import Hoe from "../images/hoe.jpeg";
@@ -40,10 +39,10 @@ export default function Toolsdisplay({ tool }) {
     }
   }
   return (
-    <div wrap="true" className="toolwrap">
+    <div wrap="true" className="itemwrap">
       {importimages(product_id)}
-      <div className="toolitem">
-        <div className="toolitemdetails">
+      <div className="item">
+        <div className="itemdetails">
           <h2>{product_name}</h2>
           <p1>{description}</p1>
           <span className="price">${product_price}</span>

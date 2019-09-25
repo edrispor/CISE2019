@@ -235,7 +235,7 @@ p1 {
   margin: 10px 0px;
 }
 
-.toolwrap {
+.itemwrap {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -245,21 +245,21 @@ p1 {
   padding: 0px 25px;
 }
 
-.toolitem {
+.item {
   display: flex;
   flex-direction: row;
   -webkit-box-align: center;
   align-items: center;
-  flex-basis: 25%;
+  flex-basis: 30%;
   flex-wrap: nowrap;
   max-height: 400px;
   cursor: default;
   margin: 1.5%;
-  background: rgb(243, 227, 86);
+  background: var(--mainPinky);
   border-radius: 10px;
 }
 
-.toolitemdetails {
+.itemdetails {
   font-size: 16px;
   font-family: Lato, sans-serif;
   padding: 10px 20px 15px;
@@ -274,7 +274,7 @@ p1 {
 }
 
 .btnitem {
-  color: rgb(244, 255, 119);
+  color: var(--mainCream);
   background: rgb(34, 34, 34);
   display: block;
   margin-right: auto;

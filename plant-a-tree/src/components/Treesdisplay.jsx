@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cat from "../images/cat.jpeg";
 import Kauri from "../TreeImages/Kauri-1.jpg";
 import Pohu from "../TreeImages/Pohutakawa-1.jpg";
 import Kowhai from "../TreeImages/kowhai.jpg";
@@ -45,7 +46,7 @@ export default function Treesdisplay({ tree }) {
       return (
         <div className="kauri">
           <Link to={`/items/trees/${slug}`}>
-            <img src={Kauri} alt={Kauri} width="200px" height="250px"></img>{" "}
+            <img src={Kauri} alt={cat} width="200px" height="250px"></img>{" "}
           </Link>
         </div>
       );
@@ -53,7 +54,7 @@ export default function Treesdisplay({ tree }) {
       return (
         <div className="pohutakawa">
           <Link to={`/items/trees/${slug}`}>
-            <img src={Pohu} alt={Pohu} width="200px" height="150px"></img>{" "}
+            <img src={Pohu} alt={cat} width="200px" height="150px"></img>{" "}
           </Link>
         </div>
       );
@@ -255,10 +256,10 @@ export default function Treesdisplay({ tree }) {
   }
 
   return (
-    <div wrap="true" className="toolwrap">
+    <div wrap="true" className="itemwrap">
       {importimages(product_id)}
-      <div className="toolitem">
-        <div className="toolitemdetails">
+      <div className="item">
+        <div className="itemdetails">
           <h2>{product_name}</h2>
           <p1>{latin_name}</p1>
           <br />
