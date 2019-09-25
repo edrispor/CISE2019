@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Zoom from "react-reveal/Zoom";
 import Flip from "react-reveal/Flip";
+import { Link } from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -112,7 +113,7 @@ class App extends Component {
                 style={{ margin: "15px", width: "200px" }}
                 onClick={this.klikPost.bind(this)}
               >
-                Register
+                <Link to="/">Register</Link>
               </button>
             </form>
 
