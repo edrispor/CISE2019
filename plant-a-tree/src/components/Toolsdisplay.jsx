@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Shovel from "../images/shovel.jpeg";
 import Rake from "../images/rake.jpeg";
 import Hoe from "../images/hoe.jpeg";
+import cat from "../images/catjpeg";
 
 export default function Toolsdisplay({ tool }) {
   console.log(tool);
