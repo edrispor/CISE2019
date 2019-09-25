@@ -1,5 +1,5 @@
 import React from "react";
-import Fast from "../components/Maintenance";
+import Maintain from "../components/Maintenance";
 import { Link } from "react-router-dom";
 export default function Maintenance() {
   return (
@@ -16,7 +16,7 @@ export default function Maintenance() {
         </li>
       </ul>
       <p>This is Garden Maintenance Page.</p>
-      <Fast></Fast>
+      <Maintain></Maintain>
     </div>
   );
 }
