@@ -15,6 +15,7 @@ import Items from "./pages/Items";
 import Login from "./pages/Login";
 import Maintenance from "./pages/Maintenance";
 import Policy from "./pages/Policy";
+import Product from "./pages/Product";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
 import Tools from "./pages/Tools";
@@ -40,11 +41,11 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />
         <Route exact path="/policy" component={Policy} />
+        <Route path="/product/:something" component={Product} />>
         <Route exact path="/register" component={Register} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/trees" component={Tree} />
-
         <Route component={Error} />
       </Switch>
       <Footer />
