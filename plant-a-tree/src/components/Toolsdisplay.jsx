@@ -21,27 +21,27 @@ export default function Toolsdisplay({ tool }) {
       return (
         <div className="shovel">
           <Link to={`/items/tools/${slug}`}>
-            <img src={Shovel} alt={cat} width="200px" height="150px"></img>{" "}
+            <img src={Shovel} alt={cat} width="200px" height="150px"></img>
           </Link>
         </div>
       );
     } else if (product_id == 22) {
       return (
         <Link to={`/items/tools/${slug}`}>
-          <img src={Rake} alt={cat} width="200px" height="150px"></img>{" "}
+          <img src={Rake} alt={cat} width="200px" height="150px"></img>
         </Link>
       );
     } else if (product_id == 23) {
       return (
         <Link to={`/items/tools/${slug}`}>
-          <img src={Hoe} alt={cat} width="200px" height="150px"></img>{" "}
+          <img src={Hoe} alt={cat} width="200px" height="150px"></img>
         </Link>
       );
     }
   }
   return (
     <div wrap="true" className="itemwrap">
-      {importimages(product_id)}
+      <div className="itemimg">{importimages(product_id)}</div>
       <div className="item">
         <div className="itemdetails">
           <h2>{product_name}</h2>

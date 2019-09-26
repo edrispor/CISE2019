@@ -28,10 +28,10 @@ export default class Tools extends Component {
     });
 
     return (
-      <section>
+      <dix>
         <h1>Featured Tools</h1>
-        <div>{tools}</div>
-      </section>
+        <div className="container">{tools}</div>
+      </dix>
     );
   }
 }

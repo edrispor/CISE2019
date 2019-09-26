@@ -9,6 +9,7 @@ import Description from "./pages/Description";
 import Details from "./pages/Details";
 import Error from "./pages/Error";
 import ExtraLinksPage from "./pages/ExtraLinksPage";
+import StoreLocator from "./pages/StoreLocator";
 import Favourites from "./pages/Favourites";
 import Home from "./pages/Home";
 import Items from "./pages/Items";
@@ -21,6 +22,9 @@ import Tools from "./pages/Tools";
 import Tree from "./pages/Tree";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+
+import NZKauri from "./pages/NZkauri";
+import ForgetPW from "./pages/ForgetPw";
 
 function App() {
   return (
@@ -35,6 +39,7 @@ function App() {
         <Route exact path="/description" component={Description} />
         <Route exact path="/details" component={Details} />
         <Route exact path="/extralinkspage" component={ExtraLinksPage} />
+        <Route exact path="/storelocator" component={StoreLocator} />
         <Route exact path="/account/favourites" component={Favourites} />
         <Route exact path="/items" component={Items} />
         <Route exact path="/login" component={Login} />
@@ -44,6 +49,13 @@ function App() {
         <Route exact path="/search" component={Search} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/trees" component={Tree} />
+
+        <Route
+          exact
+          path="/items/trees/new-zealand-kauri"
+          component={NZKauri}
+        />
+        <Route exact path="/login/forget-password" component={ForgetPW} />
 
         <Route component={Error} />
       </Switch>

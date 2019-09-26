@@ -59,7 +59,7 @@ class App extends Component {
       return <p key={index}>{arrayku}</p>;
     });
     return (
-      <div className="container">
+      <div className="containerregister">
         <Zoom>
           <center style={{ margin: "25px" }}>
             <Flip>
@@ -73,7 +73,7 @@ class App extends Component {
                   type="text"
                   id="username"
                   ref={inusername => (this.inputusername = inusername)}
-                  placeholder="enter a User-Name"
+                  placeholder="Enter a username"
                 />
               </div>
 
@@ -83,7 +83,7 @@ class App extends Component {
                   type="text"
                   id="pass"
                   ref={inpass => (this.inputpass = inpass)}
-                  placeholder="enter a password"
+                  placeholder="Enter a password"
                 />
               </div>
 
@@ -93,7 +93,7 @@ class App extends Component {
                   type="text"
                   id="email"
                   ref={inemail => (this.inputemail = inemail)}
-                  placeholder="enter your email address"
+                  placeholder="Enter your email address"
                 />
               </div>
 
@@ -103,7 +103,7 @@ class App extends Component {
                   type="text"
                   id="shipping"
                   ref={inshipping => (this.inputshipping = inshipping)}
-                  placeholder="enter your shipping address"
+                  placeholder="Enter your shipping address"
                 />
               </div>
 

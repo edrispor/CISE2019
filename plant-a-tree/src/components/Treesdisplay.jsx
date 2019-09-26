@@ -46,7 +46,7 @@ export default function Treesdisplay({ tree }) {
       return (
         <div className="kauri">
           <Link to={`/items/trees/${slug}`}>
-            <img src={Kauri} alt={cat} width="200px" height="250px"></img>{" "}
+            <img src={Kauri} alt={cat} width="100px" height="150px"></img>{" "}
           </Link>
         </div>
       );
@@ -83,7 +83,7 @@ export default function Treesdisplay({ tree }) {
       return (
         <div className="Apple">
           <Link to={`/items/trees/${slug}`}>
-            <img src={Apple} alt={Apple} width="200px" height="250px"></img>{" "}
+            <img src={Apple} alt={Apple} width="100px" height="150px"></img>{" "}
           </Link>
         </div>
       );
@@ -99,7 +99,7 @@ export default function Treesdisplay({ tree }) {
       return (
         <div className="Lemon">
           <Link to={`/items/trees/${slug}`}>
-            <img src={Lemon} alt={Lemon} width="200px" height="200px"></img>{" "}
+            <img src={Lemon} alt={Lemon} width="150px" height="150px"></img>{" "}
           </Link>
         </div>
       );
@@ -107,7 +107,7 @@ export default function Treesdisplay({ tree }) {
       return (
         <div className="Olive">
           <Link to={`/items/trees/${slug}`}>
-            <img src={Olive} alt={Olive} width="200px" height="250px"></img>{" "}
+            <img src={Olive} alt={Olive} width="100px" height="150px"></img>{" "}
           </Link>
         </div>
       );
@@ -118,7 +118,7 @@ export default function Treesdisplay({ tree }) {
             <img
               src={BabyBlue}
               alt={BabyBlue}
-              width="200px"
+              width="180px"
               height="150px"
             ></img>{" "}
           </Link>
@@ -165,8 +165,8 @@ export default function Treesdisplay({ tree }) {
             <img
               src={UmbrellaPalm}
               alt={UmbrellaPalm}
-              width="200px"
-              height="200px"
+              width="150px"
+              height="150px"
             ></img>{" "}
           </Link>
         </div>
@@ -178,8 +178,8 @@ export default function Treesdisplay({ tree }) {
             <img
               src={PittINikau}
               alt={PittINikau}
-              width="200px"
-              height="180px"
+              width="180px"
+              height="150px"
             ></img>{" "}
           </Link>
         </div>
@@ -233,8 +233,8 @@ export default function Treesdisplay({ tree }) {
             <img
               src={MtFujiCherry}
               alt={MtFujiCherry}
-              width="200px"
-              height="180px"
+              width="150px"
+              height="150px"
             ></img>{" "}
           </Link>
         </div>
@@ -257,13 +257,15 @@ export default function Treesdisplay({ tree }) {
 
   return (
     <div wrap="true" className="itemwrap">
-      {importimages(product_id)}
+      <div className="itemimg">{importimages(product_id)}</div>
       <div className="item">
         <div className="itemdetails">
-          <h2>{product_name}</h2>
+          <h2>
+            <Link to={`/items/trees/${slug}`}>{product_name}</Link>
+          </h2>
           <p1>{latin_name}</p1>
           <br />
-          <p1>{tree_type}</p1>
+          <p2>{tree_type}</p2>
           <span className="price">${product_price}</span>
           <button width="135px" color="#F4FF77" radius="50px" class="btnitem">
             Add To Cart

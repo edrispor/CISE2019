@@ -27,10 +27,10 @@ export default class Trees extends Component {
     });
 
     return (
-      <section>
+      <div>
         <h1>Featured Trees</h1>
-        <div>{trees}</div>
-      </section>
+        <div className="container">{trees}</div>
+      </div>
     );
   }
 }

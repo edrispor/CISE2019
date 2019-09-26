@@ -34,7 +34,7 @@ export default class Maintenance extends Component {
     return (
       <section>
         <h1>Featured Tools</h1>
-        <div>{maintenance}</div>
+        <div className="container">{maintenance}</div>
       </section>
     );
   }
