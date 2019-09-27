@@ -29,8 +29,8 @@ export default class Tools extends Component {
 
     return (
       <dix>
-        <h1>Featured Tools</h1>
-        <div className="container">{tools}</div>
+        <h1>All Tools</h1>
+        <div className="gridcontainer">{tools}</div>
       </dix>
     );
   }

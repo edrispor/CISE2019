@@ -33,8 +33,8 @@ export default class Maintenance extends Component {
 
     return (
       <section>
-        <h1>Featured Tools</h1>
-        <div className="container">{maintenance}</div>
+        <h1>All Garden Maintenance</h1>
+        <div className="gridcontainer">{maintenance}</div>
       </section>
     );
   }

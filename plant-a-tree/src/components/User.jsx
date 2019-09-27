@@ -59,7 +59,7 @@ class App extends Component {
       return <p key={index}>{arrayku}</p>;
     });
     return (
-      <div className="containerregister">
+      <div className="container">
         <Zoom>
           <center style={{ margin: "25px" }}>
             <Flip>

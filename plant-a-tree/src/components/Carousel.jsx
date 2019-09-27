@@ -1,28 +1,21 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
-const imgUrls = [
-  "https://cmeimg-a.akamaihd.net/640/clsd/getty/c64f76dc20c246ca88ee180fe4b4b781",
-  "https://lh3.googleusercontent.com/oxPeODS2m6rYIVbhcQChRtOWEYeGDwbeeeB1cDU2o_WYAVPU61VIgx-_6BAh5gSL8Sw=h900",
-  "https://i0.wp.com/www.universodegatos.com/wp-content/uploads/2017/04/fivfelv7.jpg?resize=582%2C328",
-  "https://i.pinimg.com/736x/07/c3/45/07c345d0eca11d0bc97c894751ba1b46.jpg",
-  "https://ehealthforum.com/health/images/avatars/11699147425707699031013.jpeg"
-];
+import Kauri1 from "../TreeImages/Kauri-1";
+import Kauri2 from "../TreeImages/kauri2";
+import Kauri3 from "../TreeImages/kauri3";
 
 export default class Carousel extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
+      images: [Kauri1, Kauri2, Kauri3],
       currentImageIndex: 0
     };
-
     this.nextSlide = this.nextSlide.bind(this);
-    this.previousSlide = this.previousSlide.bind(this);
+    this.prevSlide = this.prevSlide.bind(this);
   }
 
-  previousSlide() {
-    const lastIndex = imgUrls.length - 1;
+  prevSlide() {
+    const lastIndex = images.length - 1;
     const { currentImageIndex } = this.state;
     const shouldResetIndex = currentImageIndex === 0;
     const index = shouldResetIndex ? lastIndex : currentImageIndex - 1;
@@ -33,7 +26,7 @@ export default class Carousel extends Component {
   }
 
   nextSlide() {
-    const lastIndex = imgUrls.length - 1;
+    const lastIndex = images.length - 1;
     const { currentImageIndex } = this.state;
     const shouldResetIndex = currentImageIndex === lastIndex;
     const index = shouldResetIndex ? 0 : currentImageIndex + 1;
@@ -48,11 +41,10 @@ export default class Carousel extends Component {
       <div className="carousel">
         <Arrow
           direction="left"
-          clickFunction={this.previousSlide}
+          clickFunction={this.prevSlide}
           glyph="&#9664;"
         />
-        <ImageSlide url={imgUrls[this.state.currentImageIndex]} />
-
+        <ImageSlide url={images[this.state.currentImageIndex]} />
         <Arrow
           direction="right"
           clickFunction={this.nextSlide}
@@ -62,22 +54,3 @@ export default class Carousel extends Component {
     );
   }
 }
-const Arrow = ({ direction, clickFunction, glyph }) => (
-  <div className={`slide-arrow ${direction}`} onClick={clickFunction}>
-    {glyph}
-  </div>
-);
-const ImageSlide = ({ url }) => {
-  const styles = {
-    backgroundImage: `url(${url})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center"
-  };
-
-  return (
-    <div
-      className="image-slide"
-      style='background-image: url("https://lh3.googleusercontent.com/oxPeODS2m6rYIVbhcQChRtOWEYeGDwbeeeB1cDU2o_WYAVPU61VIgx-_6BAh5gSL8Sw=h900"); background-size: cover; background-position: center center;'
-    ></div>
-  );
-};

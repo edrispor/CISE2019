@@ -23,8 +23,10 @@ import Tree from "./pages/Tree";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
-import NZKauri from "./pages/NZkauri";
+import NZKauri from "./treepages/NZkauri";
 import ForgetPW from "./pages/ForgetPw";
+import MtFuji from "./treepages/MtFujiCherry";
+import MannaGum from "./treepages/MannaGum";
 
 function App() {
   return (
@@ -55,6 +57,9 @@ function App() {
           path="/items/trees/new-zealand-kauri"
           component={NZKauri}
         />
+        <Route exact path="/items/trees/mt-fuji-cherry" component={MtFuji} />
+        <Route exact path="/items/trees/manna-gum" component={MannaGum} />
+
         <Route exact path="/login/forget-password" component={ForgetPW} />
 
         <Route component={Error} />

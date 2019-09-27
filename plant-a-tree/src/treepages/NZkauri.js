@@ -6,11 +6,11 @@ export default function NZKauri() {
   return (
     <div className="pagelayout">
       <Link to="/">Home</Link>
-      <Link to="/items/trees">> Trees</Link>
+      <Link to="/items/trees"> > Trees</Link>
       <p>> New Zealand Native</p>
       <h1>New Zealand Kauri</h1>
       <h4>AGATHIS AUSTRALIS</h4>
-      <div className="nz-kauri-page">
+      <div className="specific-tree-page">
         <div className="kauridetails">
           <img src={Kauri} alt="Kauri" width="300px" height="500px" />
         </div>
