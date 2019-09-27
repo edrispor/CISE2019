@@ -15,7 +15,6 @@ export default function Tree() {
           <Link to="/items/maintenance">Garden Maintenance Page</Link>
         </li>
       </ul>
-      <p>This is Tree Page</p>
       <Trees></Trees>
     </div>
   );

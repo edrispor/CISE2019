@@ -4,7 +4,6 @@ import Shovel from "../images/shovel.jpeg";
 import Rake from "../images/rake.jpeg";
 import Hoe from "../images/hoe.jpeg";
 import cat from "../images/cat.jpeg";
-import Product from "../pages/Product";
 
 export default function Toolsdisplay({ tool }) {
   console.log(tool);
@@ -21,32 +20,28 @@ export default function Toolsdisplay({ tool }) {
     if (product_id == 21) {
       return (
         <div className="shovel">
-          <Link to={`/product/${product_id}`} tool={tool}>
-            <Product
-              key={tool.product_id}
-              getproduct={(product_id, product_name, description)}
-            ></Product>
-            <img src={Shovel} alt={cat} width="200px" height="150px"></img>{" "}
+          <Link to={`/items/tools/${slug}`}>
+            <img src={Shovel} alt={cat} width="200px" height="150px"></img>
           </Link>
         </div>
       );
     } else if (product_id == 22) {
       return (
-        <Link to={`/product/${product_id}`}>
-          <img src={Rake} alt={cat} width="200px" height="150px"></img>{" "}
+        <Link to={`/items/tools/${slug}`}>
+          <img src={Rake} alt={cat} width="200px" height="150px"></img>
         </Link>
       );
     } else if (product_id == 23) {
       return (
-        <Link to={`/product/${product_id}`}>
-          <img src={Hoe} alt={cat} width="200px" height="150px"></img>{" "}
+        <Link to={`/items/tools/${slug}`}>
+          <img src={Hoe} alt={cat} width="200px" height="150px"></img>
         </Link>
       );
     }
   }
   return (
     <div wrap="true" className="itemwrap">
-      {importimages(product_id, product_id, product_name, description, tool)}
+      <div className="itemimg">{importimages(product_id)}</div>
       <div className="item">
         <div className="itemdetails">
           <h2>{product_name}</h2>

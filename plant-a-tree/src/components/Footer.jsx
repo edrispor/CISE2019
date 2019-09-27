@@ -21,7 +21,7 @@ export default class Footer extends Component {
               <br></br>
               <Link to="/contact">Contact Us</Link>
               <br></br>
-              <Link to="/extralinkspage">Store Locations</Link>
+              <Link to="/storelocator">Store Locations</Link>
             </div>
             <div className="col-md-3">
               <h1>More links</h1>

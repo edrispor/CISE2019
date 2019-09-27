@@ -14,8 +14,8 @@ export default function Maintenancedisplay({ maintain }) {
             <img
               src={Fertiliser}
               alt={Fertiliser}
-              width="200px"
-              height="250px"
+              width="130px"
+              height="150px"
             ></img>{" "}
           </Link>
         </div>
@@ -33,7 +33,7 @@ export default function Maintenancedisplay({ maintain }) {
 
   return (
     <div wrap="true" className="itemwrap">
-      {importimages(product_id)}
+      <div className="itemimg">{importimages(product_id)}</div>
       <div className="item">
         <div className="itemdetails">
           <h2>{product_name}</h2>

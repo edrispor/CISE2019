@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import axios from "axios";
 import Zoom from "react-reveal/Zoom";
 import Flip from "react-reveal/Flip";
+import { Link } from "react-router-dom";
 
-class App extends Component {
-  constructor() {
-    super();
+export default class User extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      dataku: []
+      dataku: [],
+      userprofile: "Not logged in"
     };
   }
 
@@ -45,19 +47,8 @@ class App extends Component {
   }
 
   render() {
-    const dataMySQL = this.state.dataku.map((item, index) => {
-      var arrayku = [
-        "Name: ",
-        item.username,
-        ", pass: ",
-        item.pass,
-        ", email: ",
-        item.email,
-        ", shipping: ",
-        item.shipping
-      ].join(" ");
-      return <p key={index}>{arrayku}</p>;
-    });
+    const userProfile = this.state.userprofile;
+    console.log(userProfile);
     return (
       <div className="container">
         <Zoom>
@@ -73,7 +64,7 @@ class App extends Component {
                   type="text"
                   id="username"
                   ref={inusername => (this.inputusername = inusername)}
-                  placeholder="enter a User-Name"
+                  placeholder="Enter a username"
                 />
               </div>
 
@@ -83,7 +74,7 @@ class App extends Component {
                   type="text"
                   id="pass"
                   ref={inpass => (this.inputpass = inpass)}
-                  placeholder="enter a password"
+                  placeholder="Enter a password"
                 />
               </div>
 
@@ -93,7 +84,7 @@ class App extends Component {
                   type="text"
                   id="email"
                   ref={inemail => (this.inputemail = inemail)}
-                  placeholder="enter your email address"
+                  placeholder="Enter your email address"
                 />
               </div>
 
@@ -103,7 +94,7 @@ class App extends Component {
                   type="text"
                   id="shipping"
                   ref={inshipping => (this.inputshipping = inshipping)}
-                  placeholder="enter your shipping address"
+                  placeholder="Enter your shipping address"
                 />
               </div>
 
@@ -112,16 +103,14 @@ class App extends Component {
                 style={{ margin: "15px", width: "200px" }}
                 onClick={this.klikPost.bind(this)}
               >
-                Register
+                <Link to="/">Register</Link>
               </button>
             </form>
 
-            <div>{dataMySQL}</div>
+            <div></div>
           </center>
         </Zoom>
       </div>
     );
   }
 }
-
-export default App;

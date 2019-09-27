@@ -1,5 +1,5 @@
 import React from "react";
-import User from "../components/User";
+import Profile from "../components/Profile";
 
 export default function Account() {
   return (
@@ -14,6 +14,7 @@ export default function Account() {
           a photo of the place at their house they want the tree and then drag a
           photo of the tree into their garden and change the age (height and
           width) of the tree
+          <Profile></Profile>
         </p>
       </div>
     </div>
