@@ -42,17 +42,15 @@ class Profile extends Component {
 
     const listItems = users.map(d => (
       <li key={d.username}>
-        {d.username}>{d.email}
+        <p>User Name : {d.username}</p>
+        <p> Email : {d.email}</p>
+        <p> Shipping Address : {d.shipping}</p>
       </li>
     ));
     return (
       <div>
-        <input
-          value={this.props.inputValue}
-          onChange={this.props.inputChanged}
-        />
-        {this.props.inputValue}
-        <div>{listItems[result]}</div>;
+        <p>your account details are listed bellow</p>
+        <div>{listItems[result]}</div>
       </div>
     );
   }
