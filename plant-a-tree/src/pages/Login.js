@@ -12,7 +12,6 @@ class Login extends Component {
       show2: false
     };
     this.toggleDiv = this.toggleDiv.bind(this);
-    this.toggleDiv2 = this.toggleDiv2.bind(this);
   }
   componentDidMount() {
     this.getUsers();
@@ -36,24 +35,11 @@ class Login extends Component {
     if (resultUser === resultPass) {
       const { show } = this.state;
       this.setState({ show: true });
+      const { show2 } = this.state;
+      this.setState({ show2: false });
     } else {
-      console.log("not passed mate");
-    }
-  };
-  toggleDiv2 = e => {
-    e.preventDefault();
-    var resultUser = this.state.users.findIndex(
-      entry => entry.username === this.inputusername.value
-    );
-    var resultPass = this.state.users.findIndex(
-      entry => entry.pass === this.inputpass.value
-    );
-
-    if (resultUser === resultPass) {
-      const { show } = this.state;
-      this.setState({ show: true });
-    } else {
-      console.log("not passed mate");
+      const { show2 } = this.state;
+      this.setState({ show2: true });
     }
   };
 
@@ -110,6 +96,7 @@ class Login extends Component {
             </button>
           </form>
           {this.state.show && <Box />}
+          {this.state.show2 && <Box2 />}
         </div>
       </div>
     );
@@ -122,6 +109,16 @@ class Box extends Component {
         {" "}
         Login Succesfull... Click <Link to="/items">here</Link> to browse our
         collection
+      </div>
+    );
+  }
+}
+class Box2 extends Component {
+  render() {
+    return (
+      <div>
+        Login failed...please try again or click{" "}
+        <Link to="/register">HERE</Link>to Register an account
       </div>
     );
   }
