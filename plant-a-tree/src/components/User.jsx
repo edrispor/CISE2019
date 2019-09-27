@@ -4,12 +4,22 @@ import Zoom from "react-reveal/Zoom";
 import Flip from "react-reveal/Flip";
 import { Link } from "react-router-dom";
 
-class App extends Component {
-  constructor() {
-    super();
+export default class User extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      dataku: []
+      dataku: [],
+      userprofile: "Not logged in"
     };
+  }
+  handleInputChange(event) {
+    console.log("handle input change");
+    this.setState({ userprofile: event.target.value });
+    console.log(this.state.userprofile);
+  }
+
+  changeProfile() {
+    this.props.changeName(this.state.userprofile);
   }
 
   klikPost(e) {
@@ -46,19 +56,8 @@ class App extends Component {
   }
 
   render() {
-    const dataMySQL = this.state.dataku.map((item, index) => {
-      var arrayku = [
-        "Name: ",
-        item.username,
-        ", pass: ",
-        item.pass,
-        ", email: ",
-        item.email,
-        ", shipping: ",
-        item.shipping
-      ].join(" ");
-      return <p key={index}>{arrayku}</p>;
-    });
+    const userProfile = this.state.userprofile;
+    console.log(userProfile);
     return (
       <div className="container">
         <Zoom>
@@ -73,6 +72,8 @@ class App extends Component {
                   className="form-control"
                   type="text"
                   id="username"
+                  value={this.state.userprofile}
+                  onChange={this.handleInputChange.bind(this)}
                   ref={inusername => (this.inputusername = inusername)}
                   placeholder="enter a User-Name"
                 />
@@ -107,22 +108,25 @@ class App extends Component {
                   placeholder="enter your shipping address"
                 />
               </div>
+              <input
+                type="text"
+                placeholder="Write text"
+                onClick={e => this.props.updateTextCB(e.target.value)}
+              />
 
               <button
                 className="btn btn-success"
                 style={{ margin: "15px", width: "200px" }}
-                onClick={this.klikPost.bind(this)}
+                onClick={this.changeProfile.bind(this)}
               >
                 <Link to="/">Register</Link>
               </button>
             </form>
 
-            <div>{dataMySQL}</div>
+            <div></div>
           </center>
         </Zoom>
       </div>
     );
   }
 }
-
-export default App;
