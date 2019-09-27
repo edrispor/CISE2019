@@ -12,15 +12,6 @@ export default class User extends Component {
       userprofile: "Not logged in"
     };
   }
-  handleInputChange(event) {
-    console.log("handle input change");
-    this.setState({ userprofile: event.target.value });
-    console.log(this.state.userprofile);
-  }
-
-  changeProfile() {
-    this.props.changeName(this.state.userprofile);
-  }
 
   klikPost(e) {
     e.preventDefault();
@@ -72,8 +63,6 @@ export default class User extends Component {
                   className="form-control"
                   type="text"
                   id="username"
-                  value={this.state.userprofile}
-                  onChange={this.handleInputChange.bind(this)}
                   ref={inusername => (this.inputusername = inusername)}
                   placeholder="enter a User-Name"
                 />
@@ -108,16 +97,11 @@ export default class User extends Component {
                   placeholder="enter your shipping address"
                 />
               </div>
-              <input
-                type="text"
-                placeholder="Write text"
-                onClick={e => this.props.updateTextCB(e.target.value)}
-              />
 
               <button
                 className="btn btn-success"
                 style={{ margin: "15px", width: "200px" }}
-                onClick={this.changeProfile.bind(this)}
+                onClick={this.klikPost.bind(this)}
               >
                 <Link to="/">Register</Link>
               </button>
