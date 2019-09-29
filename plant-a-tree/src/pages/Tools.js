@@ -16,8 +16,6 @@ export default function Tool() {
           <Link to="/items/maintenance">Garden Maintenance Page</Link>
         </li>
       </ul>
-      <p>This is All Tools Page.</p>
-
       <Tools></Tools>
     </div>
   );

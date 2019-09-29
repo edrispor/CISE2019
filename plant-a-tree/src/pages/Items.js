@@ -1,7 +1,6 @@
 import React from "react";
-import Maincategories from "../components/Maincategories";
-import Products from "../components/Products";
 import { Link } from "react-router-dom";
+import Allitems from "../components/Items";
 
 export default function Items() {
   return (
@@ -23,13 +22,9 @@ export default function Items() {
           </li>
         </ul>
 
-        <Maincategories></Maincategories>
-
-        <h1>Links</h1>
-        <Link to="/items/tools">Tools</Link>
         <br />
         <br />
-        <Products></Products>
+        <Allitems></Allitems>
       </div>
     </div>
   );

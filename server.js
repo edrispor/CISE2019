@@ -15,6 +15,8 @@ const SELECT_ALL_TREES_QUERY = "SELECT * FROM trees";
 const SELECT_ALL_TOOLS_QUERY = "SELECT * FROM tools";
 const SELECT_ALL_MAINTENANCE_QUERY = "SELECT * FROM garden_main";
 const SELECT_ALL_USER_QUERY = "SELECT * FROM users";
+const SELECT_All_TABLES_QUERY =
+  "SELECT a.product_id,a.product_name,a.product_price FROM trees a union all SELECT b.product_id,b.product_name,b.product_price FROM tools b union all SELECT c.product_id,c.product_name,c.product_price FROM garden_main c;";
 
 let pool = mysql.createPool({
   connectionLimit: 10,
@@ -31,6 +33,22 @@ app.get("/", (req, res) => {
   res.send("go to /products");
 });
 
+app.get("/items", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      conn.query(SELECT_All_TABLES_QUERY, function(err2, records, fields) {
+        if (!err2) {
+          res.json({
+            data: records
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});
 //this is for all products.
 app.get("/products", (req, res) => {
   pool.getConnection(function(err, conn) {
@@ -39,6 +57,7 @@ app.get("/products", (req, res) => {
     } else {
       conn.query(SELECT_ALL_PRODUCTS_QUERY, function(err2, records, fields) {
         if (!err2) {
+          console.log(fields);
           res.json({
             data: records
           });
@@ -149,6 +168,27 @@ app.post("/data", (req, res) => {
   });
 });
 
+/*app.get("/profile", (req, res) => {
+  pool.getConnection(function(err, conn) {
+    if (err) {
+      res.send("Error occured");
+    } else {
+      var data = {
+        username: req.body.username
+      };
+      var sql = "SELECT * FROM users WHERE username = ? ";
+      conn.query(sql, data, function(err2, records, fields) {
+        if (!err2) {
+          console.log(records);
+          res.send({
+            name: req.body.username
+          });
+        }
+        conn.release();
+      });
+    }
+  });
+});*/
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/plant-a-tree/build/index.html"));
 });
