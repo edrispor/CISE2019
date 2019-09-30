@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import UserSess from "../components/UserProfile";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       users: [],
-      userprofile: "",
+      user: "",
       show: false,
       show2: false
     };
@@ -37,6 +38,9 @@ class Login extends Component {
       this.setState({ show: true });
       const { show2 } = this.state;
       this.setState({ show2: false });
+      localStorage.setItem("user", this.inputusername.value);
+      window.location.href = "/";
+      // UserSess.setName(localStorage.getItem("user"));
     } else {
       const { show2 } = this.state;
       this.setState({ show2: true });
@@ -44,12 +48,7 @@ class Login extends Component {
   };
 
   render() {
-    const { users, userprofile } = this.state;
-    if (userprofile === "valid") {
-      console.log("anlfsdnfal");
-    } else {
-      console.log("nuuuuuuuu");
-    }
+    const { users } = this.state;
 
     const listItems = users.map(d => (
       <li key={d.username}>
