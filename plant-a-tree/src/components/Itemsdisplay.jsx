@@ -7,7 +7,7 @@ export default function Itemsdisplay({ item }) {
     <div>
       <br></br>
       <h2>
-        {product_id} | {product_name}
+        {product_id} | {product_name} | {product_price}
       </h2>
     </div>
   );

@@ -7,7 +7,7 @@ export default function Maintenancedisplay({ maintain }) {
   let { product_id, product_name, product_price, description, slug } = maintain;
 
   function importimages(product_id) {
-    if (product_id == 30) {
+    if (product_id === 30) {
       return (
         <div className="Fertiliser">
           <Link to={`/items/maintenance/${slug}`}>
@@ -20,7 +20,7 @@ export default function Maintenancedisplay({ maintain }) {
           </Link>
         </div>
       );
-    } else if (product_id == 31) {
+    } else if (product_id === 31) {
       return (
         <div className="Bucket">
           <Link to={`/items/maintenance/${slug}`}>

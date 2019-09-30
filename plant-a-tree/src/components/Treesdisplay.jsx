@@ -42,7 +42,7 @@ export default function Treesdisplay({ tree }) {
   } = tree;
 
   function importimages(product_id) {
-    if (product_id == 1) {
+    if (product_id === 1) {
       return (
         <div className="kauri">
           <Link to={`/items/trees/${slug}`}>
@@ -50,7 +50,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 2) {
+    } else if (product_id === 2) {
       return (
         <div className="pohutakawa">
           <Link to={`/items/trees/${slug}`}>
@@ -58,7 +58,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 3) {
+    } else if (product_id === 3) {
       return (
         <div className="kowhai">
           <Link to={`/items/trees/${slug}`}>
@@ -66,7 +66,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 4) {
+    } else if (product_id === 4) {
       return (
         <div className="CabbageTree">
           <Link to={`/items/trees/${slug}`}>
@@ -79,7 +79,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 5) {
+    } else if (product_id === 5) {
       return (
         <div className="Apple">
           <Link to={`/items/trees/${slug}`}>
@@ -87,7 +87,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 6) {
+    } else if (product_id === 6) {
       return (
         <div className="Feijoa">
           <Link to={`/items/trees/${slug}`}>
@@ -95,7 +95,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 7) {
+    } else if (product_id === 7) {
       return (
         <div className="Lemon">
           <Link to={`/items/trees/${slug}`}>
@@ -103,7 +103,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 8) {
+    } else if (product_id === 8) {
       return (
         <div className="Olive">
           <Link to={`/items/trees/${slug}`}>
@@ -111,7 +111,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 9) {
+    } else if (product_id === 9) {
       return (
         <div className="BabyBlue">
           <Link to={`/items/trees/${slug}`}>
@@ -124,7 +124,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 10) {
+    } else if (product_id === 10) {
       return (
         <div className="SwampP">
           <Link to={`/items/trees/${slug}`}>
@@ -132,7 +132,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 11) {
+    } else if (product_id === 11) {
       return (
         <div className="MannaGum">
           <Link to={`/items/trees/${slug}`}>
@@ -145,7 +145,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 12) {
+    } else if (product_id === 12) {
       return (
         <div className="RedStringy">
           <Link to={`/items/trees/${slug}`}>
@@ -158,7 +158,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 13) {
+    } else if (product_id === 13) {
       return (
         <div className="UmbrellaPalm">
           <Link to={`/items/trees/${slug}`}>
@@ -171,7 +171,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 14) {
+    } else if (product_id === 14) {
       return (
         <div className="PittINikau">
           <Link to={`/items/trees/${slug}`}>
@@ -184,7 +184,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 15) {
+    } else if (product_id === 15) {
       return (
         <div className="Bamboo">
           <Link to={`/items/trees/${slug}`}>
@@ -192,7 +192,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 16) {
+    } else if (product_id === 16) {
       return (
         <div className="PortLaurel">
           <Link to={`/items/trees/${slug}`}>
@@ -205,7 +205,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 17) {
+    } else if (product_id === 17) {
       return (
         <div className="Olearia">
           <Link to={`/items/trees/${slug}`}>
@@ -213,7 +213,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 18) {
+    } else if (product_id === 18) {
       return (
         <div className="SilverBirch">
           <Link to={`/items/trees/${slug}`}>
@@ -226,7 +226,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 19) {
+    } else if (product_id === 19) {
       return (
         <div className="MtFujiCherry">
           <Link to={`/items/trees/${slug}`}>
@@ -239,7 +239,7 @@ export default function Treesdisplay({ tree }) {
           </Link>
         </div>
       );
-    } else if (product_id == 20) {
+    } else if (product_id === 20) {
       return (
         <div className="EnglishOak">
           <Link to={`/items/trees/${slug}`}>
