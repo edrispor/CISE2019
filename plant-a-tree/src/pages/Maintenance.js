@@ -15,7 +15,6 @@ export default function Maintenance() {
           <Link to="/items/tools">Tools Page</Link>
         </li>
       </ul>
-      <p>This is Garden Maintenance Page.</p>
       <Maintain></Maintain>
     </div>
   );
