@@ -53,12 +53,6 @@ function App() {
         <Route exact path="/search" component={Search} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/trees" component={Tree} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> cced2a79c164635fa7a07673811e837f6a6959d7
         <Route
           exact
           path="/items/trees/new-zealand-kauri"
@@ -67,11 +61,6 @@ function App() {
         <Route exact path="/items/trees/mt-fuji-cherry" component={MtFuji} />
         <Route exact path="/items/trees/manna-gum" component={MannaGum} />
         <Route exact path="/login/forget-password" component={ForgetPW} />
-<<<<<<< HEAD
-
->>>>>>> db63fe1a22134c290858a980a5175f10e2439724
-=======
->>>>>>> cced2a79c164635fa7a07673811e837f6a6959d7
         <Route component={Error} />
       </Switch>
       <Footer />
