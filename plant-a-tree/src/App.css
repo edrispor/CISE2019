@@ -1,10 +1,10 @@
 :root {
   --mainBlack: #042a2b;
   --mainGreen: #5cb548;
-  --darkBrown: #633517;
+  --darkBrown: #572f14;
   --mainCream: #fcf7d6;
   --mainBlue: #659dbd;
-  --mainDarkGreen: #069b06d0;
+  --mainDarkGreen: #19bd19;
   --mainPinky: #daad86;
   --mainWhite: #ffffff;
   --mainTransition: all 0.3s linear;
@@ -53,9 +53,24 @@ p {
   grid-gap: 50px;
 }
 
-/*.grid-item {
-  max-width: 30%;
-}*/
+.btnsale {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  padding: 0.4rem 0.9rem;
+  border: 3px solid var(--mainBlack);
+  border-color: initial;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 10px;
+  background: rgb(34, 34, 34);
+}
+
+.btnsale:hover {
+  background: transparent;
+  color: var(--mainDarkGreen);
+  text-decoration: none;
+}
 
 /* Pages start */
 .home-page {
@@ -212,7 +227,8 @@ p {
 
 /* Feature Section */
 .feature {
-  background: url("./TreeImages/featuretree.jpg");
+  background: url("./TreeImages/featuretree2.jpg");
+  background-size: 100%;
   padding: 5rem 5rem;
   text-align: center;
   text-transform: capitalize;
@@ -227,15 +243,16 @@ p {
 
 .feature div {
   width: 10rem;
-  height: 100px;
-  color: var(--mainDarkGreen);
+  height: 80px;
+  color: var(--mainBlack);
   margin: 1.7rem auto;
 }
 
 .feature p {
   font-size: 2rem;
   color: var(--darkBrown);
-  background: rgba(116, 196, 63, 0.5);
+  background: rgba(116, 196, 63, 0.836);
+  margin-bottom: 30px;
 }
 
 /* Footer section */

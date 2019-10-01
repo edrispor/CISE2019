@@ -27,6 +27,7 @@ import NZKauri from "./treepages/NZkauri";
 import ForgetPW from "./pages/ForgetPw";
 import MtFuji from "./treepages/MtFujiCherry";
 import MannaGum from "./treepages/MannaGum";
+import Sales from "./pages/Sales";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
         <Route exact path="/items/trees/manna-gum" component={MannaGum} />
 
         <Route exact path="/login/forget-password" component={ForgetPW} />
+        <Route exact path="/sales" component={Sales} />
 
         <Route component={Error} />
       </Switch>
