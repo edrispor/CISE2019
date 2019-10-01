@@ -3,6 +3,8 @@ import Maintenancedisplay from "./Maintenancedisplay";
 import { Link } from "react-router-dom";
 import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";
+import cat from "../images/cat.jpeg";
+
 export default class Maintenance extends Component {
   constructor() {
     super();
@@ -10,6 +12,7 @@ export default class Maintenance extends Component {
       maintenance: []
     };
     this.onclickproduct = this.onclickproduct.bind(this);
+    this.importimages = this.importimages.bind(this);
   }
 
   componentDidMount() {
@@ -26,18 +29,36 @@ export default class Maintenance extends Component {
     var resultID = this.state.maintenance.findIndex(
       entry => entry.product_id === product_id
     );
-    localStorage.setItem("productID", resultID);
-    console.log(localStorage.getItem("productID"));
+    localStorage.setItem("maintenanceID", resultID);
+    console.log(localStorage.getItem("maintenanceID"));
   }
   render() {
     let { maintenance } = this.state;
     console.log(maintenance);
     maintenance = maintenance.map(maintain => {
       return (
-        <Maintenancedisplay
-          key={maintain.product_id}
-          maintain={maintain}
-        ></Maintenancedisplay>
+        <li key={maintain.product_id} maintain={maintain}>
+          <div wrap="true" className="itemwrap">
+            <div className="itemimg">
+              {this.importimages(maintain.product_id)}
+            </div>
+            <div className="item">
+              <div className="itemdetails">
+                <h2>{maintain.product_name}</h2>
+                <p1>{maintain.description}</p1>
+                <span className="price">${maintain.product_price}</span>
+                <button
+                  width="135px"
+                  color="#F4FF77"
+                  radius="50px"
+                  class="btnitem"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>{" "}
+        </li>
       );
     });
 
@@ -47,5 +68,37 @@ export default class Maintenance extends Component {
         <div className="gridcontainer">{maintenance}</div>
       </section>
     );
+  }
+
+  importimages(product_id) {
+    if (product_id == 30) {
+      return (
+        <div className="Fertiliser">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Fertiliser}
+              alt={Fertiliser}
+              width="130px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id == 31) {
+      return (
+        <div className="Bucket">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Bucket}
+              alt={Bucket}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    }
   }
 }

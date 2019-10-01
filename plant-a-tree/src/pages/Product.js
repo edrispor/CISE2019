@@ -26,18 +26,23 @@ import SilverBirch from "../TreeImages/silverbirch.jpg";
 import MtFujiCherry from "../TreeImages/mtfuji.jpg";
 import EnglishOak from "../TreeImages/englishoak.jpg";
 ///////////////////////////////////////////////////////////////////
+import Fertiliser from "../images/fertiliser.jpg";
+import Bucket from "../images/bucket.jpg";
+///////////////////////////////////////////////////////////////////////
 export default class Product extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tools: [],
-      trees: []
+      trees: [],
+      maintenance: []
     };
   }
 
   componentDidMount() {
     this.getTools();
     this.getTrees();
+    this.getMaintenance();
   }
 
   getTools = _ => {
@@ -54,6 +59,12 @@ export default class Product extends Component {
       .catch(err => console.error(err));
   };
 
+  getMaintenance = _ => {
+    fetch("/garden_main")
+      .then(response => response.json())
+      .then(response => this.setState({ maintenance: response.data }))
+      .catch(err => console.error(err));
+  };
   render() {
     let pathArray = window.location.pathname.split("/");
     let secondLevelLocation = pathArray[0];
@@ -67,6 +78,8 @@ export default class Product extends Component {
 
     const { tools } = this.state;
     const { trees } = this.state;
+    const { maintenance } = this.state;
+
     const listTools = tools.map(tool => (
       <li key={tool.product_id}>
         <br></br>
@@ -78,6 +91,7 @@ export default class Product extends Component {
         <p>description "{tool.description}</p>
       </li>
     ));
+
     const listTrees = trees.map(tree => (
       <li key={tree.product_id}>
         <br></br>
@@ -89,33 +103,31 @@ export default class Product extends Component {
         <p>description "{tree.description}</p>
       </li>
     ));
+
+    const listMaintenance = maintenance.map(maintain => (
+      <li key={maintain.product_id}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div>this is image {this.getimage(maintain.product_id)}</div>
+        <p>name : {maintain.product_name}</p>
+        <p>description "{maintain.description}</p>
+      </li>
+    ));
+
     if (tempid >= 1 && tempid <= 20) {
       return <div>{listTrees[localStorage.getItem("treeID")]}</div>;
     } else if (tempid >= 21 && tempid <= 23) {
       return <div>{listTools[localStorage.getItem("toolID")]}</div>;
+    } else if (tempid >= 30 && tempid <= 31) {
+      return (
+        <div>{listMaintenance[localStorage.getItem("maintenanceID")]}</div>
+      );
     }
   }
 
   getimage(product_id) {
-    if (product_id == 21) {
-      return (
-        <div className="shovel">
-          <img src={Shovel} alt={cat} width="200px" height="150px"></img>
-        </div>
-      );
-    } else if (product_id == 22) {
-      return (
-        <div className="Rake">
-          <img src={Rake} alt={cat} width="200px" height="150px"></img>
-        </div>
-      );
-    } else if (product_id == 23) {
-      return (
-        <div className="Hoe">
-          <img src={Hoe} alt={cat} width="200px" height="150px"></img>
-        </div>
-      );
-    }
     if (product_id == 1) {
       return (
         <div className="kauri">
@@ -273,6 +285,50 @@ export default class Product extends Component {
             alt={EnglishOak}
             width="350px"
             height="300px"
+          ></img>{" "}
+        </div>
+      );
+    }
+    if (product_id == 21) {
+      return (
+        <div className="shovel">
+          <img src={Shovel} alt={cat} width="200px" height="150px"></img>
+        </div>
+      );
+    } else if (product_id == 22) {
+      return (
+        <div className="Rake">
+          <img src={Rake} alt={cat} width="200px" height="150px"></img>
+        </div>
+      );
+    } else if (product_id == 23) {
+      return (
+        <div className="Hoe">
+          <img src={Hoe} alt={cat} width="200px" height="150px"></img>
+        </div>
+      );
+    }
+    if (product_id == 30) {
+      return (
+        <div className="Fertiliser">
+          <img
+            src={Fertiliser}
+            alt={Fertiliser}
+            width="130px"
+            height="150px"
+            onClick={() => this.onclickproduct(product_id)}
+          ></img>{" "}
+        </div>
+      );
+    } else if (product_id == 31) {
+      return (
+        <div className="Bucket">
+          <img
+            src={Bucket}
+            alt={Bucket}
+            width="200px"
+            height="150px"
+            onClick={() => this.onclickproduct(product_id)}
           ></img>{" "}
         </div>
       );

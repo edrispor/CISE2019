@@ -50,6 +50,44 @@ export default class Trees extends Component {
     localStorage.setItem("treeID", resultID);
     console.log(localStorage.getItem("treeID"));
   }
+
+  render() {
+    let { trees } = this.state;
+    console.log(trees);
+    trees = trees.map(tree => {
+      return (
+        <li key={tree.product_id} tree={tree}>
+          <div wrap="true" className="itemwrap">
+            <div className="itemimg">{this.importimages(tree.product_id)}</div>
+            <div className="item">
+              <div className="itemdetails">
+                <p1>{tree.latin_name}</p1>
+                <br />
+                <p2>{tree.tree_type}</p2>
+                <span className="price">${tree.product_price}</span>
+                <button
+                  width="135px"
+                  color="#F4FF77"
+                  radius="50px"
+                  class="btnitem"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+    });
+
+    return (
+      <div>
+        <h1>All Trees and Hedges</h1>
+        <div className="gridcontainer">{trees}</div>
+      </div>
+    );
+  }
+
   importimages(product_id) {
     if (product_id == 1) {
       return (
@@ -332,42 +370,5 @@ export default class Trees extends Component {
         </div>
       );
     }
-  }
-
-  render() {
-    let { trees } = this.state;
-    console.log(trees);
-    trees = trees.map(tree => {
-      return (
-        <li key={tree.product_id} tree={tree}>
-          <div wrap="true" className="itemwrap">
-            <div className="itemimg">{this.importimages(tree.product_id)}</div>
-            <div className="item">
-              <div className="itemdetails">
-                <p1>{tree.latin_name}</p1>
-                <br />
-                <p2>{tree.tree_type}</p2>
-                <span className="price">${tree.product_price}</span>
-                <button
-                  width="135px"
-                  color="#F4FF77"
-                  radius="50px"
-                  class="btnitem"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-      );
-    });
-
-    return (
-      <div>
-        <h1>All Trees and Hedges</h1>
-        <div className="gridcontainer">{trees}</div>
-      </div>
-    );
   }
 }
