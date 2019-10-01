@@ -33,6 +33,44 @@ export default class Tools extends Component {
     localStorage.setItem("toolID", resultID);
     console.log(localStorage.getItem("toolID"));
   }
+
+  render() {
+    let { tools } = this.state;
+    console.log(tools);
+    tools = tools.map(tool => {
+      return (
+        <li key={tool.product_id} tool={tool}>
+          <div wrap="true" className="itemwrap">
+            {this.importimages(tool.product_id)}
+
+            <div className="item">
+              <div className="itemdetails">
+                <h2>{tool.product_name}</h2>
+                <p1>{tool.description}</p1>
+                <span className="price">${tool.product_price}</span>
+                <button
+                  width="135px"
+                  color="#F4FF77"
+                  radius="50px"
+                  class="btnitem"
+                >
+                  Add To Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+    });
+
+    return (
+      <dix>
+        <h1>All Tools</h1>
+        <div className="gridcontainer">{tools}</div>
+      </dix>
+    );
+  }
+
   importimages(product_id) {
     if (product_id == 21) {
       console.log(product_id);
@@ -79,42 +117,5 @@ export default class Tools extends Component {
         </div>
       );
     }
-  }
-
-  render() {
-    let { tools } = this.state;
-    console.log(tools);
-    tools = tools.map(tool => {
-      return (
-        <li key={tool.product_id} tool={tool}>
-          <div wrap="true" className="itemwrap">
-            {this.importimages(tool.product_id)}
-
-            <div className="item">
-              <div className="itemdetails">
-                <h2>{tool.product_name}</h2>
-                <p1>{tool.description}</p1>
-                <span className="price">${tool.product_price}</span>
-                <button
-                  width="135px"
-                  color="#F4FF77"
-                  radius="50px"
-                  class="btnitem"
-                >
-                  Add To Cart
-                </button>
-              </div>
-            </div>
-          </div>
-        </li>
-      );
-    });
-
-    return (
-      <dix>
-        <h1>All Tools</h1>
-        <div className="gridcontainer">{tools}</div>
-      </dix>
-    );
   }
 }

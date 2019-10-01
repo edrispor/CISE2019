@@ -29,44 +29,17 @@ import EnglishOak from "../TreeImages/englishoak.jpg";
 import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";
 ///////////////////////////////////////////////////////////////////////
-export default class Product extends Component {
+export default class Product_All extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tools: [],
-      trees: [],
-      maintenance: [],
       items: []
     };
   }
 
   componentDidMount() {
-    this.getTools();
-    this.getTrees();
-    this.getMaintenance();
     this.getItems();
   }
-
-  getTools = _ => {
-    fetch("/tools")
-      .then(response => response.json())
-      .then(response => this.setState({ tools: response.data }))
-      .catch(err => console.error(err));
-  };
-
-  getTrees = _ => {
-    fetch("/trees")
-      .then(response => response.json())
-      .then(response => this.setState({ trees: response.data }))
-      .catch(err => console.error(err));
-  };
-
-  getMaintenance = _ => {
-    fetch("/garden_main")
-      .then(response => response.json())
-      .then(response => this.setState({ maintenance: response.data }))
-      .catch(err => console.error(err));
-  };
 
   getItems = _ => {
     fetch("/items")
@@ -76,56 +49,8 @@ export default class Product extends Component {
   };
 
   render() {
-    let pathArray = window.location.pathname.split("/");
-    let secondLevelLocation = pathArray[0];
-    let newPathname = "";
-    for (let i = 0; i < pathArray.length; i++) {
-      newPathname += "/";
-      newPathname += pathArray[i];
-    }
-
-    let tempid = pathArray[2];
-
-    const { tools } = this.state;
-    const { trees } = this.state;
-    const { maintenance } = this.state;
     const { items } = this.state;
 
-    const listTools = tools.map(tool => (
-      <li key={tool.product_id}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(tool.product_id)}</div>
-        <p>name : {tool.product_name}</p>
-        <p>description "{tool.description}</p>
-      </li>
-    ));
-
-    const listTrees = trees.map(tree => (
-      <li key={tree.product_id}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(tree.product_id)}</div>
-        <p>name : {tree.product_name}</p>
-        <p>description "{tree.description}</p>
-      </li>
-    ));
-
-    const listMaintenance = maintenance.map(maintain => (
-      <li key={maintain.product_id}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(maintain.product_id)}</div>
-        <p>name : {maintain.product_name}</p>
-        <p>description "{maintain.description}</p>
-      </li>
-    ));
     const listAll = items.map(item => (
       <li key={item.product_id}>
         <br></br>
@@ -138,15 +63,7 @@ export default class Product extends Component {
       </li>
     ));
 
-    if (tempid >= 1 && tempid <= 20) {
-      return <div>{listTrees[localStorage.getItem("treeID")]}</div>;
-    } else if (tempid >= 21 && tempid <= 23) {
-      return <div>{listTools[localStorage.getItem("toolID")]}</div>;
-    } else if (tempid >= 30 && tempid <= 31) {
-      return (
-        <div>{listMaintenance[localStorage.getItem("maintenanceID")]}</div>
-      );
-    }
+    return <div>{listAll[localStorage.getItem("allID")]}</div>;
   }
 
   getimage(product_id) {
