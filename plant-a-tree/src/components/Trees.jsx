@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Treesdisplay from "./Treesdisplay";
+
 import { Link } from "react-router-dom";
 import Kauri from "../TreeImages/Kauri-1.jpg";
 import Pohu from "../TreeImages/Pohutakawa-1.jpg";

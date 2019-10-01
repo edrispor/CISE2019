@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Maintenancedisplay from "./Maintenancedisplay";
+
 import { Link } from "react-router-dom";
 import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";

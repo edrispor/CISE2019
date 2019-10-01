@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Itemsdisplay from "./Itemsdisplay";
+
 import cat from "../images/cat.jpeg";
 ////////////////////////////////////////////////////////////////////////////
 import Shovel from "../images/shovel.jpeg";
