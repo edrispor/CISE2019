@@ -53,25 +53,6 @@ p {
   grid-gap: 50px;
 }
 
-.btnsale {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  padding: 0.4rem 0.9rem;
-  border: 3px solid var(--mainBlack);
-  border-color: initial;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 10px;
-  background: rgb(34, 34, 34);
-}
-
-.btnsale:hover {
-  background: transparent;
-  color: var(--mainDarkGreen);
-  text-decoration: none;
-}
-
 /* Pages start */
 .home-page {
   background-color: var(--mainWhite);
@@ -253,6 +234,25 @@ p {
   color: var(--darkBrown);
   background: rgba(116, 196, 63, 0.836);
   margin-bottom: 30px;
+}
+
+.btnsale {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  padding: 0.4rem 0.9rem;
+  color: var(--mainPinky);
+  border: 3px solid var(--darkBrown);
+  border-color: initial;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 10px;
+  background: rgba(243, 56, 50, 0.952);
+}
+
+.btnsale:hover {
+  color: var(--mainCream);
+  text-decoration: none;
 }
 
 /* Footer section */

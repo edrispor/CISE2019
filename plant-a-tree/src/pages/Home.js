@@ -1,5 +1,6 @@
 import React from "react";
 import Maincategories from "../components/Maincategories";
+import Tools from "../components/Tools";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 
@@ -21,6 +22,7 @@ export default function Home() {
           <p>Powered by Terra-Byte.</p>
           <div>
             <Maincategories></Maincategories>
+            <Tools></Tools>
           </div>
         </main>
       </div>
