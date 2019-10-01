@@ -47,6 +47,11 @@ p {
   color: var(--mainBlack);
 }
 
+p3 {
+  font-size: 14px;
+  color: green;
+}
+
 .gridcontainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

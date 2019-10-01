@@ -266,7 +266,10 @@ export default function Treesdisplay({ tree }) {
           <p1>{latin_name}</p1>
           <br />
           <p2>{tree_type}</p2>
+          <br />
+          <p3> {QOH} in stock</p3>
           <span className="price">${product_price}</span>
+
           <button width="135px" color="#F4FF77" radius="50px" class="btnitem">
             Add To Cart
           </button>
