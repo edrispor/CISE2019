@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import Maintenancedisplay from "./Maintenancedisplay";
+import { Link } from "react-router-dom";
+import Fertiliser from "../images/fertiliser.jpg";
+import Bucket from "../images/bucket.jpg";
 export default class Maintenance extends Component {
   constructor() {
     super();
     this.state = {
       maintenance: []
     };
+    this.onclickproduct = this.onclickproduct.bind(this);
   }
 
   componentDidMount() {
@@ -18,7 +22,13 @@ export default class Maintenance extends Component {
       .then(response => this.setState({ maintenance: response.data }))
       .catch(err => console.error(err));
   };
-
+  onclickproduct(product_id) {
+    var resultID = this.state.maintenance.findIndex(
+      entry => entry.product_id === product_id
+    );
+    localStorage.setItem("productID", resultID);
+    console.log(localStorage.getItem("productID"));
+  }
   render() {
     let { maintenance } = this.state;
     console.log(maintenance);

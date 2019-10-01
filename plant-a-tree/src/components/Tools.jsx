@@ -30,8 +30,8 @@ export default class Tools extends Component {
     var resultID = this.state.tools.findIndex(
       entry => entry.product_id === product_id
     );
-    localStorage.setItem("productID", resultID);
-    console.log(localStorage.getItem("productID"));
+    localStorage.setItem("toolID", resultID);
+    console.log(localStorage.getItem("toolID"));
   }
   importimages(product_id) {
     if (product_id == 21) {
