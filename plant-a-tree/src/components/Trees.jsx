@@ -56,14 +56,17 @@ export default class Trees extends Component {
     console.log(trees);
     trees = trees.map(tree => {
       return (
-        <li key={tree.product_id} tree={tree}>
+        <li key={tree.product_id} tree={tree} className="itemlist">
           <div wrap="true" className="itemwrap">
             <div className="itemimg">{this.importimages(tree.product_id)}</div>
             <div className="item">
               <div className="itemdetails">
+                <h2>{tree.product_name}</h2>
                 <p1>{tree.latin_name}</p1>
                 <br />
                 <p2>{tree.tree_type}</p2>
+                <br />
+                <p3>{tree.QOH} in stock</p3>
                 <span className="price">${tree.product_price}</span>
                 <button
                   width="135px"

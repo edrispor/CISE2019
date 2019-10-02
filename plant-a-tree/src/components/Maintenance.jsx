@@ -37,7 +37,7 @@ export default class Maintenance extends Component {
     console.log(maintenance);
     maintenance = maintenance.map(maintain => {
       return (
-        <li key={maintain.product_id} maintain={maintain}>
+        <li key={maintain.product_id} maintain={maintain} className="itemlist">
           <div wrap="true" className="itemwrap">
             <div className="itemimg">
               {this.importimages(maintain.product_id)}

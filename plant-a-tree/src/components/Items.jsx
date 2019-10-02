@@ -65,13 +65,13 @@ export default class Items extends Component {
     console.log(items);
     items = items.map(item => {
       return (
-        <li key={item.product_id} item={item}>
+        <li key={item.product_id} item={item} className="itemlist">
           <div wrap="true" className="itemwrap">
             <div className="itemimg">{this.importimages(item.product_id)}</div>
             <div className="item">
               <div className="itemdetails">
                 <h2>{item.product_name}</h2>
-                <p1>Click to find out more.</p1>
+                <p3>{item.QOH} in stock</p3>
                 <span className="price">${item.product_price}</span>
                 <button
                   width="135px"
@@ -91,7 +91,7 @@ export default class Items extends Component {
     return (
       <section>
         <h1>Featured Items</h1>
-        <div>{items}</div>
+        <div className="gridcontainer">{items}</div>
       </section>
     );
   }

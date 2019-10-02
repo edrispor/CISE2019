@@ -373,6 +373,10 @@ p2 {
   border-radius: 30px;
 }
 
+.itemlist {
+  list-style-type: none;
+}
+
 /*.treesgrid {
   display: grid;
   list-style-type: none;
