@@ -33,8 +33,8 @@ import Bucket from "../images/bucket.jpg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
-import { fetchItems } from "./actions/itemsActions";
-import PropTypes from "prop-types";
+//import { fetchItems } from "./actions/itemsActions";
+//import PropTypes from "prop-types";
 
 class Items extends Component {
   constructor(props) {
@@ -44,6 +44,7 @@ class Items extends Component {
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = id => {
@@ -52,7 +53,7 @@ class Items extends Component {
 
   componentDidMount() {
     this.getItems();
-    this.props.fetchItems();
+    //this.props.fetchItems();
   }
 
   getItems = _ => {
@@ -66,7 +67,7 @@ class Items extends Component {
       entry => entry.product_id === product_id
     );
     localStorage.setItem("allID", resultID);
-    console.log(this.props.allItems.items);
+    //console.log(this.props.allItems.items);
     console.log(localStorage.getItem("allID"));
   }
 
@@ -89,6 +90,7 @@ class Items extends Component {
                   color="#F4FF77"
                   radius="50px"
                   class="btnitem"
+                  onClick={() => this.handleClick(item.product_id)}
                 >
                   Add To Cart
                 </button>
@@ -466,14 +468,21 @@ class Items extends Component {
 }
 const mapStateToProps = state => {
   return {
-    allItems: state
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
   };
 };
 
-Items.propTypes = {
+/*Items.propTypes = {
   fetchItems: PropTypes.func.isRequired
-};
+};*/
 export default connect(
   mapStateToProps,
-  { fetchItems }
+  mapDispatchToProps
 )(Items);
