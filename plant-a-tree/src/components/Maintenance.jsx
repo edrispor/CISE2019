@@ -71,7 +71,7 @@ export default class Maintenance extends Component {
   }
 
   importimages(product_id) {
-    if (product_id == 30) {
+    if (product_id === 30) {
       return (
         <div className="Fertiliser">
           <Link to={`/product/${product_id}`}>
@@ -85,7 +85,7 @@ export default class Maintenance extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 31) {
+    } else if (product_id === 31) {
       return (
         <div className="Bucket">
           <Link to={`/product/${product_id}`}>

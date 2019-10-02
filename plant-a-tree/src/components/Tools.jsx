@@ -72,7 +72,7 @@ export default class Tools extends Component {
   }
 
   importimages(product_id) {
-    if (product_id == 21) {
+    if (product_id === 21) {
       console.log(product_id);
 
       return (
@@ -88,7 +88,7 @@ export default class Tools extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 22) {
+    } else if (product_id === 22) {
       return (
         <div classname="Rake">
           <Link to={`/product/${product_id}`}>
@@ -102,7 +102,7 @@ export default class Tools extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 23) {
+    } else if (product_id === 23) {
       return (
         <div classname="Hoe">
           <Link to={`/product/${product_id}`}>

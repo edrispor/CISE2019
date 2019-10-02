@@ -89,7 +89,7 @@ export default class Trees extends Component {
   }
 
   importimages(product_id) {
-    if (product_id == 1) {
+    if (product_id === 1) {
       return (
         <div className="kauri">
           <Link to={`/product/${product_id}`}>
@@ -103,7 +103,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 2) {
+    } else if (product_id === 2) {
       return (
         <div className="pohutakawa">
           <Link to={`/product/${product_id}`}>
@@ -117,7 +117,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 3) {
+    } else if (product_id === 3) {
       return (
         <div className="kowhai">
           <Link to={`/product/${product_id}`}>
@@ -131,7 +131,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 4) {
+    } else if (product_id === 4) {
       return (
         <div className="CabbageTree">
           <Link to={`/product/${product_id}`}>
@@ -145,7 +145,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 5) {
+    } else if (product_id === 5) {
       return (
         <div className="Apple">
           <Link to={`/product/${product_id}`}>
@@ -159,7 +159,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 6) {
+    } else if (product_id === 6) {
       return (
         <div className="Feijoa">
           <Link to={`/product/${product_id}`}>
@@ -173,7 +173,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 7) {
+    } else if (product_id === 7) {
       return (
         <div className="Lemon">
           <Link to={`/product/${product_id}`}>
@@ -187,7 +187,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 8) {
+    } else if (product_id === 8) {
       return (
         <div className="Olive">
           <Link to={`/product/${product_id}`}>
@@ -201,7 +201,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 9) {
+    } else if (product_id === 9) {
       return (
         <div className="BabyBlue">
           <Link to={`/product/${product_id}`}>
@@ -215,7 +215,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 10) {
+    } else if (product_id === 10) {
       return (
         <div className="SwampP">
           <Link to={`/product/${product_id}`}>
@@ -229,7 +229,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 11) {
+    } else if (product_id === 11) {
       return (
         <div className="MannaGum">
           <Link to={`/product/${product_id}`}>
@@ -243,7 +243,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 12) {
+    } else if (product_id === 12) {
       return (
         <div className="RedStringy">
           <Link to={`/product/${product_id}`}>
@@ -257,7 +257,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 13) {
+    } else if (product_id === 13) {
       return (
         <div className="UmbrellaPalm">
           <Link to={`/product/${product_id}`}>
@@ -271,7 +271,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 14) {
+    } else if (product_id === 14) {
       return (
         <div className="PittINikau">
           <Link to={`/product/${product_id}`}>
@@ -285,7 +285,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 15) {
+    } else if (product_id === 15) {
       return (
         <div className="Bamboo">
           <Link to={`/product/${product_id}`}>
@@ -299,7 +299,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 16) {
+    } else if (product_id === 16) {
       return (
         <div className="PortLaurel">
           <Link to={`/product/${product_id}`}>
@@ -313,7 +313,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 17) {
+    } else if (product_id === 17) {
       return (
         <div className="Olearia">
           <Link to={`/product/${product_id}`}>
@@ -327,7 +327,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 18) {
+    } else if (product_id === 18) {
       return (
         <div className="SilverBirch">
           <Link to={`/product/${product_id}`}>
@@ -341,7 +341,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 19) {
+    } else if (product_id === 19) {
       return (
         <div className="MtFujiCherry">
           <Link to={`/product/${product_id}`}>
@@ -355,7 +355,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 20) {
+    } else if (product_id === 20) {
       return (
         <div className="EnglishOak">
           <Link to={`/product/${product_id}`}>
