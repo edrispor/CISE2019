@@ -16,6 +16,8 @@ import Items from "./pages/Items";
 import Login from "./pages/Login";
 import Maintenance from "./pages/Maintenance";
 import Policy from "./pages/Policy";
+import Product from "./pages/Product";
+import Productall from "./pages/Product_All";
 import Register from "./pages/Register";
 import Search from "./pages/Search";
 import Tools from "./pages/Tools";
@@ -48,11 +50,12 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />
         <Route exact path="/policy" component={Policy} />
+        <Route path="/product/:something" component={Product} />>
+        <Route path="/productall/:something" component={Productall} />>
         <Route exact path="/register" component={Register} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/trees" component={Tree} />
-
         <Route
           exact
           path="/items/trees/new-zealand-kauri"
@@ -60,10 +63,8 @@ function App() {
         />
         <Route exact path="/items/trees/mt-fuji-cherry" component={MtFuji} />
         <Route exact path="/items/trees/manna-gum" component={MannaGum} />
-
         <Route exact path="/login/forget-password" component={ForgetPW} />
         <Route exact path="/sales" component={Sales} />
-
         <Route component={Error} />
       </Switch>
       <Footer />
