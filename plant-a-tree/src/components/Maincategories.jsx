@@ -4,7 +4,7 @@ export default class Maincategories extends Component {
   render() {
     return (
       <div>
-        <h1>table of contents main page.</h1>
+        <h1>Check out the best trees from NZ's best tree company.</h1>
         <p>
           Users should browse tree-types based on their name (e.g. Beech trees)
           They should be able to restrict what is viewed based on at least: Tree

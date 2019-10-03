@@ -1,10 +1,10 @@
 :root {
   --mainBlack: #042a2b;
   --mainGreen: #5cb548;
-  --darkBrown: #633517;
+  --darkBrown: #572f14;
   --mainCream: #fcf7d6;
   --mainBlue: #659dbd;
-  --mainDarkGreen: #069b06d0;
+  --mainDarkGreen: #19bd19;
   --mainPinky: #daad86;
   --mainWhite: #ffffff;
   --mainTransition: all 0.3s linear;
@@ -47,15 +47,16 @@ p {
   color: var(--mainBlack);
 }
 
+p3 {
+  font-size: 14px;
+  color: green;
+}
+
 .gridcontainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 50px;
 }
-
-/*.grid-item {
-  max-width: 30%;
-}*/
 
 /* Pages start */
 .home-page {
@@ -212,7 +213,8 @@ p {
 
 /* Feature Section */
 .feature {
-  background: url("./TreeImages/featuretree.jpg");
+  background: url("./TreeImages/featuretree2.jpg");
+  background-size: 100%;
   padding: 5rem 5rem;
   text-align: center;
   text-transform: capitalize;
@@ -223,19 +225,40 @@ p {
   font-size: 10rem;
   height: 100px;
   color: var(--mainDarkGreen);
+  text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
 }
 
 .feature div {
   width: 10rem;
-  height: 100px;
-  color: var(--mainDarkGreen);
+  height: 80px;
+  color: var(--mainBlack);
   margin: 1.7rem auto;
 }
 
 .feature p {
   font-size: 2rem;
   color: var(--darkBrown);
-  background: rgba(116, 196, 63, 0.5);
+  background: rgba(116, 196, 63, 0.836);
+  margin-bottom: 30px;
+}
+
+.btnsale {
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: var(--mainSpacing);
+  padding: 0.4rem 0.9rem;
+  color: var(--mainPinky);
+  border: 3px solid var(--darkBrown);
+  border-color: initial;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 10px;
+  background: rgba(243, 56, 50, 0.952);
+}
+
+.btnsale:hover {
+  color: var(--mainCream);
+  text-decoration: none;
 }
 
 /* Footer section */
