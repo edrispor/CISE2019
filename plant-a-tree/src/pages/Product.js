@@ -110,6 +110,7 @@ export default class Product extends Component {
         <br></br>
         <br></br>
         <div>this is image {this.getimage(tree.product_id)}</div>
+        <p>name : {tree.product_id}</p>
         <p>name : {tree.product_name}</p>
         <p>description "{tree.description}</p>
       </li>
@@ -124,17 +125,6 @@ export default class Product extends Component {
         <div>this is image {this.getimage(maintain.product_id)}</div>
         <p>name : {maintain.product_name}</p>
         <p>description "{maintain.description}</p>
-      </li>
-    ));
-    const listAll = items.map(item => (
-      <li key={item.product_id}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(item.product_id)}</div>
-        <p>name : {item.product_name}</p>
-        <p>description "{item.description}</p>
       </li>
     ));
 

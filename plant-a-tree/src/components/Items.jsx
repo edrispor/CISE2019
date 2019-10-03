@@ -52,13 +52,30 @@ export default class Items extends Component {
       .catch(err => console.error(err));
   };
   onclickproduct(product_id) {
-    var resultID = this.state.items.findIndex(
+    /*var resultID = this.state.items.findIndex(
       entry => entry.product_id === product_id
-    );
+    );*/
+    var resultID = product_id - 1;
     localStorage.setItem("allID", resultID);
     console.log(localStorage.getItem("allID"));
   }
-
+  sortPrice(itemarray, condition) {
+    if (condition === "lowhigh") {
+      let a = itemarray.sort(function(a, b) {
+        return parseFloat(a.product_price) - parseFloat(b.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ trees: a });
+    } else if (condition === "highlow") {
+      let a = itemarray.sort(function(a, b) {
+        return parseFloat(b.product_price) - parseFloat(a.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ trees: a });
+    }
+  }
   render() {
     let { items } = this.state;
     console.log("this is all items");
@@ -91,6 +108,24 @@ export default class Items extends Component {
     return (
       <section>
         <h1>Featured Items</h1>
+        <button
+          width="135px"
+          color="#F4FF77"
+          radius="50px"
+          class="btnitem"
+          onClick={() => this.sortPrice(this.state.items, "lowhigh")}
+        >
+          Sort from lowest to highest cost
+        </button>
+        <button
+          width="135px"
+          color="#F4FF77"
+          radius="50px"
+          class="btnitem"
+          onClick={() => this.sortPrice(this.state.items, "highlow")}
+        >
+          Sort from highest to lowest cost
+        </button>
         <div>{items}</div>
       </section>
     );

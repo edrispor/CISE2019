@@ -31,6 +31,7 @@ export default class Trees extends Component {
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
+    this.sortPrice = this.sortPrice.bind(this);
   }
 
   componentDidMount() {
@@ -44,20 +45,32 @@ export default class Trees extends Component {
       .catch(err => console.error(err));
   };
   onclickproduct(product_id) {
-    var resultID = this.state.trees.findIndex(
-      entry => entry.product_id === product_id
-    );
+    var resultID = product_id - 1;
     localStorage.setItem("treeID", resultID);
     console.log(localStorage.getItem("treeID"));
   }
-
+  sortPrice(treearray, condition) {
+    if (condition === "lowhigh") {
+      let a = treearray.sort(function(a, b) {
+        return parseFloat(a.product_price) - parseFloat(b.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ trees: a });
+    } else if (condition === "highlow") {
+      let a = treearray.sort(function(a, b) {
+        return parseFloat(b.product_price) - parseFloat(a.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ trees: a });
+    }
+  }
   render() {
     let { trees } = this.state;
-    let sort = trees.filter(function(test) {
-      return test.product_price == "12";
-    });
-    console.log(sort);
+    console.log("Before sort : ");
     console.log(trees);
+    //this.sortPrice(trees);
     trees = trees.map(tree => {
       return (
         <li key={tree.product_id} tree={tree}>
@@ -86,6 +99,24 @@ export default class Trees extends Component {
 
     return (
       <div>
+        <button
+          width="135px"
+          color="#F4FF77"
+          radius="50px"
+          class="btnitem"
+          onClick={() => this.sortPrice(this.state.trees, "lowhigh")}
+        >
+          Sort from lowest to highest cost
+        </button>
+        <button
+          width="135px"
+          color="#F4FF77"
+          radius="50px"
+          class="btnitem"
+          onClick={() => this.sortPrice(this.state.trees, "highlow")}
+        >
+          Sort from highest to lowest cost
+        </button>
         <h1>All Trees and Hedges</h1>
         <div className="gridcontainer">{trees}</div>
       </div>
@@ -93,7 +124,7 @@ export default class Trees extends Component {
   }
 
   importimages(product_id) {
-    if (product_id == 1) {
+    if (product_id === 1) {
       return (
         <div className="kauri">
           <Link to={`/product/${product_id}`}>
@@ -107,7 +138,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 2) {
+    } else if (product_id === 2) {
       return (
         <div className="pohutakawa">
           <Link to={`/product/${product_id}`}>
@@ -121,7 +152,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 3) {
+    } else if (product_id === 3) {
       return (
         <div className="kowhai">
           <Link to={`/product/${product_id}`}>
@@ -135,7 +166,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 4) {
+    } else if (product_id === 4) {
       return (
         <div className="CabbageTree">
           <Link to={`/product/${product_id}`}>
@@ -149,7 +180,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 5) {
+    } else if (product_id === 5) {
       return (
         <div className="Apple">
           <Link to={`/product/${product_id}`}>
@@ -163,7 +194,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 6) {
+    } else if (product_id === 6) {
       return (
         <div className="Feijoa">
           <Link to={`/product/${product_id}`}>
@@ -177,7 +208,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 7) {
+    } else if (product_id === 7) {
       return (
         <div className="Lemon">
           <Link to={`/product/${product_id}`}>
@@ -191,7 +222,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 8) {
+    } else if (product_id === 8) {
       return (
         <div className="Olive">
           <Link to={`/product/${product_id}`}>
@@ -205,7 +236,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 9) {
+    } else if (product_id === 9) {
       return (
         <div className="BabyBlue">
           <Link to={`/product/${product_id}`}>
@@ -219,7 +250,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 10) {
+    } else if (product_id === 10) {
       return (
         <div className="SwampP">
           <Link to={`/product/${product_id}`}>
@@ -233,7 +264,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 11) {
+    } else if (product_id === 11) {
       return (
         <div className="MannaGum">
           <Link to={`/product/${product_id}`}>
@@ -247,7 +278,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 12) {
+    } else if (product_id === 12) {
       return (
         <div className="RedStringy">
           <Link to={`/product/${product_id}`}>
@@ -261,7 +292,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 13) {
+    } else if (product_id === 13) {
       return (
         <div className="UmbrellaPalm">
           <Link to={`/product/${product_id}`}>
@@ -275,7 +306,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 14) {
+    } else if (product_id === 14) {
       return (
         <div className="PittINikau">
           <Link to={`/product/${product_id}`}>
@@ -289,7 +320,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 15) {
+    } else if (product_id === 15) {
       return (
         <div className="Bamboo">
           <Link to={`/product/${product_id}`}>
@@ -303,7 +334,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 16) {
+    } else if (product_id === 16) {
       return (
         <div className="PortLaurel">
           <Link to={`/product/${product_id}`}>
@@ -317,7 +348,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 17) {
+    } else if (product_id === 17) {
       return (
         <div className="Olearia">
           <Link to={`/product/${product_id}`}>
@@ -331,7 +362,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 18) {
+    } else if (product_id === 18) {
       return (
         <div className="SilverBirch">
           <Link to={`/product/${product_id}`}>
@@ -345,7 +376,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 19) {
+    } else if (product_id === 19) {
       return (
         <div className="MtFujiCherry">
           <Link to={`/product/${product_id}`}>
@@ -359,7 +390,7 @@ export default class Trees extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 20) {
+    } else if (product_id === 20) {
       return (
         <div className="EnglishOak">
           <Link to={`/product/${product_id}`}>
