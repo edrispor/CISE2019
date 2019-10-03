@@ -5,9 +5,9 @@ export default class Footer extends Component {
   render() {
     return (
       <footer>
-        <div className="f-center">
-          <div className="row">
-            <div className="col-md-3">
+        <div className="footer">
+          <div className="footercontainer">
+            <div className="column">
               <h1>Useful Links</h1>
               <Link to="/policy">Privacy Policy</Link>
               <br></br>
@@ -15,7 +15,7 @@ export default class Footer extends Component {
               <br></br>
               <Link to="/extralinkspage">Terms of Use</Link>
             </div>
-            <div className="col-md-3">
+            <div className="column">
               <h1>Company</h1>
               <Link to="/about">About Us</Link>
               <br></br>
@@ -23,7 +23,7 @@ export default class Footer extends Component {
               <br></br>
               <Link to="/storelocator">Store Locations</Link>
             </div>
-            <div className="col-md-3">
+            <div className="column">
               <h1>More links</h1>
               <Link to="/extralinkspage">Link uno</Link>
               <br></br>

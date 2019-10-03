@@ -117,8 +117,8 @@ export default class Items extends Component {
             <img
               src={Pohu}
               alt={cat}
-              width="350px"
-              height="300px"
+              width="310px"
+              height="260px"
               onClick={() => this.onclickproduct(product_id)}
             ></img>{" "}
           </Link>

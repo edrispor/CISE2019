@@ -59,7 +59,7 @@ export default class Product_All extends Component {
           <Link to="/items">> All Products</Link>
           <p>> {item.product_name}</p>
           <div className="specific-tree-page">
-            <div>{this.getimage(item.product_id)}</div>
+            <div align="center">{this.getimage(item.product_id)}</div>
             <div className="itemdetails">
               <h1>{item.product_name}</h1>
               <p>{item.description}</p>

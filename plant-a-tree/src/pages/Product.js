@@ -98,7 +98,7 @@ export default class Product extends Component {
           <Link to="/items/tools">> All Tools</Link>
           <p>> {tool.product_name}</p>
           <div className="specific-tree-page">
-            <div>this is image {this.getimage(tool.product_id)}</div>
+            <div align="center">{this.getimage(tool.product_id)}</div>
             <div className="itemdetails">
               <h1>{tool.product_name}</h1>
               <p>{tool.description}</p>
@@ -123,7 +123,7 @@ export default class Product extends Component {
           <Link to="/items/trees">> All Trees</Link>
           <p>> {tree.product_name}</p>
           <div className="specific-tree-page">
-            <div>{this.getimage(tree.product_id)}</div>
+            <div align="center">{this.getimage(tree.product_id)}</div>
             <div className="itemdetails">
               <h1>{tree.product_name}</h1>
               <h4>{tree.latin_name}</h4>
@@ -156,7 +156,7 @@ export default class Product extends Component {
           <Link to="/items">> All Garden Maintenance</Link>
           <p>> {maintain.product_name}</p>
           <div className="specific-tree-page">
-            <div>{this.getimage(maintain.product_id)}</div>
+            <div align="center">{this.getimage(maintain.product_id)}</div>
             <div className="itemdetails">
               <h1>{maintain.product_name}</h1>
               <p>{maintain.description}</p>
