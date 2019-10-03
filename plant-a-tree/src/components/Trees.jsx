@@ -53,6 +53,10 @@ export default class Trees extends Component {
 
   render() {
     let { trees } = this.state;
+    let sort = trees.filter(function(test) {
+      return test.product_price == "12";
+    });
+    console.log(sort);
     console.log(trees);
     trees = trees.map(tree => {
       return (
