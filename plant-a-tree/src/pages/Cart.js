@@ -16,6 +16,7 @@ class Cart extends Component {
   //to remove the item completely
   handleRemove = id => {
     this.props.removeItem(id);
+    this.forceUpdate();
   };
   //to add the quantity
   handleAddQuantity = id => {
