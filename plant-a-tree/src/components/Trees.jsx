@@ -127,6 +127,24 @@ export default class Trees extends Component {
         return tree.maintenaince.includes(condition);
       });
       this.setState({ trees: a });
+    } else if (condition === "Fast") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.growth_rate.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Medium") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.growth_rate.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Slow") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.growth_rate.includes(condition);
+      });
+      this.setState({ trees: a });
     }
   }
 
@@ -353,7 +371,42 @@ export default class Trees extends Component {
             Low
           </button>
         </div>
-        <div></div>
+        <div>
+          <h3>Growth Rate</h3>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(this.state.trees, this.state.treesClone, "Fast")
+            }
+          >
+            Fast
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(this.state.trees, this.state.treesClone, "Medium")
+            }
+          >
+            Medium
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(this.state.trees, this.state.treesClone, "Slow")
+            }
+          >
+            Slow
+          </button>
+        </div>
         <h1>All Trees and Hedges</h1>
         <div className="gridcontainer">{trees}</div>
       </div>
