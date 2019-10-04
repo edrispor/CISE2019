@@ -27,15 +27,19 @@ export default class Trees extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trees: []
+      trees: [],
+      treesClone: []
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
     this.sortPrice = this.sortPrice.bind(this);
+    this.filterTree = this.filterTree.bind(this);
+    this.getTrees = this.getTrees.bind(this);
   }
 
   componentDidMount() {
     this.getTrees();
+    this.getTreesClone();
   }
 
   getTrees = _ => {
@@ -44,11 +48,70 @@ export default class Trees extends Component {
       .then(response => this.setState({ trees: response.data }))
       .catch(err => console.error(err));
   };
+
+  getTreesClone = _ => {
+    fetch("/trees")
+      .then(response => response.json())
+      .then(response => this.setState({ treesClone: response.data }))
+      .catch(err => console.error(err));
+  };
   onclickproduct(product_id) {
     var resultID = product_id - 1;
     localStorage.setItem("treeID", resultID);
     console.log(localStorage.getItem("treeID"));
   }
+  filterTree(treearray, treeclonearray, condition) {
+    if (condition === "Evergreen") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Fruit Tree") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "NZ Native") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Palm Tree") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Hedge") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Hardwood") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Deciduos") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Gum Tree") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    }
+  }
+
   sortPrice(treearray, condition) {
     if (condition === "lowhigh") {
       let a = treearray.sort(function(a, b) {
@@ -68,9 +131,7 @@ export default class Trees extends Component {
   }
   render() {
     let { trees } = this.state;
-    console.log("Before sort : ");
-    console.log(trees);
-    //this.sortPrice(trees);
+
     trees = trees.map(tree => {
       return (
         <li key={tree.product_id} tree={tree}>
@@ -99,24 +160,145 @@ export default class Trees extends Component {
 
     return (
       <div>
-        <button
-          width="135px"
-          color="#F4FF77"
-          radius="50px"
-          class="btnitem"
-          onClick={() => this.sortPrice(this.state.trees, "lowhigh")}
-        >
-          Sort from lowest to highest cost
-        </button>
-        <button
-          width="135px"
-          color="#F4FF77"
-          radius="50px"
-          class="btnitem"
-          onClick={() => this.sortPrice(this.state.trees, "highlow")}
-        >
-          Sort from highest to lowest cost
-        </button>
+        <div>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.trees, "lowhigh")}
+          >
+            Sort from lowest to highest cost
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.trees, "highlow")}
+          >
+            Sort from highest to lowest cost
+          </button>
+        </div>
+        <div>
+          <h4>Tree type filter</h4>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "Evergreen"
+              )
+            }
+          >
+            Evergreen
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "Fruit Tree"
+              )
+            }
+          >
+            Fruit Tree
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "NZ Native"
+              )
+            }
+          >
+            NZ Native
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "Palm Tree"
+              )
+            }
+          >
+            Palm Tree
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(this.state.trees, this.state.treesClone, "Hedge")
+            }
+          >
+            Hedge
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "Hardwood"
+              )
+            }
+          >
+            Hardwood
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "Deciduos"
+              )
+            }
+          >
+            Deciduos
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTree(
+                this.state.trees,
+                this.state.treesClone,
+                "Gum Tree"
+              )
+            }
+          >
+            Gum Tree
+          </button>
+        </div>
         <h1>All Trees and Hedges</h1>
         <div className="gridcontainer">{trees}</div>
       </div>
