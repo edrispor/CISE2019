@@ -1,11 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Recipe from "../components/Recipe";
+import {
+  removeItem,
+  addQuantity,
+  subtractQuantity
+} from "../components/actions/cartActions";
 
 class Cart extends Component {
   componentWillMount() {
     onbeforeunload = e => "Don't leave";
   }
+
+  //to remove the item completely
+  handleRemove = id => {
+    this.props.removeItem(id);
+  };
+  //to add the quantity
+  handleAddQuantity = id => {
+    this.props.addQuantity(id);
+    this.forceUpdate();
+  };
+  //to substruct from the quantity
+  handleSubtractQuantity = id => {
+    this.props.subtractQuantity(id);
+    this.forceUpdate();
+  };
 
   render() {
     let addedItems = this.props.items.length ? (
@@ -23,14 +44,32 @@ class Cart extends Component {
                 <b>Quantity: {item.quantity}</b>
               </p>
               <div>
-                <Link to="/cart">
-                  <i>arrow_drop_up</i>
+                <Link to="/account/cart">
+                  <i
+                    onClick={() => {
+                      this.handleAddQuantity(item.product_id);
+                    }}
+                  >
+                    🡹
+                  </i>
                 </Link>
-                <Link to="/cart">
-                  <i>arrow_drop_down</i>
+                <Link to="/account/cart">
+                  <i
+                    onClick={() => {
+                      this.handleSubtractQuantity(item.product_id);
+                    }}
+                  >
+                    🢃
+                  </i>
                 </Link>
               </div>
-              <button>Remove</button>
+              <button
+                onClick={() => {
+                  this.handleRemove(item.product_id);
+                }}
+              >
+                Remove
+              </button>
             </div>
           </li>
         );
@@ -44,6 +83,7 @@ class Cart extends Component {
           <h5>You have ordered:</h5>
           <ul>{addedItems}</ul>
         </div>
+        <Recipe></Recipe>
       </div>
     );
   }
@@ -57,9 +97,18 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    // removeItem: (id)=>{dispatch(removeItem(id))},
-    //addQuantity: (id)=>{dispatch(addQuantity(id))},
-    //subtractQuantity: (id)=>{dispatch(subtractQuantity(id))}
+    removeItem: id => {
+      dispatch(removeItem(id));
+    },
+    addQuantity: id => {
+      dispatch(addQuantity(id));
+    },
+    subtractQuantity: id => {
+      dispatch(subtractQuantity(id));
+    }
   };
 };
-export default connect(mapStateToProps)(Cart);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Cart);
