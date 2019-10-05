@@ -381,6 +381,34 @@ p2 {
   margin: 10px 0px;
 }
 
+.product-menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+}
+
+.product-menu li {
+  display: inline-block;
+  position: relative;
+}
+
+.product-menu li a {
+  display: inline-block;
+  font-size: 20px;
+  color: black;
+  margin-right: 70px;
+  line-height: 1;
+  padding: 17px 0;
+  position: relative;
+}
+
+.product-menu a:active,
+.product-menu a:hover,
+.product-menu a.active {
+  color: var(--mainPinky);
+  text-decoration: none;
+}
+
 /*.itemwrap {
   display: flex;
   flex-direction: row;

@@ -90,7 +90,7 @@ export default class Items extends Component {
 
     return (
       <section>
-        <h1>Featured Items</h1>
+        <h1>All Products</h1>
         <div className="gridcontainer">{items}</div>
       </section>
     );
