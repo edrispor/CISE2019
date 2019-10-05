@@ -34,6 +34,8 @@ export default class Trees extends Component {
     this.importimages = this.importimages.bind(this);
     this.sortPrice = this.sortPrice.bind(this);
     this.filterTree = this.filterTree.bind(this);
+    this.filterTreeSunlight = this.filterTreeSunlight.bind(this);
+    this.filterTreeSoilDrainage = this.filterTreeSoilDrainage.bind(this);
     this.getTrees = this.getTrees.bind(this);
   }
 
@@ -60,111 +62,7 @@ export default class Trees extends Component {
     localStorage.setItem("treeID", resultID);
     console.log(localStorage.getItem("treeID"));
   }
-  filterTree(treearray, treeclonearray, condition) {
-    if (condition === "Evergreen") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Fruit Tree") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "NZ Native") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Palm Tree") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Hedge") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Hardwood") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Deciduos") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Gum Tree") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.tree_type.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "High") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.maintenaince.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Medium") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.maintenaince.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Low") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.maintenaince.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Fast") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.growth_rate.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Medium") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.growth_rate.includes(condition);
-      });
-      this.setState({ trees: a });
-    } else if (condition === "Slow") {
-      treearray = treeclonearray;
-      let a = treearray.filter(function(tree) {
-        return tree.growth_rate.includes(condition);
-      });
-      this.setState({ trees: a });
-    }
-  }
 
-  sortPrice(treearray, condition) {
-    if (condition === "lowhigh") {
-      let a = treearray.sort(function(a, b) {
-        return parseFloat(a.product_price) - parseFloat(b.product_price);
-      });
-      console.log("After sort ");
-      console.log(a);
-      this.setState({ trees: a });
-    } else if (condition === "highlow") {
-      let a = treearray.sort(function(a, b) {
-        return parseFloat(b.product_price) - parseFloat(a.product_price);
-      });
-      console.log("After sort ");
-      console.log(a);
-      this.setState({ trees: a });
-    }
-  }
   render() {
     let { trees } = this.state;
 
@@ -407,10 +305,298 @@ export default class Trees extends Component {
             Slow
           </button>
         </div>
+        <div>
+          <h3>Sunlight Requirement</h3>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSunlight(
+                this.state.trees,
+                this.state.treesClone,
+                "Sunny"
+              )
+            }
+          >
+            Sunny
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSunlight(
+                this.state.trees,
+                this.state.treesClone,
+                "Medium"
+              )
+            }
+          >
+            Medium
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSunlight(
+                this.state.trees,
+                this.state.treesClone,
+                "Low"
+              )
+            }
+          >
+            Low
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSunlight(
+                this.state.trees,
+                this.state.treesClone,
+                "Shade"
+              )
+            }
+          >
+            Shade
+          </button>
+        </div>
+        <div>
+          <h3>Soil Drainage</h3>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSoilDrainage(
+                this.state.trees,
+                this.state.treesClone,
+                "High"
+              )
+            }
+          >
+            High
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSoilDrainage(
+                this.state.trees,
+                this.state.treesClone,
+                "Medium"
+              )
+            }
+          >
+            Medium
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSoilDrainage(
+                this.state.trees,
+                this.state.treesClone,
+                "Low"
+              )
+            }
+          >
+            Low
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeSoilDrainage(
+                this.state.trees,
+                this.state.treesClone,
+                "Shade"
+              )
+            }
+          >
+            Shade
+          </button>
+        </div>
         <h1>All Trees and Hedges</h1>
         <div className="gridcontainer">{trees}</div>
       </div>
     );
+  }
+  filterTreeHeight(treearray, treeclonearray, condition) {}
+
+  filterTreeSoilDrainage(treearray, treeclonearray, condition) {
+    if (condition === "High") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.soil_drainage.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Medium") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.soil_drainage.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Low") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.soil_drainage.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Shade") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.soil_drainage.includes(condition);
+      });
+      this.setState({ trees: a });
+    }
+  }
+  filterTreeSunlight(treearray, treeclonearray, condition) {
+    if (condition === "Sunny") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.sunlight.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Medium") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.sunlight.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Low") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.sunlight.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Shade") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.sunlight.includes(condition);
+      });
+      this.setState({ trees: a });
+    }
+  }
+  filterTree(treearray, treeclonearray, condition) {
+    //this method is for tree type,growth rate and tree maintenance.
+    if (condition === "Evergreen") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Fruit Tree") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "NZ Native") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Palm Tree") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Hedge") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Hardwood") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Deciduos") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Gum Tree") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.tree_type.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "High") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.maintenaince.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Medium") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.maintenaince.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Low") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.maintenaince.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Fast") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.growth_rate.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Medium") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.growth_rate.includes(condition);
+      });
+      this.setState({ trees: a });
+    } else if (condition === "Slow") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return tree.growth_rate.includes(condition);
+      });
+      this.setState({ trees: a });
+    }
+  }
+
+  sortPrice(treearray, condition) {
+    if (condition === "lowhigh") {
+      let a = treearray.sort(function(a, b) {
+        return parseFloat(a.product_price) - parseFloat(b.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ trees: a });
+    } else if (condition === "highlow") {
+      let a = treearray.sort(function(a, b) {
+        return parseFloat(b.product_price) - parseFloat(a.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ trees: a });
+    }
   }
 
   importimages(product_id) {
