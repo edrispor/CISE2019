@@ -5,10 +5,12 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
-import reducer from "./store/reducer";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import cartReducer from "./components/reducers/cartReducer";
 
-const store = createStore(reducer);
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+const store = createStoreWithMiddleware(cartReducer);
 
 ReactDOM.render(
   <Router>

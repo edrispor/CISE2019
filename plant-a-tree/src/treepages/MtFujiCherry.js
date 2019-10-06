@@ -16,23 +16,22 @@ export default function NZKauri() {
         </div>
         <div className="fujidetails">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            The famous "Mt. Fuji Cherry" forms a beautifully propotioned, small,
+            flat-topped tree with horizontal, slightly drooping branches that
+            bear very large, pure white scented flowers that are a mix of both
+            single and semi-doubles. Leaves are deeply serrated and turn a
+            distinctive golden-yellow in autumn. 'Shirotae' is one of the most
+            gorgeous white-flowering cherries.
           </p>
           <p>
-            Care: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim
+            Care: Performs best in full sun in moist, relatively fertile,
+            well-drained soils. Watch for caterpillars, silver leaf and blossom
+            wilt.
           </p>
           <ul>
             <li>Hardwood, Devidous</li>
-            <li>Sunlight needed: Medium</li>
-            <li>Max mature height: 20m</li>
+            <li>Sunlight needed: High</li>
+            <li>Max mature height: 6m</li>
             <li>Growth rate: Medium</li>
           </ul>
           <button width="135px" color="#F4FF77" radius="50px" class="btnitem">

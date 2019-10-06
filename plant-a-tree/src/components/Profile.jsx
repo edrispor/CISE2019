@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import UserSess from "../components/UserProfile";
+import { Link } from "react-router-dom";
 
 class Profile extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class Profile extends Component {
       userprofile: ""
     };
     this.updateUser = this.updateUser.bind(this);
+    this.userLogOut = this.userLogOut.bind(this);
 
     //console.log(this.props);
   }
@@ -20,6 +23,10 @@ class Profile extends Component {
     console.log("handle input change");
     this.setState({ userprofile: this.props.getProfile });
     console.log(this.props.userprofile);
+  }
+  userLogOut() {
+    localStorage.setItem("user", "Not logged in");
+    window.location.href = "/";
   }
 
   componentDidMount() {
@@ -37,7 +44,7 @@ class Profile extends Component {
     const { users, userprofile } = this.state;
 
     var result = users.findIndex(
-      entry => entry.username === this.props.inputValue
+      entry => entry.username === localStorage.getItem("user")
     );
 
     const listItems = users.map(d => (
@@ -51,6 +58,15 @@ class Profile extends Component {
       <div>
         <p>your account details are listed bellow</p>
         <div>{listItems[result]}</div>
+        <button
+          width="135px"
+          color="#F4FF77"
+          radius="50px"
+          class="btnitem"
+          onClick={this.userLogOut}
+        >
+          Logout
+        </button>
       </div>
     );
   }

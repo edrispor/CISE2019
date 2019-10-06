@@ -72,6 +72,9 @@ export default class Navbar extends Component {
               <li>
                 <Link to="/register">Register</Link>
               </li>
+              <li>
+                <Link to="/account">{localStorage.getItem("user")}</Link>
+              </li>
             </ul>
           </div>
         </nav>
