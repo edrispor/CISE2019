@@ -73,9 +73,21 @@ export default class Trees extends Component {
             <div className="itemimg">{this.importimages(tree.product_id)}</div>
             <div className="item">
               <div className="itemdetails">
+                <p1>{tree.product_name}</p1>
+                <br></br>
                 <p1>{tree.latin_name}</p1>
                 <br />
-                <p2>{tree.tree_type}</p2>
+                <p2>type: {tree.tree_type}</p2>
+                <p1>maintenaince: {tree.maintenaince}</p1>
+                <br />
+                <p1>sunlight: {tree.sunlight}</p1>
+                <br />
+                <p1>height: {tree.height}</p1>
+                <br />
+                <p1>soil: {tree.soil_drainage}</p1>
+                <br />
+                <p1>gr: {tree.growth_rate}</p1>
+                <br />
                 <span className="price">${tree.product_price}</span>
                 <button
                   width="135px"
@@ -95,6 +107,7 @@ export default class Trees extends Component {
     return (
       <div>
         <div>
+          <h3>Filter by price.</h3>
           <button
             width="135px"
             color="#F4FF77"
@@ -115,7 +128,7 @@ export default class Trees extends Component {
           </button>
         </div>
         <div>
-          <h4>Tree type filter</h4>
+          <h3>Tree type filter</h3>
           <button
             width="135px"
             color="#F4FF77"
@@ -431,12 +444,113 @@ export default class Trees extends Component {
             Shade
           </button>
         </div>
+        <div>
+          <h3>Tree Ranges</h3>{" "}
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeHeight(
+                this.state.trees,
+                this.state.treesClone,
+                "0-10"
+              )
+            }
+          >
+            0-10
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeHeight(
+                this.state.trees,
+                this.state.treesClone,
+                "10-20"
+              )
+            }
+          >
+            10-20
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeHeight(
+                this.state.trees,
+                this.state.treesClone,
+                "20-30"
+              )
+            }
+          >
+            20-30
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() =>
+              this.filterTreeHeight(
+                this.state.trees,
+                this.state.treesClone,
+                "30-50"
+              )
+            }
+          >
+            30-50
+          </button>
+        </div>
         <h1>All Trees and Hedges</h1>
         <div className="gridcontainer">{trees}</div>
       </div>
     );
   }
-  filterTreeHeight(treearray, treeclonearray, condition) {}
+  filterTreeHeight(treearray, treeclonearray, condition) {
+    if (condition === "0-10") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return (
+          tree.height.slice(0, tree.height.length - 1) <= 10 &&
+          tree.height.slice(0, tree.height.length - 1) >= 0
+        );
+      });
+      this.setState({ trees: a });
+    } else if (condition === "10-20") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return (
+          tree.height.slice(0, tree.height.length - 1) <= 20 &&
+          tree.height.slice(0, tree.height.length - 1) >= 10
+        );
+      });
+      this.setState({ trees: a });
+    } else if (condition === "20-30") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return (
+          tree.height.slice(0, tree.height.length - 1) <= 30 &&
+          tree.height.slice(0, tree.height.length - 1) >= 20
+        );
+      });
+      this.setState({ trees: a });
+    } else if (condition === "30-50") {
+      treearray = treeclonearray;
+      let a = treearray.filter(function(tree) {
+        return (
+          tree.height.slice(0, tree.height.length - 1) <= 50 &&
+          tree.height.slice(0, tree.height.length - 1) >= 30
+        );
+      });
+      this.setState({ trees: a });
+    }
+  }
 
   filterTreeSoilDrainage(treearray, treeclonearray, condition) {
     if (condition === "High") {
@@ -883,3 +997,4 @@ export default class Trees extends Component {
     }
   }
 }
+//milestone reached.
