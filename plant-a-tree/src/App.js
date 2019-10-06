@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Items from "./pages/Items";
 import Login from "./pages/Login";
 import Maintenance from "./pages/Maintenance";
+import Payment from "./pages/Payment";
 import Policy from "./pages/Policy";
 import Product from "./pages/Product";
 import Productall from "./pages/Product_All";
@@ -50,6 +51,7 @@ function App() {
         <Route exact path="/items" component={Items} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />
+        <Route exact path="/account/payment" component={Payment} />
         <Route exact path="/policy" component={Policy} />
         <Route path="/product/:something" component={Product} />>
         <Route path="/productall/:something" component={Productall} />>

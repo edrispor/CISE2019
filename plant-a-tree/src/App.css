@@ -306,6 +306,26 @@ p2 {
   margin: 10px 0px;
 }
 
+/*Payment page*/
+
+.paymentimg {
+  display: block;
+  width: 40%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paymentform {
+  display: block;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+}
+
+/*end of payment page css*/
+
 /*.itemwrap {
   display: flex;
   flex-direction: row;
