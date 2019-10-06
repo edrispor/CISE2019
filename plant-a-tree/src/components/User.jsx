@@ -50,67 +50,69 @@ export default class User extends Component {
     const userProfile = this.state.userprofile;
     console.log(userProfile);
     return (
-      <div className="container">
-        <Zoom>
-          <center style={{ margin: "25px" }}>
-            <Flip>
-              <h3> 🌲 Register 🌲 </h3>
-            </Flip>
+      <section id="section-register" class="grid">
+        <div class="content-wrap">
+          <Zoom>
+            <center style={{ margin: "25px" }}>
+              <Flip>
+                <h3> 🌲 Register 🌲 </h3>
+              </Flip>
 
-            <form>
-              <div className="form-group" style={{ margin: "15px" }}>
-                <input
-                  className="form-control"
-                  type="text"
-                  id="username"
-                  ref={inusername => (this.inputusername = inusername)}
-                  placeholder="Enter a username"
-                />
-              </div>
+              <form>
+                <div className="form-group" style={{ margin: "15px" }}>
+                  <input
+                    className="form-control"
+                    type="text"
+                    id="username"
+                    ref={inusername => (this.inputusername = inusername)}
+                    placeholder="Enter a username"
+                  />
+                </div>
 
-              <div className="form-group" style={{ margin: "15px" }}>
-                <input
-                  className="form-control"
-                  type="text"
-                  id="pass"
-                  ref={inpass => (this.inputpass = inpass)}
-                  placeholder="Enter a password"
-                />
-              </div>
+                <div className="form-group" style={{ margin: "15px" }}>
+                  <input
+                    className="form-control"
+                    type="text"
+                    id="pass"
+                    ref={inpass => (this.inputpass = inpass)}
+                    placeholder="Enter a password"
+                  />
+                </div>
 
-              <div className="form-group" style={{ margin: "15px" }}>
-                <input
-                  className="form-control"
-                  type="text"
-                  id="email"
-                  ref={inemail => (this.inputemail = inemail)}
-                  placeholder="Enter your email address"
-                />
-              </div>
+                <div className="form-group" style={{ margin: "15px" }}>
+                  <input
+                    className="form-control"
+                    type="text"
+                    id="email"
+                    ref={inemail => (this.inputemail = inemail)}
+                    placeholder="Enter your email address"
+                  />
+                </div>
 
-              <div className="form-group" style={{ margin: "15px" }}>
-                <input
-                  className="form-control"
-                  type="text"
-                  id="shipping"
-                  ref={inshipping => (this.inputshipping = inshipping)}
-                  placeholder="Enter your shipping address"
-                />
-              </div>
+                <div className="form-group" style={{ margin: "15px" }}>
+                  <input
+                    className="form-control"
+                    type="text"
+                    id="shipping"
+                    ref={inshipping => (this.inputshipping = inshipping)}
+                    placeholder="Enter your shipping address"
+                  />
+                </div>
 
-              <button
-                className="btn btn-success"
-                style={{ margin: "15px", width: "200px" }}
-                onClick={this.klikPost.bind(this)}
-              >
-                <Link to="/">Register</Link>
-              </button>
-            </form>
+                <button
+                  className="btn btn-success"
+                  style={{ margin: "15px", width: "200px" }}
+                  onClick={this.klikPost.bind(this)}
+                >
+                  <Link to="/">Register</Link>
+                </button>
+              </form>
 
-            <div></div>
-          </center>
-        </Zoom>
-      </div>
+              <div></div>
+            </center>
+          </Zoom>
+        </div>
+      </section>
     );
   }
 }

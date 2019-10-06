@@ -323,6 +323,19 @@ p2 {
   margin-right: auto;
   background-color: gray;
 }
+.paybtn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+  margin: 0.3em 0;
+}
+.paybtn:hover {
+  background: #eaeaea;
+  color: #333;
+}
 
 /*end of payment page css*/
 
@@ -528,6 +541,13 @@ h4 {
 #section-cartitems {
   display: block;
   background-color: #717171;
+  list-style: none;
+  margin: 0.5;
+  padding-bottom: 0.5;
+  border: 1px solid #19bd19;
+}
+#section-register {
+  display: block;
   list-style: none;
   margin: 0.5;
   padding-bottom: 0.5;
