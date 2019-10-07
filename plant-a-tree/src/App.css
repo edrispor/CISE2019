@@ -323,6 +323,19 @@ p2 {
   margin-right: auto;
   background-color: gray;
 }
+.paybtn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 2em;
+  border: 1px solid #666;
+  margin: 0.3em 0;
+}
+.paybtn:hover {
+  background: #eaeaea;
+  color: #333;
+}
 
 /*end of payment page css*/
 
@@ -517,3 +530,42 @@ h4 {
     padding: 0.5rem 0;
   }
 }*/
+/*cart*/
+#section-cart {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  list-style: none;
+}
+#section-cartitems {
+  display: block;
+  background-color: #717171;
+  list-style: none;
+  margin: 0.5;
+  padding-bottom: 0.5;
+  border: 1px solid #19bd19;
+}
+#section-register {
+  display: block;
+  list-style: none;
+  margin: 0.5;
+  padding-bottom: 0.5;
+  border: 1px solid #19bd19;
+}
+.carthead {
+  font-size: 1.5em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+  }
+  .content-wrap,
+  #section-cart {
+    grid-column: 2/4;
+  }
+}

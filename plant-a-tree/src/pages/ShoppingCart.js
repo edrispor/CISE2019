@@ -3,10 +3,12 @@ import Cart from "./Cart";
 
 export default function ShoppingCart() {
   return (
-    <div>
-      <br></br>
-      <br></br>
-      <Cart></Cart>
-    </div>
+    <section id="section-cart" class="grid">
+      <div class="content-wrap">
+        <br></br>
+        <br></br>
+        <Cart></Cart>
+      </div>
+    </section>
   );
 }

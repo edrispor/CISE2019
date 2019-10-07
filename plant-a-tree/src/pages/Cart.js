@@ -33,8 +33,8 @@ class Cart extends Component {
     let addedItems = this.props.items.length ? (
       this.props.items.map(item => {
         return (
-          <li key={item.product_id}>
-            <div>test1</div>
+          <li id="section-cartitems" key={item.product_id}>
+            <div></div>
 
             <div>
               <span>{item.product_name}</span>
@@ -76,12 +76,12 @@ class Cart extends Component {
         );
       })
     ) : (
-      <p>Nothing.</p>
+      <p>No Items in Cart</p>
     );
     return (
       <div>
         <div>
-          <h5>You have ordered:</h5>
+          <h5>Your Order:</h5>
           <ul>{addedItems}</ul>
         </div>
         <Recipe></Recipe>
