@@ -31,7 +31,13 @@ import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";
 ///////////////////////////////////////////////////////////////////////
 import { Link } from "react-router-dom";
-export default class Items extends Component {
+import { connect } from "react-redux";
+import { addToCart } from "./actions/cartActions";
+import { Prompt } from "react-router-dom";
+//import { fetchItems } from "./actions/itemsActions";
+//import PropTypes from "prop-types";
+
+class Items extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,6 +51,20 @@ export default class Items extends Component {
     this.filterTreeSunlight = this.filterTreeSunlight.bind(this);
     this.filterTreeSoilDrainage = this.filterTreeSoilDrainage.bind(this);
   }
+
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+      this.setState({ shouldBlockNavigation: true });
+      window.history.back();
+      window.location.href = "/login";
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getItems();
@@ -69,6 +89,7 @@ export default class Items extends Component {
     );*/
     var resultID = product_id - 1;
     localStorage.setItem("allID", resultID);
+    //console.log(this.props.allItems.items);
     console.log(localStorage.getItem("allID"));
   }
 
@@ -124,9 +145,15 @@ export default class Items extends Component {
                   color="#F4FF77"
                   radius="50px"
                   class="btnitem"
+                  onClick={() => this.handleClick(item.product_id)}
                 >
                   Add To Cart
                 </button>
+                <Prompt
+                  key="block-nav"
+                  when={this.state.shouldBlockNavigation}
+                  message="Please Login to add to cart"
+                />
               </div>
             </div>
           </div>{" "}
@@ -726,7 +753,7 @@ export default class Items extends Component {
   }
 
   importimages(product_id) {
-    if (product_id == 1) {
+    if (product_id === 1) {
       return (
         <div className="kauri">
           <Link to={`/productall/${product_id}`}>
@@ -740,7 +767,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 2) {
+    } else if (product_id === 2) {
       return (
         <div className="pohutakawa">
           <Link to={`/productall/${product_id}`}>
@@ -754,7 +781,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 3) {
+    } else if (product_id === 3) {
       return (
         <div className="kowhai">
           <Link to={`/productall/${product_id}`}>
@@ -768,7 +795,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 4) {
+    } else if (product_id === 4) {
       return (
         <div className="CabbageTree">
           <Link to={`/productall/${product_id}`}>
@@ -782,7 +809,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 5) {
+    } else if (product_id === 5) {
       return (
         <div className="Apple">
           <Link to={`/productall/${product_id}`}>
@@ -796,7 +823,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 6) {
+    } else if (product_id === 6) {
       return (
         <div className="Feijoa">
           <Link to={`/productall/${product_id}`}>
@@ -810,7 +837,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 7) {
+    } else if (product_id === 7) {
       return (
         <div className="Lemon">
           <Link to={`/productall/${product_id}`}>
@@ -824,7 +851,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 8) {
+    } else if (product_id === 8) {
       return (
         <div className="Olive">
           <Link to={`/productall/${product_id}`}>
@@ -838,7 +865,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 9) {
+    } else if (product_id === 9) {
       return (
         <div className="BabyBlue">
           <Link to={`/productall/${product_id}`}>
@@ -852,7 +879,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 10) {
+    } else if (product_id === 10) {
       return (
         <div className="SwampP">
           <Link to={`/productall/${product_id}`}>
@@ -866,7 +893,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 11) {
+    } else if (product_id === 11) {
       return (
         <div className="MannaGum">
           <Link to={`/productall/${product_id}`}>
@@ -880,7 +907,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 12) {
+    } else if (product_id === 12) {
       return (
         <div className="RedStringy">
           <Link to={`/productall/${product_id}`}>
@@ -894,7 +921,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 13) {
+    } else if (product_id === 13) {
       return (
         <div className="UmbrellaPalm">
           <Link to={`/productall/${product_id}`}>
@@ -908,7 +935,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 14) {
+    } else if (product_id === 14) {
       return (
         <div className="PittINikau">
           <Link to={`/productall/${product_id}`}>
@@ -922,7 +949,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 15) {
+    } else if (product_id === 15) {
       return (
         <div className="Bamboo">
           <Link to={`/productall/${product_id}`}>
@@ -936,7 +963,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 16) {
+    } else if (product_id === 16) {
       return (
         <div className="PortLaurel">
           <Link to={`/productall/${product_id}`}>
@@ -950,7 +977,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 17) {
+    } else if (product_id === 17) {
       return (
         <div className="Olearia">
           <Link to={`/productall/${product_id}`}>
@@ -964,7 +991,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 18) {
+    } else if (product_id === 18) {
       return (
         <div className="SilverBirch">
           <Link to={`/productall/${product_id}`}>
@@ -978,7 +1005,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 19) {
+    } else if (product_id === 19) {
       return (
         <div className="MtFujiCherry">
           <Link to={`/productall/${product_id}`}>
@@ -992,7 +1019,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 20) {
+    } else if (product_id === 20) {
       return (
         <div className="EnglishOak">
           <Link to={`/productall/${product_id}`}>
@@ -1007,7 +1034,7 @@ export default class Items extends Component {
         </div>
       );
     }
-    if (product_id == 21) {
+    if (product_id === 21) {
       return (
         <div className="shovel">
           <Link to={`/productall/${product_id}`}>
@@ -1021,7 +1048,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 22) {
+    } else if (product_id === 22) {
       return (
         <div className="Rake">
           <Link to={`/productall/${product_id}`}>
@@ -1035,7 +1062,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 23) {
+    } else if (product_id === 23) {
       return (
         <div className="Hoe">
           <Link to={`/productall/${product_id}`}>
@@ -1050,7 +1077,7 @@ export default class Items extends Component {
         </div>
       );
     }
-    if (product_id == 30) {
+    if (product_id === 30) {
       return (
         <div className="Fertiliser">
           <Link to={`/productall/${product_id}`}>
@@ -1065,7 +1092,7 @@ export default class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 31) {
+    } else if (product_id === 31) {
       return (
         <div className="Bucket">
           <Link to={`/productall/${product_id}`}>
@@ -1083,3 +1110,23 @@ export default class Items extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Items);

@@ -3,11 +3,15 @@ import User from "../components/User";
 
 export default function Register() {
   return (
-    <div className="pagelayout">
-      <div className="register-page">
-        <p>Register to be able to buy our products</p>
-        <User></User>
+    <section id="section-cart" class="grid">
+      <div class="content-wrap">
+        <div>
+          <div>
+            <p>Register to be able to buy our products</p>
+            <User></User>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

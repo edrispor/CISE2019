@@ -140,25 +140,25 @@ export default class Product extends Component {
   }
 
   getimage(product_id) {
-    if (product_id == 1) {
+    if (product_id === 1) {
       return (
         <div className="kauri">
           <img src={Kauri} alt={cat} width="250px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 2) {
+    } else if (product_id === 2) {
       return (
         <div className="pohutakawa">
           <img src={Pohu} alt={cat} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 3) {
+    } else if (product_id === 3) {
       return (
         <div className="kowhai">
           <img src={Kowhai} alt={Kowhai} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 4) {
+    } else if (product_id === 4) {
       return (
         <div className="CabbageTree">
           <img
@@ -169,49 +169,49 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 5) {
+    } else if (product_id === 5) {
       return (
         <div className="Apple">
           <img src={Apple} alt={Apple} width="250px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 6) {
+    } else if (product_id === 6) {
       return (
         <div className="Feijoa">
           <img src={Feijoa} alt={Feijoa} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 7) {
+    } else if (product_id === 7) {
       return (
         <div className="Lemon">
           <img src={Lemon} alt={Lemon} width="300px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 8) {
+    } else if (product_id === 8) {
       return (
         <div className="Olive">
           <img src={Olive} alt={Olive} width="250px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 9) {
+    } else if (product_id === 9) {
       return (
         <div className="BabyBlue">
           <img src={BabyBlue} alt={BabyBlue} width="330px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 10) {
+    } else if (product_id === 10) {
       return (
         <div className="SwampP">
           <img src={SwampP} alt={SwampP} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 11) {
+    } else if (product_id === 11) {
       return (
         <div className="MannaGum">
           <img src={MannaGum} alt={MannaGum} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 12) {
+    } else if (product_id === 12) {
       return (
         <div className="RedStringy">
           <img
@@ -222,7 +222,7 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 13) {
+    } else if (product_id === 13) {
       return (
         <div className="UmbrellaPalm">
           <img
@@ -233,7 +233,7 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 14) {
+    } else if (product_id === 14) {
       return (
         <div className="PittINikau">
           <img
@@ -244,13 +244,13 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 15) {
+    } else if (product_id === 15) {
       return (
         <div className="Bamboo">
           <img src={Bamboo} alt={Bamboo} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 16) {
+    } else if (product_id === 16) {
       return (
         <div className="PortLaurel">
           <img
@@ -261,13 +261,13 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 17) {
+    } else if (product_id === 17) {
       return (
         <div className="Olearia">
           <img src={Olearia} alt={Olearia} width="350px" height="300px"></img>{" "}
         </div>
       );
-    } else if (product_id == 18) {
+    } else if (product_id === 18) {
       return (
         <div className="SilverBirch">
           <img
@@ -278,7 +278,7 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 19) {
+    } else if (product_id === 19) {
       return (
         <div className="MtFujiCherry">
           <img
@@ -289,7 +289,7 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 20) {
+    } else if (product_id === 20) {
       return (
         <div className="EnglishOak">
           <img
@@ -301,26 +301,26 @@ export default class Product extends Component {
         </div>
       );
     }
-    if (product_id == 21) {
+    if (product_id === 21) {
       return (
         <div className="shovel">
           <img src={Shovel} alt={cat} width="200px" height="150px"></img>
         </div>
       );
-    } else if (product_id == 22) {
+    } else if (product_id === 22) {
       return (
         <div className="Rake">
           <img src={Rake} alt={cat} width="200px" height="150px"></img>
         </div>
       );
-    } else if (product_id == 23) {
+    } else if (product_id === 23) {
       return (
         <div className="Hoe">
           <img src={Hoe} alt={cat} width="200px" height="150px"></img>
         </div>
       );
     }
-    if (product_id == 30) {
+    if (product_id === 30) {
       return (
         <div className="Fertiliser">
           <img
@@ -332,7 +332,7 @@ export default class Product extends Component {
           ></img>{" "}
         </div>
       );
-    } else if (product_id == 31) {
+    } else if (product_id === 31) {
       return (
         <div className="Bucket">
           <img
