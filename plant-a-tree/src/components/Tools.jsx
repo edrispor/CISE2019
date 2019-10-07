@@ -64,13 +64,50 @@ export default class Tools extends Component {
     });
 
     return (
-      <dix>
+      <div>
+        <div>
+          <h3>Filter by price.</h3>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.tools, "lowhigh")}
+          >
+            Sort from lowest to highest cost
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.tools, "highlow")}
+          >
+            Sort from highest to lowest cost
+          </button>
+        </div>
         <h1>All Tools</h1>
         <div className="gridcontainer">{tools}</div>
-      </dix>
+      </div>
     );
   }
-
+  sortPrice(toolsarray, condition) {
+    if (condition === "lowhigh") {
+      let a = toolsarray.sort(function(a, b) {
+        return parseFloat(a.product_price) - parseFloat(b.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ tools: a });
+    } else if (condition === "highlow") {
+      let a = toolsarray.sort(function(a, b) {
+        return parseFloat(b.product_price) - parseFloat(a.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ tools: a });
+    }
+  }
   importimages(product_id) {
     if (product_id == 21) {
       console.log(product_id);
