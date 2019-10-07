@@ -222,8 +222,8 @@ p3 {
 }
 
 .feature h1 {
-  font-size: 9rem;
-  height: 100px;
+  font-size: 150px;
+  height: 90px;
   color: var(--mainDarkGreen);
   text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
 }
@@ -236,7 +236,7 @@ p3 {
 }
 
 .feature p {
-  font-size: 2rem;
+  font-size: 33px;
   color: var(--darkBrown);
   background: rgba(116, 196, 63, 0.836);
   margin-bottom: 30px;
@@ -254,6 +254,7 @@ p3 {
   cursor: pointer;
   border-radius: 10px;
   background: rgba(243, 56, 50, 0.952);
+  font-size: 20px;
 }
 
 .btnsale:hover {
@@ -261,50 +262,68 @@ p3 {
   text-decoration: none;
 }
 
-/*@media screen and (max-width: 1200px) {
-  .feature {
-    background-size: 100%;
-  }
+@media screen and (max-width: 1300px) and (min-width: 1155px) {
   .feature h1 {
-    font-size: 50px;
-    height: 70px;
-    color: var(--mainDarkGreen);
-    text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
+    font-size: 90px;
+    height: 40px;
   }
 
   .feature div {
     width: 5rem;
-    height: 80px;
-    color: var(--mainBlack);
-    margin: 1.7rem auto;
+    height: 50px;
   }
 
   .feature p {
-    font-size: 2rem;
-    color: var(--darkBrown);
-    background: rgba(116, 196, 63, 0.836);
-    margin-bottom: 30px;
+    font-size: 20px;
   }
 
   .btnsale {
-    display: inline-block;
-    text-decoration: none;
-    letter-spacing: var(--mainSpacing);
-    padding: 0.4rem 0.9rem;
-    color: var(--mainPinky);
-    border: 3px solid var(--darkBrown);
-    border-color: initial;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 10px;
-    background: rgba(243, 56, 50, 0.952);
+    padding: 0.1rem 0.7rem;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  .feature h1 {
+    font-size: 50px;
+    height: 25px;
   }
 
-  .btnsale:hover {
-    color: var(--mainCream);
-    text-decoration: none;
+  .feature div {
+    width: 2.5rem;
+    height: 30px;
   }
-}*/
+
+  .feature p {
+    font-size: 15px;
+  }
+
+  .btnsale {
+    padding: 0.1rem 0.7rem;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .feature h1 {
+    font-size: 25px;
+    height: 5px;
+  }
+
+  .feature div {
+    width: 2rem;
+    height: 5px;
+  }
+
+  .feature p {
+    font-size: 10px;
+  }
+
+  .btnsale {
+    padding: 0.1rem 0.7rem;
+    font-size: 10px;
+  }
+}
 
 /* Footer section */
 .footer {
@@ -369,6 +388,8 @@ p3 {
   text-align: center;
   background-color: var(--secondCream);
   bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .copyright p {
@@ -458,7 +479,6 @@ p2 {
 
 .gridcontainer {
   display: grid;
-  /*grid-template-columns: 1fr 1fr 1fr;*/
   grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-gap: 50px;
 }
