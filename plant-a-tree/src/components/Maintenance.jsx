@@ -40,15 +40,7 @@ export default class Maintenance extends Component {
         <li key={maintain.product_id} maintain={maintain}>
           <div wrap="true" className="itemwrap">
             <div className="itemimg">
-              <Link to={`/product/${maintain.product_id}`}>
-                <img
-                  src={"../images/bucket.jpg"}
-                  alt={Fertiliser}
-                  width="130px"
-                  height="150px"
-                  onClick={() => this.onclickproduct(maintain.product_id)}
-                ></img>{" "}
-              </Link>
+              {this.importimages(maintain.product_id)}
             </div>
             <div className="item">
               <div className="itemdetails">
