@@ -3,17 +3,33 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";
-import cat from "../images/cat.jpeg";
+import { connect } from "react-redux";
+import { addToCart } from "./actions/cartActions";
+import { Prompt } from "react-router-dom";
 
-export default class Maintenance extends Component {
+class Maintenance extends Component {
   constructor() {
     super();
     this.state = {
-      maintenance: []
+      maintenance: [],
+      shouldBlockNavigation: false
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
   }
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+      this.setState({ shouldBlockNavigation: true });
+      window.history.back();
+      window.location.href = "/login";
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getMaintenance();
@@ -53,9 +69,15 @@ export default class Maintenance extends Component {
                   color="#F4FF77"
                   radius="50px"
                   class="btnitem"
+                  onClick={() => this.handleClick(maintain.product_id)}
                 >
                   Add To Cart
                 </button>
+                <Prompt
+                  key="block-nav"
+                  when={this.state.shouldBlockNavigation}
+                  message="Please Login to add to cart"
+                />
               </div>
             </div>
           </div>{" "}
@@ -141,3 +163,23 @@ export default class Maintenance extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Maintenance);

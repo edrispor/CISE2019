@@ -42,7 +42,8 @@ class Items extends Component {
     super(props);
     this.state = {
       items: [],
-      itemsClone: []
+      itemsClone: [],
+      shouldBlockNavigation: false
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
