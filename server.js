@@ -15,9 +15,10 @@ const SELECT_ALL_TREES_QUERY = "SELECT * FROM trees";
 const SELECT_ALL_TOOLS_QUERY = "SELECT * FROM tools";
 const SELECT_ALL_MAINTENANCE_QUERY = "SELECT * FROM garden_main";
 const SELECT_ALL_USER_QUERY = "SELECT * FROM users";
+//const SELECT_All_TABLES_QUERY =
+// "SELECT a.product_id,a.product_name,a.product_price FROM trees a union all SELECT b.product_id,b.product_name,b.product_price FROM tools b union all SELECT c.product_id,c.product_name,c.product_price FROM garden_main c;";
 const SELECT_All_TABLES_QUERY =
-  "SELECT a.product_id,a.product_name,a.product_price FROM trees a union all SELECT b.product_id,b.product_name,b.product_price FROM tools b union all SELECT c.product_id,c.product_name,c.product_price FROM garden_main c;";
-
+  "SELECT a.product_id,a.product_name,a.latin_name,a.QOH,a.description,a.product_price,a.maintenaince,a.tree_type,a.sunlight,a.soil_drainage,a.growth_rate,a.height FROM trees a UNION ALL SELECT b.product_id,b.product_name,b.latin_name,b.QOH,b.description,b.product_price,b.maintenaince,b.tree_type,b.sunlight,b.soil_drainage,b.growth_rate,b.height FROM tools b UNION ALL SELECT c.product_id,c.product_name,c.latin_name,c.QOH,c.description,c.product_price,c.maintenaince,c.tree_type,c.sunlight,c.soil_drainage,c.growth_rate,c.height FROM garden_main c;";
 let pool = mysql.createPool({
   connectionLimit: 10,
   host: "us-cdbr-iron-east-02.cleardb.net",
