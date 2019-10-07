@@ -53,7 +53,7 @@ export default class Product_All extends Component {
     const { items } = this.state;
 
     const listAll = items.map(item => (
-      <li key={item.product_id}>
+      <li key={item.product_id} className="itemlist">
         <div className="pagelayout">
           <Link to="/">Home </Link>
           <Link to="/items">> All Products</Link>

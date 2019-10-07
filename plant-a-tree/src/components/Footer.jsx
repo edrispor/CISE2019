@@ -33,6 +33,10 @@ export default class Footer extends Component {
             </div>
           </div>
         </div>
+        <div className="copyright">
+          <p>@ Copyright Plant-A-Tree. All Rights Reserved</p>
+          <p>Designed by Terra-Byte</p>
+        </div>
       </footer>
     );
   }

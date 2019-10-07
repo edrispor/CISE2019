@@ -92,7 +92,7 @@ export default class Product extends Component {
     const { maintenance } = this.state;
 
     const listTools = tools.map(tool => (
-      <li key={tool.product_id}>
+      <li key={tool.product_id} className="itemlist">
         <div className="pagelayout">
           <Link to="/">Home </Link>
           <Link to="/items/tools">> All Tools</Link>
@@ -117,7 +117,7 @@ export default class Product extends Component {
     ));
 
     const listTrees = trees.map(tree => (
-      <li key={tree.product_id}>
+      <li key={tree.product_id} className="itemlist">
         <div className="pagelayout">
           <Link to="/">Home </Link>
           <Link to="/items/trees">> All Trees</Link>
@@ -150,7 +150,7 @@ export default class Product extends Component {
     ));
 
     const listMaintenance = maintenance.map(maintain => (
-      <li key={maintain.product_id}>
+      <li key={maintain.product_id} className="itemlist">
         <div className="pagelayout">
           <Link to="/">Home </Link>
           <Link to="/items">> All Garden Maintenance</Link>
