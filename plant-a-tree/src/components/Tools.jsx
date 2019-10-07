@@ -4,16 +4,34 @@ import Rake from "../images/rake.jpeg";
 import Hoe from "../images/hoe.jpeg";
 import cat from "../images/cat.jpeg";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { addToCart } from "./actions/cartActions";
+import { Prompt } from "react-router-dom";
 
-export default class Tools extends Component {
+class Tools extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tools: []
+      tools: [],
+      shouldBlockNavigation: false
     };
     this.importimages = this.importimages.bind(this);
     this.onclickproduct = this.onclickproduct.bind(this);
   }
+
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+      this.setState({ shouldBlockNavigation: true });
+      window.history.back();
+      window.location.href = "/login";
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getTools();
@@ -53,9 +71,15 @@ export default class Tools extends Component {
                   color="#F4FF77"
                   radius="50px"
                   class="btnitem"
+                  onClick={() => this.handleClick(tool.product_id)}
                 >
                   Add To Cart
                 </button>
+                <Prompt
+                  key="block-nav"
+                  when={this.state.shouldBlockNavigation}
+                  message="Please Login to add to cart"
+                />
               </div>
             </div>
           </div>
@@ -64,15 +88,52 @@ export default class Tools extends Component {
     });
 
     return (
-      <dix>
+      <div>
+        <div>
+          <h3>Filter by price.</h3>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.tools, "lowhigh")}
+          >
+            Sort from lowest to highest cost
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.tools, "highlow")}
+          >
+            Sort from highest to lowest cost
+          </button>
+        </div>
         <h1>All Tools</h1>
         <div className="gridcontainer">{tools}</div>
-      </dix>
+      </div>
     );
   }
-
+  sortPrice(toolsarray, condition) {
+    if (condition === "lowhigh") {
+      let a = toolsarray.sort(function(a, b) {
+        return parseFloat(a.product_price) - parseFloat(b.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ tools: a });
+    } else if (condition === "highlow") {
+      let a = toolsarray.sort(function(a, b) {
+        return parseFloat(b.product_price) - parseFloat(a.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ tools: a });
+    }
+  }
   importimages(product_id) {
-    if (product_id == 21) {
+    if (product_id === 21) {
       console.log(product_id);
 
       return (
@@ -88,7 +149,7 @@ export default class Tools extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 22) {
+    } else if (product_id === 22) {
       return (
         <div classname="Rake">
           <Link to={`/product/${product_id}`}>
@@ -102,7 +163,7 @@ export default class Tools extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 23) {
+    } else if (product_id === 23) {
       return (
         <div classname="Hoe">
           <Link to={`/product/${product_id}`}>
@@ -119,3 +180,23 @@ export default class Tools extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Tools);

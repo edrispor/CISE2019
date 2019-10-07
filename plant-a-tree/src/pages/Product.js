@@ -117,60 +117,27 @@ export default class Product extends Component {
     ));
 
     const listTrees = trees.map(tree => (
-      <li key={tree.product_id} className="itemlist">
-        <div className="pagelayout">
-          <Link to="/">Home </Link>
-          <Link to="/items/trees">> All Trees</Link>
-          <p>> {tree.product_name}</p>
-          <div className="specific-tree-page">
-            <div align="center">{this.getimage(tree.product_id)}</div>
-            <div className="itemdetails">
-              <h1>{tree.product_name}</h1>
-              <h4>{tree.latin_name}</h4>
-              <p>{tree.description}</p>
-              <ul>
-                <li>{tree.tree_type}</li>
-                <li>Sunlight needed: {tree.sunlight}</li>
-                <li>Max mature height: {tree.height}</li>
-                <li>Growth rate: {tree.growth_rate}</li>
-              </ul>
-              <h2>${tree.product_price}</h2>
-              <button
-                width="135px"
-                color="#F4FF77"
-                radius="50px"
-                class="btnitem"
-              >
-                Add To Cart
-              </button>
-            </div>
-          </div>
-        </div>
+      <li key={tree.product_id}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div>this is image {this.getimage(tree.product_id)}</div>
+        <p>name : {tree.product_id}</p>
+        <p>name : {tree.product_name}</p>
+        <p>description "{tree.description}</p>
       </li>
     ));
 
     const listMaintenance = maintenance.map(maintain => (
-      <li key={maintain.product_id} className="itemlist">
-        <div className="pagelayout">
-          <Link to="/">Home </Link>
-          <Link to="/items">> All Garden Maintenance</Link>
-          <p>> {maintain.product_name}</p>
-          <div className="specific-tree-page">
-            <div align="center">{this.getimage(maintain.product_id)}</div>
-            <div className="itemdetails">
-              <h1>{maintain.product_name}</h1>
-              <p>{maintain.description}</p>
-              <button
-                width="135px"
-                color="#F4FF77"
-                radius="50px"
-                class="btnitem"
-              >
-                Add To Cart
-              </button>
-            </div>
-          </div>
-        </div>
+      <li key={maintain.product_id}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <div>this is image {this.getimage(maintain.product_id)}</div>
+        <p>name : {maintain.product_name}</p>
+        <p>description "{maintain.description}</p>
       </li>
     ));
 
@@ -186,7 +153,7 @@ export default class Product extends Component {
   }
 
   getimage(product_id) {
-    if (product_id == 1) {
+    if (product_id === 1) {
       return (
         <div className="kauri">
           <div className="itemdetails">
@@ -194,7 +161,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 2) {
+    } else if (product_id === 2) {
       return (
         <div className="pohutakawa">
           <div className="itemdetails">
@@ -202,7 +169,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 3) {
+    } else if (product_id === 3) {
       return (
         <div className="kowhai">
           <div className="itemdetails">
@@ -210,7 +177,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 4) {
+    } else if (product_id === 4) {
       return (
         <div className="CabbageTree">
           <div className="itemdetails">
@@ -223,7 +190,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 5) {
+    } else if (product_id === 5) {
       return (
         <div className="Apple">
           <div className="itemdetails">
@@ -231,7 +198,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 6) {
+    } else if (product_id === 6) {
       return (
         <div className="Feijoa">
           <div className="itemdetails">
@@ -239,7 +206,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 7) {
+    } else if (product_id === 7) {
       return (
         <div className="Lemon">
           <div className="itemdetails">
@@ -247,7 +214,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 8) {
+    } else if (product_id === 8) {
       return (
         <div className="Olive">
           <div className="itemdetails">
@@ -255,7 +222,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 9) {
+    } else if (product_id === 9) {
       return (
         <div className="BabyBlue">
           <div className="itemdetails">
@@ -268,7 +235,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 10) {
+    } else if (product_id === 10) {
       return (
         <div className="SwampP">
           <div className="itemdetails">
@@ -276,7 +243,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 11) {
+    } else if (product_id === 11) {
       return (
         <div className="MannaGum">
           <div className="itemdetails">
@@ -289,7 +256,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 12) {
+    } else if (product_id === 12) {
       return (
         <div className="RedStringy">
           <div className="itemdetails">
@@ -302,7 +269,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 13) {
+    } else if (product_id === 13) {
       return (
         <div className="UmbrellaPalm">
           <div className="itemdetails">
@@ -315,7 +282,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 14) {
+    } else if (product_id === 14) {
       return (
         <div className="PittINikau">
           <div className="itemdetails">
@@ -328,7 +295,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 15) {
+    } else if (product_id === 15) {
       return (
         <div className="Bamboo">
           <div className="itemdetails">
@@ -336,7 +303,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 16) {
+    } else if (product_id === 16) {
       return (
         <div className="PortLaurel">
           <div className="itemdetails">
@@ -349,7 +316,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 17) {
+    } else if (product_id === 17) {
       return (
         <div className="Olearia">
           <div className="itemdetails">
@@ -357,7 +324,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 18) {
+    } else if (product_id === 18) {
       return (
         <div className="SilverBirch">
           <div className="itemdetails">
@@ -370,7 +337,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 19) {
+    } else if (product_id === 19) {
       return (
         <div className="MtFujiCherry">
           <div className="itemdetails">
@@ -383,7 +350,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 20) {
+    } else if (product_id === 20) {
       return (
         <div className="EnglishOak">
           <div className="itemdetails">
@@ -397,7 +364,7 @@ export default class Product extends Component {
         </div>
       );
     }
-    if (product_id == 21) {
+    if (product_id === 21) {
       return (
         <div className="shovel">
           <div className="itemdetails">
@@ -405,7 +372,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 22) {
+    } else if (product_id === 22) {
       return (
         <div className="Rake">
           <div className="itemdetails">
@@ -413,7 +380,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 23) {
+    } else if (product_id === 23) {
       return (
         <div className="Hoe">
           <div className="itemdetails">
@@ -422,7 +389,7 @@ export default class Product extends Component {
         </div>
       );
     }
-    if (product_id == 30) {
+    if (product_id === 30) {
       return (
         <div className="Fertiliser">
           <div className="itemdetails">
@@ -436,7 +403,7 @@ export default class Product extends Component {
           </div>
         </div>
       );
-    } else if (product_id == 31) {
+    } else if (product_id === 31) {
       return (
         <div className="Bucket">
           <div className="itemdetails">
