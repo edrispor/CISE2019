@@ -102,6 +102,7 @@ export default class Product extends Component {
             <div className="itemdetails">
               <h1>{tool.product_name}</h1>
               <p>{tool.description}</p>
+              <h2>${tool.product_price}</h2>
               <button
                 width="135px"
                 color="#F4FF77"
@@ -117,20 +118,62 @@ export default class Product extends Component {
     ));
 
     const listTrees = trees.map(tree => (
-      <li key={tree.product_id}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(tree.product_id)}</div>
-        <p>name : {tree.product_id}</p>
-        <p>name : {tree.product_name}</p>
-        <p>description "{tree.description}</p>
+      <li key={tree.product_id} className="itemlist">
+        <div className="pagelayout">
+          <Link to="/">Home </Link>
+          <Link to="/items/trees">> All Trees and Hedges</Link>
+          <p>> {tree.product_name}</p>
+          <div className="specific-tree-page">
+            <div align="center">{this.getimage(tree.product_id)}</div>
+            <div className="itemdetails">
+              <h1>{tree.product_name}</h1>
+              <h4>{tree.latin_name}</h4>
+              <p>{tree.description}</p>
+              <ul>
+                <li>{tree.tree_type}</li>
+                <li>Sunlight needed: {tree.sunlight}</li>
+                <li>Max mature height: {tree.height}</li>
+                <li>Growth rate: {tree.height}</li>
+              </ul>
+              <h2>${tree.product_price}</h2>
+              <button
+                width="135px"
+                color="#F4FF77"
+                radius="50px"
+                class="btnitem"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
       </li>
     ));
 
     const listMaintenance = maintenance.map(maintain => (
       <li key={maintain.product_id}>
+        <div className="pagelayout">
+          <Link to="/">Home </Link>
+          <Link to="/items/maintenance">> All Garden Maintenance</Link>
+          <p>> {maintain.product_name}</p>
+          <div className="specific-tree-page">
+            <div align="center">{this.getimage(maintain.product_id)}</div>
+            <div className="itemdetails">
+              <h1>{maintain.product_name}</h1>
+              <p>{maintain.description}</p>
+              <h2>${maintain.product_price}</h2>
+              <button
+                width="135px"
+                color="#F4FF77"
+                radius="50px"
+                class="btnitem"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
         <br></br>
         <br></br>
         <br></br>

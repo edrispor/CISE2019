@@ -25,6 +25,11 @@ const Navlinks = () => {
         </Link>
       </li>
       <li>
+        <Link to="/account/cart" className="link">
+          Cart
+        </Link>
+      </li>
+      <li>
         <Link to="/account" className="link">
           {localStorage.getItem("user")}
         </Link>

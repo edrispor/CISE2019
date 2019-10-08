@@ -89,26 +89,24 @@ class Tools extends Component {
 
     return (
       <div>
-        <div>
-          <h3>Filter by price.</h3>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.tools, "lowhigh")}
-          >
-            Sort from lowest to highest cost
-          </button>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.tools, "highlow")}
-          >
-            Sort from highest to lowest cost
-          </button>
+        <div className="filternavbar">
+          <div className="dropdown">
+            <button className="dropbtn">Sort</button>
+            <div className="dropdown-content">
+              <a
+                href="#"
+                onClick={() => this.sortPrice(this.state.tools, "lowhigh")}
+              >
+                Low to high
+              </a>
+              <a
+                href="#"
+                onClick={() => this.sortPrice(this.state.tools, "highlow")}
+              >
+                High to low
+              </a>
+            </div>
+          </div>
         </div>
         <h1>All Tools</h1>
         <div className="gridcontainer">{tools}</div>

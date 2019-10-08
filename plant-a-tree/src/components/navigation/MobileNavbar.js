@@ -21,7 +21,7 @@ const MyMobileNavbar = styled.nav`
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
-    height: 20vh;
+    height: 24vh;
   }
 
   .nav-links2 li a:active,

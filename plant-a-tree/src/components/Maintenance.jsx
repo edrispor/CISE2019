@@ -86,31 +86,33 @@ class Maintenance extends Component {
     });
 
     return (
-      <section>
-        <div>
-          <h3>Filter by price.</h3>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.maintenance, "lowhigh")}
-          >
-            Sort from lowest to highest cost
-          </button>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.maintenance, "highlow")}
-          >
-            Sort from highest to lowest cost
-          </button>
+      <div>
+        <div className="filternavbar">
+          <div className="dropdown">
+            <button className="dropbtn">Sort</button>
+            <div className="dropdown-content">
+              <a
+                href="#"
+                onClick={() =>
+                  this.sortPrice(this.state.maintenance, "lowhigh")
+                }
+              >
+                Low to high
+              </a>
+              <a
+                href="#"
+                onClick={() =>
+                  this.sortPrice(this.state.maintenance, "highlow")
+                }
+              >
+                High to low
+              </a>
+            </div>
+          </div>
         </div>
         <h1>All Garden Maintenance</h1>
-        <div className="gridcontainer">{maintenance}</div>
-      </section>
+        <div className="gridcontainer">{maintenance}</div>{" "}
+      </div>
     );
   }
   sortPrice(maintenancearray, condition) {

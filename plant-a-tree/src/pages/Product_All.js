@@ -63,6 +63,7 @@ export default class Product_All extends Component {
             <div className="itemdetails">
               <h1>{item.product_name}</h1>
               <p>{item.description}</p>
+              <h2>${item.product_price}</h2>
               <button
                 width="135px"
                 color="#F4FF77"
