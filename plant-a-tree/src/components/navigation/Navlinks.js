@@ -3,24 +3,35 @@ import { Link } from "react-router-dom";
 
 const redUrl = () => {
   if (
-    localStorage.getItem("user") !== "Not logged in" ||
+    localStorage.getItem("user") === "Not logged in" ||
     localStorage.getItem("user") === null
   ) {
-    alert("you are already logged in");
-  } else {
     window.location.assign("/login");
+  } else {
+    alert("you are already logged in");
   }
 };
 const redUrlReg = () => {
   if (
-    localStorage.getItem("user") !== "Not logged in" ||
+    localStorage.getItem("user") === "Not logged in" ||
     localStorage.getItem("user") === null
   ) {
-    alert("you are already logged in");
-  } else {
     window.location.assign("/register");
+  } else {
+    alert("you are already logged in");
   }
 };
+const redUrlAcc = () => {
+  if (
+    localStorage.getItem("user") === "Not logged in" ||
+    localStorage.getItem("user") === null
+  ) {
+    alert("Please login to continue");
+  } else {
+    window.location.assign("/account");
+  }
+};
+
 const Navlinks = () => {
   return (
     <ul className="nav-links2">
@@ -50,7 +61,7 @@ const Navlinks = () => {
         </Link>
       </li>
       <li>
-        <Link to="/account" className="link">
+        <Link onClick={redUrlAcc} className="link">
           {localStorage.getItem("user")}
         </Link>
       </li>
