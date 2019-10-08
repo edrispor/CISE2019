@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import Fertiliser from "../images/fertiliser.jpg";
-import Bucket from "../images/bucket.jpg";
+import Organic_Fertilizer from "../GardenMainImages/organic_fertilizer.jpg";
+import Organic_Potting_Mix from "../GardenMainImages/organic_potting_mix.jpg";
+import Neem_Oil from "../GardenMainImages/Neem.jpg";
+import Garden_Hose from "../GardenMainImages/garden_hose.jpg";
+import Watering_Can from "../GardenMainImages/watering_can.jpg";
+import Hose_Nozzle from "../GardenMainImages/hose_nozzle.jpg";
+import Nematodes from "../GardenMainImages/nematodes.jpg";
+import Self_Watering_Mix from "../GardenMainImages/self_watering_mix.jpg";
+import Mix_Kit from "../GardenMainImages/mix_kit.jpg";
+import cat from "../images/cat.jpeg";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
 import { Prompt } from "react-router-dom";
@@ -136,11 +144,11 @@ class Maintenance extends Component {
   importimages(product_id) {
     if (product_id === 30) {
       return (
-        <div className="Fertiliser">
+        <div className="Organic_Fertilizer">
           <Link to={`/product/${product_id}`}>
             <img
-              src={Fertiliser}
-              alt={Fertiliser}
+              src={Organic_Fertilizer}
+              alt={cat}
               width="130px"
               height="150px"
               onClick={() => this.onclickproduct(product_id)}
@@ -150,11 +158,109 @@ class Maintenance extends Component {
       );
     } else if (product_id === 31) {
       return (
-        <div className="Bucket">
+        <div className="Mix_Kit">
           <Link to={`/product/${product_id}`}>
             <img
-              src={Bucket}
-              alt={Bucket}
+              src={Mix_Kit}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 32) {
+      return (
+        <div className="Self_Watering_Mix">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Self_Watering_Mix}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 33) {
+      return (
+        <div className="Organic_Potting_Mix">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Organic_Potting_Mix}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 34) {
+      return (
+        <div className="Neem_Oil">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Neem_Oil}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 35) {
+      return (
+        <div className="Garden_Hose">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Garden_Hose}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 36) {
+      return (
+        <div className="Watering_Can">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Watering_Can}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 37) {
+      return (
+        <div className="Hose_Nozzle">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Hose_Nozzle}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 38) {
+      return (
+        <div className="Nematodes">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Nematodes}
+              alt={cat}
               width="200px"
               height="150px"
               onClick={() => this.onclickproduct(product_id)}
