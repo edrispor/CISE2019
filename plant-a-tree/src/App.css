@@ -3,6 +3,7 @@
   --mainGreen: #5cb548;
   --darkBrown: #572f14;
   --mainCream: #fcf7d6;
+  --secondCream: #f8efb4;
   --mainBlue: #659dbd;
   --mainDarkGreen: #19bd19;
   --mainPinky: #daad86;
@@ -52,27 +53,22 @@ p3 {
   color: green;
 }
 
-.gridcontainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
-}
-
-/* Pages start */
-.home-page {
-  background-color: var(--mainWhite);
-  padding-top: 60px;
+.pagelayout {
   padding-left: 243px;
   padding-right: 243px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - 66px);
   align-items: center;
   justify-content: center;
 }
 
-.pagelayout {
-  padding-top: 60px;
-  padding-left: 243px;
-  padding-right: 243px;
-  min-height: calc(100vh - 66px);
+@media screen and (max-width: 768px) {
+  .pagelayout {
+    padding-top: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }
 
 /*Register page*/
@@ -109,7 +105,7 @@ p3 {
   }
 }
 
-/*Navbar section*/
+/*Navbar section
 .header-section {
   display: grid;
   position: relative;
@@ -118,7 +114,6 @@ p3 {
   left: 0;
   height: 140px;
   width: 100%;
-
   flex-wrap: wrap;
   align-items: center;
 }
@@ -174,12 +169,17 @@ p3 {
   width: 100%;
   background: var(--darkBrown);
 }
+/*height: 7vh;*/
 
 .main-menu {
   display: flex;
   list-style-type: none;
-  margin: 0;
 }
+/*  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: auto;*
 
 .main-menu li {
   display: inline-block;
@@ -209,6 +209,60 @@ p3 {
   top: 20px;
   right: 250px;
   width: 50%;
+}*/
+
+.filternavbar {
+  overflow: hidden;
+  background-color: var(--mainDarkGreen);
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropdown:hover .dropbtn {
+  background-color: var(--mainBlue);
+}
+
+.dropdown-content {
+  display: none;
+  position: relative;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  text-decoration: none;
 }
 
 /* Feature Section */
@@ -219,11 +273,12 @@ p3 {
   text-align: center;
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
+  z-index: auto;
 }
 
 .feature h1 {
-  font-size: 10rem;
-  height: 100px;
+  font-size: 150px;
+  height: 90px;
   color: var(--mainDarkGreen);
   text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
 }
@@ -236,7 +291,7 @@ p3 {
 }
 
 .feature p {
-  font-size: 2rem;
+  font-size: 33px;
   color: var(--darkBrown);
   background: rgba(116, 196, 63, 0.836);
   margin-bottom: 30px;
@@ -254,6 +309,7 @@ p3 {
   cursor: pointer;
   border-radius: 10px;
   background: rgba(243, 56, 50, 0.952);
+  font-size: 20px;
 }
 
 .btnsale:hover {
@@ -261,40 +317,176 @@ p3 {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1300px) and (min-width: 1155px) {
+  .feature h1 {
+    font-size: 90px;
+    height: 40px;
+  }
+
+  .feature div {
+    width: 5rem;
+    height: 50px;
+  }
+
+  .feature p {
+    font-size: 20px;
+  }
+
+  .btnsale {
+    padding: 0.1rem 0.7rem;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  .feature h1 {
+    font-size: 50px;
+    height: 25px;
+  }
+
+  .feature div {
+    width: 2.5rem;
+    height: 30px;
+  }
+
+  .feature p {
+    font-size: 15px;
+  }
+
+  .btnsale {
+    padding: 0.1rem 0.7rem;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .feature h1 {
+    font-size: 25px;
+    height: 5px;
+  }
+
+  .feature div {
+    width: 2rem;
+    height: 5px;
+  }
+
+  .feature p {
+    font-size: 10px;
+  }
+
+  .btnsale {
+    padding: 0.1rem 0.7rem;
+    font-size: 10px;
+  }
+}
+
 /* Footer section */
-.f-center {
+.footer {
   position: relative;
-  bottom: 0;
   background-color: var(--mainCream);
-  height: 180px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: auto;
+  height: 155px;
+
   padding-left: 300px;
   padding-right: 200px;
 }
 
-.f-center h1 {
+.column {
+  width: 300px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+  text-align: center;
+}
+
+.column h1 {
+  margin: 0;
+  padding: 0;
   font-size: 25px;
-  margin-top: 25px;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
   color: var(--mainDarkGreen);
+  margin-top: 15px;
 }
 
-.f-center p {
+.column ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: var(--mainPinky);
+}
+.column ul li {
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+}
+
+.footer a {
   color: var(--mainPinky);
 }
 
-.f-center a {
-  font-size: 17px;
-  color: var(--mainPinky);
-}
-
-.f-center a:hover {
+.footer a:hover {
   text-decoration: none;
   color: rgba(51, 49, 18, 0.5);
 }
 
-/*Item pages section*/
+.copyright {
+  text-align: center;
+  background-color: var(--secondCream);
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+.copyright p {
+  color: var(--mainPinky);
+}
+
+@media screen and (min-width: 1057px) and (max-width: 1420px) {
+  .footer {
+    height: 300px;
+    padding-left: 240px;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1057px) {
+  .footer {
+    height: 470px;
+    padding-left: 240px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 800px) {
+  .footer {
+    height: 470px;
+    padding-left: 135px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 575px) {
+  .footer {
+    height: 470px;
+    padding-left: 90px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer {
+    height: 470px;
+    padding-left: 35px;
+  }
+}
+
+/*Item pages section*/
 p1 {
   font-size: 15px;
   margin: 10px 0px;
@@ -339,29 +531,43 @@ p2 {
 
 /*end of payment page css*/
 
-/*.itemwrap {
+.itemwrap {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  align-items: center;
-  margin-top: 55px;
-  padding: 0px 25px;
+  list-style-type: none;
+  margin: 0;
 }
 
-.item {
-  justify-content: space-evenly;
-  align-items: center;
-  flex-basis: 40%;
-  flex-wrap: nowrap;
-  margin: 1.5%;
-  background: var(--mainPinky);
-  border-radius: 10px;
-}*/
+.product-menu li {
+  display: inline-block;
+  position: relative;
+}
+
+.product-menu li a {
+  display: inline-block;
+  font-size: 20px;
+  color: black;
+  margin-right: 70px;
+  line-height: 1;
+  padding: 17px 0;
+  position: relative;
+}
+
+.product-menu a:active,
+.product-menu a:hover,
+.product-menu a.active {
+  color: var(--mainPinky);
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .product-menu {
+    display: block;
+  }
+}
 
 .gridcontainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-gap: 50px;
 }
 
@@ -406,18 +612,15 @@ p2 {
   border-radius: 30px;
 }
 
-/*.treesgrid {
-  display: grid;
+.itemlist {
   list-style-type: none;
-  grid-gap: 50px 100px;
-
-  The box aligns contents in the center, dividing any extra space equally between the start and the end.
 }
 
-.treesgrid li {
+.filterbuttons {
   display: grid;
-  position: relative;
-}*/
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 50px;
+}
 
 /* Cart Page */
 .cartempty {
@@ -440,7 +643,8 @@ h4 {
 
 .specific-tree-page {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr;*/
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-gap: 0px;
 }
 

@@ -61,7 +61,7 @@ export default class Navbar extends Component {
                 <Link to="/items">Browse</Link>
               </li>
               <li>
-                <Link to="/account">Account</Link>
+                <Link to="/sales">Sale</Link>
               </li>
               <li>
                 <Link to="/account/favourites">Favourites</Link>

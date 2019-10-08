@@ -27,6 +27,8 @@ import Tree from "./pages/Tree";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
+import Navbar2 from "./components/navigation/Navbar2";
+
 import NZKauri from "./treepages/NZkauri";
 import ForgetPW from "./pages/ForgetPw";
 import MtFuji from "./treepages/MtFujiCherry";
@@ -36,7 +38,8 @@ import Sales from "./pages/Sales";
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar2 />
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
