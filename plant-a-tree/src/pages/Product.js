@@ -222,9 +222,9 @@ class Product extends Component {
 
     if (tempid >= 1 && tempid <= 20) {
       return <div>{listTrees[localStorage.getItem("treeID")]}</div>;
-    } else if (tempid >= 21 && tempid <= 23) {
+    } else if (tempid >= 21 && tempid <= 29) {
       return <div>{listTools[localStorage.getItem("toolID")]}</div>;
-    } else if (tempid >= 30 && tempid <= 31) {
+    } else if (tempid >= 30 && tempid <= 39) {
       return (
         <div>{listMaintenance[localStorage.getItem("maintenanceID")]}</div>
       );
