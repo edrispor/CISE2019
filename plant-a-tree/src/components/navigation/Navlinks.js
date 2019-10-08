@@ -1,6 +1,26 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+const redUrl = () => {
+  if (
+    localStorage.getItem("user") !== "Not logged in" ||
+    localStorage.getItem("user") === null
+  ) {
+    alert("you are already logged in");
+  } else {
+    window.location.assign("/login");
+  }
+};
+const redUrlReg = () => {
+  if (
+    localStorage.getItem("user") !== "Not logged in" ||
+    localStorage.getItem("user") === null
+  ) {
+    alert("you are already logged in");
+  } else {
+    window.location.assign("/register");
+  }
+};
 const Navlinks = () => {
   return (
     <ul className="nav-links2">
@@ -15,12 +35,12 @@ const Navlinks = () => {
         </Link>
       </li>
       <li>
-        <Link to="/login" className="link">
+        <Link onClick={redUrl} className="link">
           Login
         </Link>
       </li>
       <li>
-        <Link to="/register" className="link">
+        <Link onClick={redUrlReg} className="link">
           Register
         </Link>
       </li>
