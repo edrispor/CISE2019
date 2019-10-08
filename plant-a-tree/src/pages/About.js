@@ -10,8 +10,8 @@ export default function About() {
         <img
           src={GroupPhoto}
           alt="Group Photo Placeholder"
-          width="500"
-          height="370"
+          width="345"
+          height="280"
         />
         <br />
         <br />

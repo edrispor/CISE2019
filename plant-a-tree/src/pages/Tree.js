@@ -7,7 +7,7 @@ export default function Tree() {
       <Link to="/">Home</Link>
       <p> > All Trees</p>
       <h3>Links</h3>
-      <ul>
+      <ul className="product-menu">
         <li>
           <Link to="/items/tools">Tools Page</Link>
         </li>

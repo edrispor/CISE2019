@@ -9,16 +9,34 @@ import Transplanter from "../ToolImages/transplanter.jpg";
 import Weeder from "../ToolImages/weeder.jpg";
 import cat from "../images/cat.jpeg";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { addToCart } from "./actions/cartActions";
+import { Prompt } from "react-router-dom";
 
-export default class Tools extends Component {
+class Tools extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tools: []
+      tools: [],
+      shouldBlockNavigation: false
     };
     this.importimages = this.importimages.bind(this);
     this.onclickproduct = this.onclickproduct.bind(this);
   }
+
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+      this.setState({ shouldBlockNavigation: true });
+      window.history.back();
+      window.location.href = "/login";
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getTools();
@@ -44,7 +62,7 @@ export default class Tools extends Component {
     console.log(tools);
     tools = tools.map(tool => {
       return (
-        <li key={tool.product_id} tool={tool}>
+        <li key={tool.product_id} tool={tool} className="itemlist">
           <div wrap="true" className="itemwrap">
             {this.importimages(tool.product_id)}
 
@@ -58,9 +76,15 @@ export default class Tools extends Component {
                   color="#F4FF77"
                   radius="50px"
                   class="btnitem"
+                  onClick={() => this.handleClick(tool.product_id)}
                 >
                   Add To Cart
                 </button>
+                <Prompt
+                  key="block-nav"
+                  when={this.state.shouldBlockNavigation}
+                  message="Please Login to add to cart"
+                />
               </div>
             </div>
           </div>
@@ -70,26 +94,24 @@ export default class Tools extends Component {
 
     return (
       <div>
-        <div>
-          <h3>Filter by price.</h3>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.tools, "lowhigh")}
-          >
-            Sort from lowest to highest cost
-          </button>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.tools, "highlow")}
-          >
-            Sort from highest to lowest cost
-          </button>
+        <div className="filternavbar">
+          <div className="dropdown">
+            <button className="dropbtn">Sort</button>
+            <div className="dropdown-content">
+              <a
+                href="#"
+                onClick={() => this.sortPrice(this.state.tools, "lowhigh")}
+              >
+                Low to high
+              </a>
+              <a
+                href="#"
+                onClick={() => this.sortPrice(this.state.tools, "highlow")}
+              >
+                High to low
+              </a>
+            </div>
+          </div>
         </div>
         <h1>All Tools</h1>
         <div className="gridcontainer">{tools}</div>
@@ -231,3 +253,23 @@ export default class Tools extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Tools);

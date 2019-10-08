@@ -7,7 +7,7 @@ export default function Tool() {
       <Link to="/">Home</Link>
       <p> > All Tools</p>
       <h3>Links</h3>
-      <ul>
+      <ul className="product-menu">
         <li>
           <Link to="/items/trees">Trees Page</Link>
         </li>

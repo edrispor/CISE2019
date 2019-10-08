@@ -11,16 +11,35 @@ import Nematodes from "../GardenMainImages/nematodes.jpg";
 import Self_Watering_Mix from "../GardenMainImages/self_watering_mix.jpg";
 import Mix_Kit from "../GardenMainImages/mix_kit.jpg";
 import cat from "../images/cat.jpeg";
+import Fertiliser from "../images/fertiliser.jpg";
+import Bucket from "../images/bucket.jpg";
+import { connect } from "react-redux";
+import { addToCart } from "./actions/cartActions";
+import { Prompt } from "react-router-dom";
 
-export default class Maintenance extends Component {
+class Maintenance extends Component {
   constructor() {
     super();
     this.state = {
-      maintenance: []
+      maintenance: [],
+      shouldBlockNavigation: false
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
   }
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+      this.setState({ shouldBlockNavigation: true });
+      window.history.back();
+      window.location.href = "/login";
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getMaintenance();
@@ -44,7 +63,7 @@ export default class Maintenance extends Component {
     console.log(maintenance);
     maintenance = maintenance.map(maintain => {
       return (
-        <li key={maintain.product_id} maintain={maintain}>
+        <li key={maintain.product_id} maintain={maintain} className="itemlist">
           <div wrap="true" className="itemwrap">
             <div className="itemimg">
               {this.importimages(maintain.product_id)}
@@ -60,9 +79,15 @@ export default class Maintenance extends Component {
                   color="#F4FF77"
                   radius="50px"
                   class="btnitem"
+                  onClick={() => this.handleClick(maintain.product_id)}
                 >
                   Add To Cart
                 </button>
+                <Prompt
+                  key="block-nav"
+                  when={this.state.shouldBlockNavigation}
+                  message="Please Login to add to cart"
+                />
               </div>
             </div>
           </div>{" "}
@@ -71,31 +96,33 @@ export default class Maintenance extends Component {
     });
 
     return (
-      <section>
-        <div>
-          <h3>Filter by price.</h3>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.maintenance, "lowhigh")}
-          >
-            Sort from lowest to highest cost
-          </button>
-          <button
-            width="135px"
-            color="#F4FF77"
-            radius="50px"
-            class="btnitem"
-            onClick={() => this.sortPrice(this.state.maintenance, "highlow")}
-          >
-            Sort from highest to lowest cost
-          </button>
+      <div>
+        <div className="filternavbar">
+          <div className="dropdown">
+            <button className="dropbtn">Sort</button>
+            <div className="dropdown-content">
+              <a
+                href="#"
+                onClick={() =>
+                  this.sortPrice(this.state.maintenance, "lowhigh")
+                }
+              >
+                Low to high
+              </a>
+              <a
+                href="#"
+                onClick={() =>
+                  this.sortPrice(this.state.maintenance, "highlow")
+                }
+              >
+                High to low
+              </a>
+            </div>
+          </div>
         </div>
         <h1>All Garden Maintenance</h1>
-        <div className="gridcontainer">{maintenance}</div>
-      </section>
+        <div className="gridcontainer">{maintenance}</div>{" "}
+      </div>
     );
   }
   sortPrice(maintenancearray, condition) {
@@ -246,3 +273,23 @@ export default class Maintenance extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Maintenance);

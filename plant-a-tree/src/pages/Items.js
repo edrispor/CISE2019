@@ -6,8 +6,8 @@ export default function Items() {
   return (
     <div className="pagelayout">
       <div className="items-page">
-        <h3>Links...</h3>
-        <ul>
+        <h3>Links</h3>
+        <ul className="product-menu">
           <li>
             <Link to="/">Home</Link>
           </li>
