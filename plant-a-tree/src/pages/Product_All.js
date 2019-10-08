@@ -32,14 +32,12 @@ import Bucket from "../images/bucket.jpg";
 ///////////////////////////////////////////////////////////////////////
 import { connect } from "react-redux";
 import { addToCart } from "../components/actions/cartActions";
-import { Prompt } from "react-router-dom";
 
 class Product_All extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      shouldBlockNavigation: false
+      items: []
     };
   }
   handleClick = id => {
@@ -48,9 +46,8 @@ class Product_All extends Component {
       localStorage.getItem("user") === null
     ) {
       console.log("log in to continue");
-      this.setState({ shouldBlockNavigation: true });
-      window.history.back();
-      window.location.href = "/login";
+
+      alert("please login to be able to add to cart");
     } else {
       this.props.addToCart(id);
     }
@@ -91,11 +88,6 @@ class Product_All extends Component {
               >
                 Add To Cart
               </button>
-              <Prompt
-                key="block-nav"
-                when={this.state.shouldBlockNavigation}
-                message="Please Login to add to cart"
-              />
             </div>
           </div>
         </div>

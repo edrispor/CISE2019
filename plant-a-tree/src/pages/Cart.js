@@ -51,7 +51,7 @@ class Cart extends Component {
                       this.handleAddQuantity(item.product_id);
                     }}
                   >
-                    🡹
+                    ↑
                   </i>
                 </Link>
                 <Link to="/account/cart">
@@ -60,7 +60,7 @@ class Cart extends Component {
                       this.handleSubtractQuantity(item.product_id);
                     }}
                   >
-                    🢃
+                    ↓
                   </i>
                 </Link>
               </div>
