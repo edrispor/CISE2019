@@ -30,13 +30,31 @@ import EnglishOak from "../TreeImages/englishoak.jpg";
 import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";
 ///////////////////////////////////////////////////////////////////////
-export default class Product_All extends Component {
+import { connect } from "react-redux";
+import { addToCart } from "../components/actions/cartActions";
+import { Prompt } from "react-router-dom";
+
+class Product_All extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
+      shouldBlockNavigation: false
     };
   }
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+      this.setState({ shouldBlockNavigation: true });
+      window.history.back();
+      window.location.href = "/login";
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getItems();
@@ -69,9 +87,15 @@ export default class Product_All extends Component {
                 color="#F4FF77"
                 radius="50px"
                 class="btnitem"
+                onClick={() => this.handleClick(item.product_id)}
               >
                 Add To Cart
               </button>
+              <Prompt
+                key="block-nav"
+                when={this.state.shouldBlockNavigation}
+                message="Please Login to add to cart"
+              />
             </div>
           </div>
         </div>
@@ -349,3 +373,23 @@ export default class Product_All extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Product_All);

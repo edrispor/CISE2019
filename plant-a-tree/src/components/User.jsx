@@ -55,7 +55,7 @@ export default class User extends Component {
           <Zoom>
             <center style={{ margin: "25px" }}>
               <Flip>
-                <h3> 🌲 Register 🌲 </h3>
+                <h3> Register </h3>
               </Flip>
 
               <form>
@@ -72,7 +72,8 @@ export default class User extends Component {
                 <div className="form-group" style={{ margin: "15px" }}>
                   <input
                     className="form-control"
-                    type="text"
+                    type="password"
+                    name="password"
                     id="pass"
                     ref={inpass => (this.inputpass = inpass)}
                     placeholder="Enter a password"
