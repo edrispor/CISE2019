@@ -11,8 +11,6 @@ import Nematodes from "../GardenMainImages/nematodes.jpg";
 import Self_Watering_Mix from "../GardenMainImages/self_watering_mix.jpg";
 import Mix_Kit from "../GardenMainImages/mix_kit.jpg";
 import cat from "../images/cat.jpeg";
-import Fertiliser from "../images/fertiliser.jpg";
-import Bucket from "../images/bucket.jpg";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
 import { Prompt } from "react-router-dom";
