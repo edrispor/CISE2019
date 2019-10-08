@@ -53,6 +53,7 @@ export default class Maintenance extends Component {
               <div className="itemdetails">
                 <h2>{maintain.product_name}</h2>
                 <p1>{maintain.description}</p1>
+                <p1>{maintain.photo_link}</p1>
                 <span className="price">${maintain.product_price}</span>
                 <button
                   width="135px"
@@ -71,10 +72,48 @@ export default class Maintenance extends Component {
 
     return (
       <section>
+        <div>
+          <h3>Filter by price.</h3>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.maintenance, "lowhigh")}
+          >
+            Sort from lowest to highest cost
+          </button>
+          <button
+            width="135px"
+            color="#F4FF77"
+            radius="50px"
+            class="btnitem"
+            onClick={() => this.sortPrice(this.state.maintenance, "highlow")}
+          >
+            Sort from highest to lowest cost
+          </button>
+        </div>
         <h1>All Garden Maintenance</h1>
         <div className="gridcontainer">{maintenance}</div>
       </section>
     );
+  }
+  sortPrice(maintenancearray, condition) {
+    if (condition === "lowhigh") {
+      let a = maintenancearray.sort(function(a, b) {
+        return parseFloat(a.product_price) - parseFloat(b.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ maintenance: a });
+    } else if (condition === "highlow") {
+      let a = maintenancearray.sort(function(a, b) {
+        return parseFloat(b.product_price) - parseFloat(a.product_price);
+      });
+      console.log("After sort ");
+      console.log(a);
+      this.setState({ maintenance: a });
+    }
   }
 
   importimages(product_id) {
