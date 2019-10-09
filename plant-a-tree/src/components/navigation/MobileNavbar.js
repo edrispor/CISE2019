@@ -4,9 +4,9 @@ import Navlinks from "./Navlinks";
 
 const MyMobileNavbar = styled.nav`
   width: 100%;
-  background: #572f14;
 
   margin-bottom: 15px;
+  background-color: #fffacd;
 
   align-self: flex-end;
 
@@ -22,6 +22,7 @@ const MyMobileNavbar = styled.nav`
     align-items: center;
     list-style: none;
     height: 24vh;
+    background: #101820ff;
   }
 
   .nav-links2 li a:active,
