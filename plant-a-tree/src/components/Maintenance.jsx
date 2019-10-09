@@ -80,7 +80,7 @@ class Maintenance extends Component {
                 />
               </div>
             </div>
-          </div>{" "}
+          </div>
         </li>
       );
     });
@@ -111,7 +111,7 @@ class Maintenance extends Component {
           </div>
         </div>
         <h1>All Garden Maintenance</h1>
-        <div className="gridcontainer">{maintenance}</div>{" "}
+        <div className="gridcontainer">{maintenance}</div>
       </div>
     );
   }

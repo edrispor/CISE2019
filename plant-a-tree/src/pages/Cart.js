@@ -34,13 +34,10 @@ class Cart extends Component {
       this.props.items.map(item => {
         return (
           <li id="section-cartitems" key={item.product_id}>
-            <div></div>
-
             <div>
-              <span>{item.product_name}</span>
-
-              <b>Price: {item.product_price}$</b>
-
+              <h3>{item.product_name}</h3>
+              <br />
+              <b>Unit Price: ${item.product_price}</b>
               <p>
                 <b>Quantity: {item.quantity}</b>
               </p>
@@ -65,6 +62,7 @@ class Cart extends Component {
                 </Link>
               </div>
               <button
+                className="btncart"
                 onClick={() => {
                   this.handleRemove(item.product_id);
                 }}
@@ -76,12 +74,15 @@ class Cart extends Component {
         );
       })
     ) : (
-      <p>No Items in Cart</p>
+      <p>
+        No Items in Cart.
+        <Link to="/items"> Start Browsing Now!</Link>
+      </p>
     );
     return (
       <div>
         <div>
-          <h5>Your Order:</h5>
+          <h2>Shopping Cart:</h2>
           <ul>{addedItems}</ul>
         </div>
         <Recipe></Recipe>

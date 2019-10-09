@@ -89,10 +89,10 @@ class Trees extends Component {
             <div className="itemimg">{this.importimages(tree.product_id)}</div>
             <div className="item">
               <div className="itemdetails">
-                <p1>{tree.product_name}</p1>
-                <br></br>
+                <h2>{tree.product_name}</h2>
                 <p1>{tree.latin_name}</p1>
                 <br />
+                <p2>{tree.tree_type}</p2>
                 <span className="price">${tree.product_price}</span>
                 <button
                   width="135px"
