@@ -6,40 +6,40 @@ import menu from "./menu-24px.svg";
 import treelogo2 from "./treelogo2.svg";
 
 const MyDesktopNavbar = styled.nav`
-display: flex;
-flex-flow: row nowrap;
-justify-content: space-evenly;
-align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
 
-background: #572f14;
-color: white;
-height 16vh;
+  background: -webkit-linear-gradient(#006b38ff, #101820ff);
+  color: white;
+  height: 20vh;
 
-.nav-links2 {
+  .nav-links2 {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
     list-style: none;
     width: 35vw;
-    
+
     @media screen and (max-width: 768px) {
-        display: none;
-      }
-}
+      display: none;
+    }
+  }
 
-.nav-links2 li a:active,
-.nav-links2 li a:hover,
-.nav-links2 li a.active {
-  color: var(--mainPinky);
-  text-decoration: none;
-}
+  .nav-links2 li a:active,
+  .nav-links2 li a:hover,
+  .nav-links2 li a.active {
+    color: var(--mainPinky);
+    text-decoration: none;
+  }
 
-.link {
+  .link {
     color: white;
     font-size: 2.5vh;
     text-decoration: none;
-}
+  }
 `;
 
 const MyMobileNavButton = styled.button`

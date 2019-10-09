@@ -19,10 +19,17 @@ export default function Home() {
         <br></br>
         <h1>Welcome to Plant-A-Tree, by TreeCo.</h1>
         <p>Powered by Terra-Byte.</p>
-        <div>
-          <Maincategories></Maincategories>
-          <Tools></Tools>
-        </div>
+        <ul className="product-menu">
+          <li>
+            <Link to="/items/trees">Trees</Link>
+          </li>
+          <li>
+            <Link to="/items/tools">Tools</Link>
+          </li>
+          <li>
+            <Link to="/items/maintenance">Garden Maintenance</Link>
+          </li>
+        </ul>
       </main>
     </div>
   );
