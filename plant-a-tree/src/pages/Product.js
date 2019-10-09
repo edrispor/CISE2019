@@ -30,7 +30,10 @@ import EnglishOak from "../TreeImages/englishoak.jpg";
 import Fertiliser from "../images/fertiliser.jpg";
 import Bucket from "../images/bucket.jpg";
 ///////////////////////////////////////////////////////////////////////
-export default class Product extends Component {
+import { connect } from "react-redux";
+import { addToCart } from "../components/actions/cartActions";
+
+class Product extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,6 +43,18 @@ export default class Product extends Component {
       items: []
     };
   }
+  handleClick = id => {
+    if (
+      localStorage.getItem("user") === "Not logged in" ||
+      localStorage.getItem("user") === null
+    ) {
+      console.log("log in to continue");
+
+      alert("please login to be able to add to cart");
+    } else {
+      this.props.addToCart(id);
+    }
+  };
 
   componentDidMount() {
     this.getTools();
@@ -108,6 +123,7 @@ export default class Product extends Component {
                 color="#F4FF77"
                 radius="50px"
                 class="btnitem"
+                onClick={() => this.handleClick(tool.product_id)}
               >
                 Add To Cart
               </button>
@@ -141,6 +157,7 @@ export default class Product extends Component {
                 color="#F4FF77"
                 radius="50px"
                 class="btnitem"
+                onClick={() => this.handleClick(tree.product_id)}
               >
                 Add To Cart
               </button>
@@ -167,6 +184,7 @@ export default class Product extends Component {
                 color="#F4FF77"
                 radius="50px"
                 class="btnitem"
+                onClick={() => this.handleClick(maintain.product_id)}
               >
                 Add To Cart
               </button>
@@ -186,9 +204,9 @@ export default class Product extends Component {
 
     if (tempid >= 1 && tempid <= 20) {
       return <div>{listTrees[localStorage.getItem("treeID")]}</div>;
-    } else if (tempid >= 21 && tempid <= 23) {
+    } else if (tempid >= 21 && tempid <= 29) {
       return <div>{listTools[localStorage.getItem("toolID")]}</div>;
-    } else if (tempid >= 30 && tempid <= 31) {
+    } else if (tempid >= 30 && tempid <= 39) {
       return (
         <div>{listMaintenance[localStorage.getItem("maintenanceID")]}</div>
       );
@@ -463,3 +481,23 @@ export default class Product extends Component {
     }
   }
 }
+const mapStateToProps = state => {
+  return {
+    items: state.items
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addToCart: id => {
+      dispatch(addToCart(id));
+    }
+  };
+};
+
+/*Items.propTypes = {
+  fetchItems: PropTypes.func.isRequired
+};*/
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Product);

@@ -2,18 +2,21 @@ import React, { Component } from "react";
 import Shovel from "../images/shovel.jpeg";
 import Rake from "../images/rake.jpeg";
 import Hoe from "../images/hoe.jpeg";
+import Cultivator from "../ToolImages/cultivator.jpg";
+import Planter from "../ToolImages/planter-hoe.jpg";
+import Tool_Belt from "../ToolImages/tool_belt.jpg";
+import Transplanter from "../ToolImages/transplanter.jpg";
+import Weeder from "../ToolImages/weeder.jpg";
 import cat from "../images/cat.jpeg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
-import { Prompt } from "react-router-dom";
 
 class Tools extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tools: [],
-      shouldBlockNavigation: false
+      tools: []
     };
     this.importimages = this.importimages.bind(this);
     this.onclickproduct = this.onclickproduct.bind(this);
@@ -25,9 +28,8 @@ class Tools extends Component {
       localStorage.getItem("user") === null
     ) {
       console.log("log in to continue");
-      this.setState({ shouldBlockNavigation: true });
-      window.history.back();
-      window.location.href = "/login";
+
+      alert("please login to be able to add to cart");
     } else {
       this.props.addToCart(id);
     }
@@ -75,11 +77,6 @@ class Tools extends Component {
                 >
                   Add To Cart
                 </button>
-                <Prompt
-                  key="block-nav"
-                  when={this.state.shouldBlockNavigation}
-                  message="Please Login to add to cart"
-                />
               </div>
             </div>
           </div>
@@ -167,6 +164,76 @@ class Tools extends Component {
           <Link to={`/product/${product_id}`}>
             <img
               src={Hoe}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 24) {
+      return (
+        <div classname="Cultivator">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Cultivator}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 25) {
+      return (
+        <div classname="Transplanter">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Transplanter}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 26) {
+      return (
+        <div classname="Planter">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Planter}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 27) {
+      return (
+        <div classname="Weeder">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Weeder}
+              alt={cat}
+              width="200px"
+              height="150px"
+              onClick={() => this.onclickproduct(product_id)}
+            ></img>{" "}
+          </Link>
+        </div>
+      );
+    } else if (product_id === 28) {
+      return (
+        <div classname="Tool_Belt">
+          <Link to={`/product/${product_id}`}>
+            <img
+              src={Tool_Belt}
               alt={cat}
               width="200px"
               height="150px"
