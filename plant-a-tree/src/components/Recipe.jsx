@@ -25,16 +25,16 @@ class Recipe extends Component {
                 ref="shipping"
                 onChange={this.handleChecked}
               />
-              <span>Shipping(+6$)</span>
+              <span>Shipping(+ $6)</span>
             </label>
           </li>
           <li>
-            <b>Total: {this.props.total} $</b>
+            <b>Total (incl GST): ${this.props.total}</b>
           </li>
         </div>
         <div>
           <Link to="/account/Payment">
-            <button>Checkout</button>
+            <button className="btncart">Checkout</button>
           </Link>
         </div>
       </div>

@@ -11,14 +11,12 @@ import cat from "../images/cat.jpeg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
-import { Prompt } from "react-router-dom";
 
 class Tools extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tools: [],
-      shouldBlockNavigation: false
+      tools: []
     };
     this.importimages = this.importimages.bind(this);
     this.onclickproduct = this.onclickproduct.bind(this);
@@ -30,9 +28,8 @@ class Tools extends Component {
       localStorage.getItem("user") === null
     ) {
       console.log("log in to continue");
-      this.setState({ shouldBlockNavigation: true });
-      window.history.back();
-      window.location.href = "/login";
+
+      alert("please login to be able to add to cart");
     } else {
       this.props.addToCart(id);
     }
@@ -80,11 +77,6 @@ class Tools extends Component {
                 >
                   Add To Cart
                 </button>
-                <Prompt
-                  key="block-nav"
-                  when={this.state.shouldBlockNavigation}
-                  message="Please Login to add to cart"
-                />
               </div>
             </div>
           </div>
