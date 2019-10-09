@@ -134,10 +134,6 @@ class Items extends Component {
             <div className="item">
               <div className="itemdetails">
                 <h2>{item.product_name}</h2>
-                <p1>{item.latin_name}</p1>
-                <br />
-                <p2>{item.tree_type}</p2>
-                <br />
                 <span className="price">${item.product_price}</span>
                 <button
                   width="135px"
