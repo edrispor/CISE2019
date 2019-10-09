@@ -45,7 +45,7 @@ import Mix_Kit from "../GardenMainImages/mix_kit.jpg";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { addToCart } from "./actions/cartActions";
-import { Prompt } from "react-router-dom";
+
 //import { fetchItems } from "./actions/itemsActions";
 //import PropTypes from "prop-types";
 
@@ -54,8 +54,7 @@ class Items extends Component {
     super(props);
     this.state = {
       items: [],
-      itemsClone: [],
-      shouldBlockNavigation: false
+      itemsClone: []
     };
     this.onclickproduct = this.onclickproduct.bind(this);
     this.importimages = this.importimages.bind(this);
@@ -71,9 +70,8 @@ class Items extends Component {
       localStorage.getItem("user") === null
     ) {
       console.log("log in to continue");
-      this.setState({ shouldBlockNavigation: true });
-      window.history.back();
-      window.location.href = "/login";
+
+      alert("please login to be able to add to cart");
     } else {
       this.props.addToCart(id);
     }
@@ -136,22 +134,10 @@ class Items extends Component {
             <div className="item">
               <div className="itemdetails">
                 <h2>{item.product_name}</h2>
-                <h3>{item.latin_name}</h3>
+                <p1>{item.latin_name}</p1>
                 <br />
-                <p2>type: {item.tree_type}</p2>
+                <p2>{item.tree_type}</p2>
                 <br />
-                <p1>maintenaince: {item.maintenaince}</p1>
-                <br />
-                <p1>sunlight: {item.sunlight}</p1>
-                <br />
-                <p1>height: {item.height}</p1>
-                <br />
-                <p1>soil: {item.soil_drainage}</p1>
-                <br />
-                <p1>gr: {item.growth_rate}</p1>
-                <br />
-
-                <p1>Click to find out more.</p1>
                 <span className="price">${item.product_price}</span>
                 <button
                   width="135px"
@@ -162,14 +148,9 @@ class Items extends Component {
                 >
                   Add To Cart
                 </button>
-                <Prompt
-                  key="block-nav"
-                  when={this.state.shouldBlockNavigation}
-                  message="Please Login to add to cart"
-                />
               </div>
             </div>
-          </div>{" "}
+          </div>
         </li>
       );
     });
@@ -545,7 +526,7 @@ class Items extends Component {
         </div>
 
         <br />
-        <div>{items}</div>
+        <div className="gridcontainer">{items}</div>
       </div>
     );
   }
