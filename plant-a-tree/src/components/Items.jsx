@@ -1017,7 +1017,7 @@ class Items extends Component {
     } else if (product_id == 21) {
       return (
         <div className="shovel">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Shovel}
               alt={cat}
@@ -1031,7 +1031,7 @@ class Items extends Component {
     } else if (product_id === 22) {
       return (
         <div classname="Rake">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Rake}
               alt={cat}
@@ -1045,7 +1045,7 @@ class Items extends Component {
     } else if (product_id === 23) {
       return (
         <div classname="Hoe">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Hoe}
               alt={cat}
@@ -1059,7 +1059,7 @@ class Items extends Component {
     } else if (product_id === 24) {
       return (
         <div classname="Cultivator">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Cultivator}
               alt={cat}
@@ -1073,7 +1073,7 @@ class Items extends Component {
     } else if (product_id === 25) {
       return (
         <div classname="Transplanter">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Transplanter}
               alt={cat}
@@ -1087,7 +1087,7 @@ class Items extends Component {
     } else if (product_id === 26) {
       return (
         <div classname="Planter">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Planter}
               alt={cat}
@@ -1101,7 +1101,7 @@ class Items extends Component {
     } else if (product_id === 27) {
       return (
         <div classname="Weeder">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Weeder}
               alt={cat}
@@ -1115,7 +1115,7 @@ class Items extends Component {
     } else if (product_id === 28) {
       return (
         <div classname="Tool_Belt">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Tool_Belt}
               alt={cat}
@@ -1129,7 +1129,7 @@ class Items extends Component {
     } else if (product_id === 30) {
       return (
         <div className="Organic_Fertilizer">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Organic_Fertilizer}
               alt={cat}
@@ -1143,7 +1143,7 @@ class Items extends Component {
     } else if (product_id === 31) {
       return (
         <div className="Mix_Kit">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Mix_Kit}
               alt={cat}
@@ -1157,7 +1157,7 @@ class Items extends Component {
     } else if (product_id === 32) {
       return (
         <div className="Self_Watering_Mix">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Self_Watering_Mix}
               alt={cat}
@@ -1171,7 +1171,7 @@ class Items extends Component {
     } else if (product_id === 33) {
       return (
         <div className="Organic_Potting_Mix">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Organic_Potting_Mix}
               alt={cat}
@@ -1185,7 +1185,7 @@ class Items extends Component {
     } else if (product_id === 34) {
       return (
         <div className="Neem_Oil">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Neem_Oil}
               alt={cat}
@@ -1199,7 +1199,7 @@ class Items extends Component {
     } else if (product_id === 35) {
       return (
         <div className="Garden_Hose">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Garden_Hose}
               alt={cat}
@@ -1213,7 +1213,7 @@ class Items extends Component {
     } else if (product_id === 36) {
       return (
         <div className="Watering_Can">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Watering_Can}
               alt={cat}
@@ -1227,7 +1227,7 @@ class Items extends Component {
     } else if (product_id === 37) {
       return (
         <div className="Hose_Nozzle">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Hose_Nozzle}
               alt={cat}
@@ -1241,7 +1241,7 @@ class Items extends Component {
     } else if (product_id === 38) {
       return (
         <div className="Nematodes">
-          <Link to={`/product/${product_id}`}>
+          <Link to={`/productall/${product_id}`}>
             <img
               src={Nematodes}
               alt={cat}
