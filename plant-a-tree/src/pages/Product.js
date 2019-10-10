@@ -163,6 +163,18 @@ class Product extends Component {
                 <li>Max mature height: {tree.height}</li>
                 <li>Growth rate: {tree.height}</li>
               </ul>
+              Tool Recommendations:
+              <ul>
+                <li>
+                  <Link to="/product/21">Shovel</Link>
+                </li>
+                <li>
+                  <Link to="/product/26">Nyglass Planter Hoe</Link>
+                </li>
+                <li>
+                  <Link to="/product/28">Gardener’s Tool Belt</Link>
+                </li>
+              </ul>
               <h2>${tree.product_price}</h2>
               <button
                 width="135px"
@@ -203,14 +215,6 @@ class Product extends Component {
             </div>
           </div>
         </div>
-
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(maintain.product_id)}</div>
-        <p>name : {maintain.product_name}</p>
-        <p>description "{maintain.description}</p>
       </li>
     ));
 

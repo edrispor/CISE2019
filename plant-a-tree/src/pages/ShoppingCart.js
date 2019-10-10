@@ -12,6 +12,7 @@ export default function ShoppingCart() {
           <br></br>
           <br></br>
           <Cart></Cart>
+          <Link to="/storelocator">Company Branches</Link>
         </div>
       </section>
     </div>
