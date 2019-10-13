@@ -38,7 +38,7 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/extralinkspage" component={ExtraLinksPage} />
         <Route exact path="/storelocator" component={StoreLocator} />
-        <Route exact path="/items" component={Items} />
+        <Route exact path="/item" component={Items} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />
         <Route exact path="/account/payment" component={Payment} />

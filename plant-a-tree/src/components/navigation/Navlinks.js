@@ -36,7 +36,7 @@ const Navlinks = () => {
   return (
     <ul className="nav-links2">
       <li>
-        <Link to="/items" className="link">
+        <Link to="/item" className="link">
           Browse
         </Link>
       </li>

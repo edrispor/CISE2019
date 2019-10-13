@@ -76,7 +76,7 @@ class Cart extends Component {
     ) : (
       <p>
         No Items in Cart.
-        <Link to="/items"> Start Browsing Now!</Link>
+        <Link to="/item"> Start Browsing Now!</Link>
       </p>
     );
     return (
