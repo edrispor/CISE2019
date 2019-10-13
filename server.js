@@ -23,7 +23,7 @@ const SELECT_All_TABLES_QUERY =
 /*"SELECT a.product_id,a.product_name,a.product_price FROM trees a union all SELECT b.product_id,b.product_name,b.product_price FROM tools b union all SELECT c.product_id,c.product_name,c.product_price FROM garden_main c;";
  */
 let pool = mysql.createPool({
-  connectionLimit: 10,
+  connectionLimit: 15,
   host: "us-cdbr-iron-east-02.cleardb.net",
   user: "b02474a9fac601",
   password: "15251463",
