@@ -102,7 +102,13 @@ class Product extends Component {
       .then(response => this.setState({ items: response.data }))
       .catch(err => console.error(err));
   };
-
+  onclickproduct(product_id) {
+    var resultID = this.state.tools.findIndex(
+      entry => entry.product_id === product_id
+    );
+    localStorage.setItem("toolID", resultID);
+    console.log(localStorage.getItem("toolID"));
+  }
   render() {
     let pathArray = window.location.pathname.split("/");
     let secondLevelLocation = pathArray[0];
@@ -175,6 +181,38 @@ class Product extends Component {
               </button>
             </div>
           </div>
+          <li>
+            <h3>Recommended tools</h3>
+            <ul>
+              Shovel
+              <div align="center" onClick={() => this.onclickproduct(21)}>
+                <Link to={`/product/${21}`}>
+                  <img
+                    src={Shovel}
+                    alt={cat}
+                    width="200px"
+                    height="150px"
+                  ></img>{" "}
+                </Link>
+              </div>
+            </ul>
+            <ul>
+              Rake{" "}
+              <div align="center" onClick={() => this.onclickproduct(22)}>
+                <Link to={`/product/${22}`}>
+                  <img src={Rake} alt={cat} width="200px" height="150px"></img>{" "}
+                </Link>
+              </div>
+            </ul>
+            <ul>
+              Hoe{" "}
+              <div align="center" onClick={() => this.onclickproduct(23)}>
+                <Link to={`/product/${23}`}>
+                  <img src={Hoe} alt={cat} width="200px" height="150px"></img>{" "}
+                </Link>
+              </div>
+            </ul>
+          </li>
         </div>
       </li>
     ));
@@ -203,14 +241,6 @@ class Product extends Component {
             </div>
           </div>
         </div>
-
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div>this is image {this.getimage(maintain.product_id)}</div>
-        <p>name : {maintain.product_name}</p>
-        <p>description "{maintain.description}</p>
       </li>
     ));
 
