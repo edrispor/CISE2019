@@ -12,7 +12,7 @@ export default function Home() {
           title="Spring Sale"
           subtitle="Selected trees 15% off! Till end of October."
         >
-          <Link to="/sales" className="btnsale">
+          <Link to="/items" className="btnsale">
             Search Products
           </Link>
         </Banner>

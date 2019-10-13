@@ -3,8 +3,12 @@ import {
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY,
-  ADD_SHIPPING,
-  SUB_SHIPPING
+  ADD_URBAN_SHIPPING,
+  SUB_URBAN_SHIPPING,
+  ADD_RURAL_SHIPPING,
+  SUB_RURAL_SHIPPING,
+  ADD_OUTSIDE_SHIPPING,
+  SUB_OUTSIDE_SHIPPING
 } from "../actions/action-types/cart-actions";
 
 const initState = {
@@ -91,19 +95,46 @@ const cartReducer = (state = initState, action) => {
     }
   }
 
-  if (action.type === ADD_SHIPPING) {
+  if (action.type === ADD_URBAN_SHIPPING) {
     return {
       ...state,
-      total: state.total + 6
+      total: state.total + 10
     };
   }
 
-  if (action.type === SUB_SHIPPING) {
+  if (action.type === SUB_URBAN_SHIPPING) {
     return {
       ...state,
-      total: state.total - 6
+      total: state.total - 10
     };
-  } else {
+  } 
+  if (action.type === ADD_RURAL_SHIPPING) {
+    return {
+      ...state,
+      total: state.total + 17
+    };
+  }
+
+  if (action.type ===  SUB_RURAL_SHIPPING) {
+    return {
+      ...state,
+      total: state.total - 17
+    };
+  }
+  if (action.type === ADD_OUTSIDE_SHIPPING) {
+    return {
+      ...state,
+      total: state.total + 22
+    };
+  }
+
+  if (action.type === SUB_OUTSIDE_SHIPPING) {
+    return {
+      ...state,
+      total: state.total - 22
+    };
+  }
+  else {
     return state;
   }
 
