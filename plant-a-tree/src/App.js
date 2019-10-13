@@ -21,13 +21,8 @@ import ShoppingCart from "./pages/ShoppingCart";
 import Tools from "./pages/Tools";
 import Tree from "./pages/Tree";
 import Footer from "./components/Footer";
-
 import Navbar from "./components/navigation/Navbar";
-
-import NZKauri from "./treepages/NZkauri";
 import ForgetPW from "./pages/ForgetPw";
-import MtFuji from "./treepages/MtFujiCherry";
-import MannaGum from "./treepages/MannaGum";
 import Sales from "./pages/Sales";
 
 function App() {
@@ -53,13 +48,6 @@ function App() {
         <Route exact path="/register" component={Register} />
         <Route exact path="/items/tools" component={Tools} />
         <Route exact path="/items/trees" component={Tree} />
-        <Route
-          exact
-          path="/items/trees/new-zealand-kauri"
-          component={NZKauri}
-        />
-        <Route exact path="/items/trees/mt-fuji-cherry" component={MtFuji} />
-        <Route exact path="/items/trees/manna-gum" component={MannaGum} />
         <Route exact path="/login/forget-password" component={ForgetPW} />
         <Route exact path="/sales" component={Sales} />
         <Route component={Error} />
