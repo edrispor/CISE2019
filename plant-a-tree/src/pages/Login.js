@@ -107,7 +107,7 @@ class Box extends Component {
     return (
       <div>
         {" "}
-        Login Succesfull... Click <Link to="/items">here</Link> to browse our
+        Login Succesfull... Click <Link to="/item">here</Link> to browse our
         collection
       </div>
     );

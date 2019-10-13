@@ -83,7 +83,7 @@ class Product_All extends Component {
       <li key={item.product_id} className="itemlist">
         <div className="pagelayout">
           <Link to="/">Home </Link>
-          <Link to="/items">> All Products</Link>
+          <Link to="/item">> All Products</Link>
           <p>> {item.product_name}</p>
           <div className="specific-tree-page">
             <div align="center">{this.getimage(item.product_id)}</div>

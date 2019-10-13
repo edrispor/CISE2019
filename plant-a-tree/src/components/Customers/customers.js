@@ -35,7 +35,7 @@ function App() {
         <Route exact path="/description" component={Description} />
         <Route exact path="/details" component={Details} />
         <Route exact path="/account/favourites" component={Favourites} />
-        <Route exact path="/items" component={Items} />
+        <Route exact path="/item" component={Items} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />
         <Route exact path="/policy" component={Policy} />
