@@ -3,8 +3,12 @@ import {
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY,
-  ADD_SHIPPING,
-  SUB_SHIPPING
+  ADD_URBAN_SHIPPING,
+  SUB_URBAN_SHIPPING,
+  ADD_RURAL_SHIPPING,
+  SUB_RURAL_SHIPPING,
+  ADD_OUTSIDE_SHIPPING,
+  SUB_OUTSIDE_SHIPPING
 } from "./action-types/cart-actions";
 
 //add cart action
@@ -36,14 +40,38 @@ export const addQuantity = id => {
   };
 };
 //add shipping
-export const addShipping = () => {
+export const addUrbanShipping = () => {
   return {
-    type: ADD_SHIPPING
+    type: ADD_URBAN_SHIPPING
   };
 };
 //sub shipping
-export const substractShipping = () => {
+export const substractUrbanShipping = () => {
   return {
-    type: SUB_SHIPPING
+    type: SUB_URBAN_SHIPPING
+  };
+};
+//add shipping
+export const addRuralShipping = () => {
+  return {
+    type: ADD_RURAL_SHIPPING
+  };
+};
+//sub shipping
+export const substractRuralShipping = () => {
+  return {
+    type: SUB_RURAL_SHIPPING
+  };
+};
+//add shipping
+export const addOutsideShipping = () => {
+  return {
+    type: ADD_OUTSIDE_SHIPPING
+  };
+};
+//sub shipping
+export const substractOutsideShipping = () => {
+  return {
+    type: SUB_OUTSIDE_SHIPPING
   };
 };

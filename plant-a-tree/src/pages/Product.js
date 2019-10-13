@@ -183,35 +183,45 @@ class Product extends Component {
           </div>
           <li>
             <h3>Recommended tools</h3>
-            <ul>
-              Shovel
-              <div align="center" onClick={() => this.onclickproduct(21)}>
-                <Link to={`/product/${21}`}>
-                  <img
-                    src={Shovel}
-                    alt={cat}
-                    width="200px"
-                    height="150px"
-                  ></img>{" "}
-                </Link>
-              </div>
-            </ul>
-            <ul>
-              Rake{" "}
-              <div align="center" onClick={() => this.onclickproduct(22)}>
-                <Link to={`/product/${22}`}>
-                  <img src={Rake} alt={cat} width="200px" height="150px"></img>{" "}
-                </Link>
-              </div>
-            </ul>
-            <ul>
-              Hoe{" "}
-              <div align="center" onClick={() => this.onclickproduct(23)}>
-                <Link to={`/product/${23}`}>
-                  <img src={Hoe} alt={cat} width="200px" height="150px"></img>{" "}
-                </Link>
-              </div>
-            </ul>
+            <div className="gridcontainer">
+              <ul>
+                <h3>Shovel</h3>
+                <p>$20</p>
+                <div align="center" onClick={() => this.onclickproduct(21)}>
+                  <Link to={`/product/${21}`}>
+                    <img
+                      src={Shovel}
+                      alt={cat}
+                      width="200px"
+                      height="150px"
+                    ></img>
+                  </Link>
+                </div>
+              </ul>
+              <ul>
+                <h3>Rake</h3>
+                <p>$25</p>
+                <div align="center" onClick={() => this.onclickproduct(22)}>
+                  <Link to={`/product/${22}`}>
+                    <img
+                      src={Rake}
+                      alt={cat}
+                      width="200px"
+                      height="150px"
+                    ></img>
+                  </Link>
+                </div>
+              </ul>
+              <ul>
+                <h3>Hoe</h3>
+                <p>$30</p>
+                <div align="center" onClick={() => this.onclickproduct(23)}>
+                  <Link to={`/product/${23}`}>
+                    <img src={Hoe} alt={cat} width="200px" height="150px"></img>
+                  </Link>
+                </div>
+              </ul>
+            </div>
           </li>
         </div>
       </li>

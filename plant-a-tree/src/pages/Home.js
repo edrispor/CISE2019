@@ -1,6 +1,4 @@
 import React from "react";
-import Maincategories from "../components/Maincategories";
-import Tools from "../components/Tools";
 import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 
@@ -10,7 +8,7 @@ export default function Home() {
       <main>
         <Banner
           title="Spring Sale"
-          subtitle="Selected trees 15% off! Till end of October."
+          subtitle="All Tools on sale! Till end of October."
         >
           <Link to="/sales" className="btnsale">
             Search Products

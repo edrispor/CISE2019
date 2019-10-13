@@ -21,15 +21,15 @@ export default class Footer extends Component {
               <br></br>
               <Link to="/contact">Contact Us</Link>
               <br></br>
-              <Link to="/storelocator">Store Locations</Link>
+              <Link to="/storelocator">Branch Locations</Link>
             </div>
             <div className="column">
               <h1>More links</h1>
-              <Link to="/extralinkspage">Link uno</Link>
+              <Link to="/extralinkspage">Link one</Link>
               <br></br>
-              <Link to="/extralinkspage">Link dos</Link>
+              <Link to="/extralinkspage">Link two</Link>
               <br></br>
-              <Link to="/extralinkspage">Link tres</Link>
+              <Link to="/extralinkspage">Link three</Link>
             </div>
           </div>
         </div>
