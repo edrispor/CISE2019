@@ -991,7 +991,7 @@ class Items extends Component {
           </Link>
         </div>
       );
-    } else if (product_id == 21) {
+    } else if (product_id === 21) {
       return (
         <div className="shovel">
           <Link to={`/productall/${product_id}`}>
