@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Tools from "../components/Tools";
 
 export default function Sales() {
   return (
@@ -9,9 +10,10 @@ export default function Sales() {
         <p> > Sale</p>
         <h1>SPRING SALE ! ! !</h1>
         <p>
-          Selected trees are up to 15% off. Till end of October 2019 or while
-          stocks last. Exclusive to Plant-A-Tree members only.
+          All TOOLS are on sale. Till end of October 2019 or while stocks last.
+          Exclusive to Plant-A-Tree members only.
         </p>
+        <Tools></Tools>
       </div>
     </div>
   );
