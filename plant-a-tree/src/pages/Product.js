@@ -169,18 +169,7 @@ class Product extends Component {
                 <li>Max mature height: {tree.height}</li>
                 <li>Growth rate: {tree.height}</li>
               </ul>
-              Tool Recommendations:
-              <ul>
-                <li>
-                  <Link to="/product/21">Shovel</Link>
-                </li>
-                <li>
-                  <Link to="/product/26">Nyglass Planter Hoe</Link>
-                </li>
-                <li>
-                  <Link to="/product/28">Gardener’s Tool Belt</Link>
-                </li>
-              </ul>
+
               <h2>${tree.product_price}</h2>
               <button
                 width="135px"
@@ -195,35 +184,45 @@ class Product extends Component {
           </div>
           <li>
             <h3>Recommended tools</h3>
-            <ul>
-              Shovel
-              <div align="center" onClick={() => this.onclickproduct(21)}>
-                <Link to={`/product/${21}`}>
-                  <img
-                    src={Shovel}
-                    alt={cat}
-                    width="200px"
-                    height="150px"
-                  ></img>{" "}
-                </Link>
-              </div>
-            </ul>
-            <ul>
-              Rake{" "}
-              <div align="center" onClick={() => this.onclickproduct(22)}>
-                <Link to={`/product/${22}`}>
-                  <img src={Rake} alt={cat} width="200px" height="150px"></img>{" "}
-                </Link>
-              </div>
-            </ul>
-            <ul>
-              Hoe{" "}
-              <div align="center" onClick={() => this.onclickproduct(23)}>
-                <Link to={`/product/${23}`}>
-                  <img src={Hoe} alt={cat} width="200px" height="150px"></img>{" "}
-                </Link>
-              </div>
-            </ul>
+            <div className="gridcontainer">
+              <ul>
+                <h3>Shovel</h3>
+                <p>$20</p>
+                <div align="center" onClick={() => this.onclickproduct(21)}>
+                  <Link to={`/product/${21}`}>
+                    <img
+                      src={Shovel}
+                      alt={cat}
+                      width="200px"
+                      height="150px"
+                    ></img>
+                  </Link>
+                </div>
+              </ul>
+              <ul>
+                <h3>Rake</h3>
+                <p>$25</p>
+                <div align="center" onClick={() => this.onclickproduct(22)}>
+                  <Link to={`/product/${22}`}>
+                    <img
+                      src={Rake}
+                      alt={cat}
+                      width="200px"
+                      height="150px"
+                    ></img>
+                  </Link>
+                </div>
+              </ul>
+              <ul>
+                <h3>Hoe</h3>
+                <p>$30</p>
+                <div align="center" onClick={() => this.onclickproduct(23)}>
+                  <Link to={`/product/${23}`}>
+                    <img src={Hoe} alt={cat} width="200px" height="150px"></img>
+                  </Link>
+                </div>
+              </ul>
+            </div>
           </li>
         </div>
       </li>
