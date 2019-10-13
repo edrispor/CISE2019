@@ -10,7 +10,6 @@ import Details from "./pages/Details";
 import Error from "./pages/Error";
 import ExtraLinksPage from "./pages/ExtraLinksPage";
 import StoreLocator from "./pages/StoreLocator";
-import Favourites from "./pages/Favourites";
 import Home from "./pages/Home";
 import Items from "./pages/Items";
 import Login from "./pages/Login";
@@ -50,7 +49,6 @@ function App() {
         <Route exact path="/details" component={Details} />
         <Route exact path="/extralinkspage" component={ExtraLinksPage} />
         <Route exact path="/storelocator" component={StoreLocator} />
-        <Route exact path="/account/favourites" component={Favourites} />
         <Route exact path="/items" component={Items} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/items/maintenance" component={Maintenance} />

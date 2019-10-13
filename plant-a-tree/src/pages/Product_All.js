@@ -91,6 +91,18 @@ class Product_All extends Component {
               <h1>{item.product_name}</h1>
               <p>{item.description}</p>
               <h2>${item.product_price}</h2>
+              Tool Recommendations:
+              <ul>
+                <li>
+                  <Link to="/product/21">Shovel</Link>
+                </li>
+                <li>
+                  <Link to="/product/26">Nyglass Planter Hoe</Link>
+                </li>
+                <li>
+                  <Link to="/product/28">Gardener’s Tool Belt</Link>
+                </li>
+              </ul>
               <button
                 width="135px"
                 color="#F4FF77"
