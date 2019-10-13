@@ -67,7 +67,7 @@ class Recipe extends Component {
           <li>
             <p>
               Pickup (no charge - no need to select an option above)-->
-              <Link to="/storelocator">Company Branches</Link>
+              <Link to="/storelocator">Branch Locations</Link>
             </p>
             <b>Total (incl GST): ${this.props.total}</b>
           </li>
